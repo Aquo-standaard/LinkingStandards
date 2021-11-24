@@ -1,0 +1,31 @@
+Inventarisatie:
+-	Er zijn mapping tabellen bij AQUO. De tabellen voor voorkomen van biota moeten herzien worden omdat die parameterstructuur in BODC is veranderd. Er zijn tabellen voor (datum staat voor datum dat ik ze heb gedownloadt):
+o	Mapping_SDN_L05_Bemonsteringsapparaat_2019_04_09.csv
+o	Mapping_SDN_L05_Meetapparaat_2019_04_09.csv
+o	Mapping_SDN_L111_2019_04_09.csv
+o	Mapping_SDN_P61_2019_04_09.csv
+o	Mapping_SDN_L201_2019_04_09.csv
+o	Mapping_SDN_P01_2019_04_09.csv
+Ik heb deze mappings geprobeerd te joinen met DDL metadata. Ging redelijk, maar moet eigenlijk een keer met de hand nagelopen worden.
+-	We hebben mappings gemaakt van AQUO naar P35 (aggregate parameter vooralvoor eutrofieringsparameters) in kader van intern project. Die zijn beschikbaar
+-	We hebben oude mappings uit de tijd dat RWS nog zelf uit DONAR data aan SeaDataNet aanleverde. Deze zijn dus DONAR2SDN, en niet AQU2SDN, maar kunnen wel gebruikt worden om mappings compleet te maken.
+
+Techniek :
+-	AQUO tabellen kunnen zo gebruikt worden in scripts. Wij hebben daar ervaring mee. Wat doen we met ontbrekende mappings? Aanbieden aan AQUO als wijziging, maar dat kost tijd, en heeft voor AQUO misschien geen prioriteit.
+-	We kunnen ook bijv op Github csv tabellen hosten. Voordeel: (en nadeel): iedereen kan bijdragen, en het is snel. Een editorial lijkt me gewenst.
+-	Onderhoud moet geregeld worden, maar kan beperkt zijn tot die parameters/groepen die we willen mappen. Er kan zowel bij BODC als bij AQUO iets veranderen. 
+
+Wie
+-	Deltares wil delen, en heeft er belang bij. We kunnen er beperkte tijd in stoppen. Projecten waar het belangrijk is zijn:
+o	EMODnet Biology
+o	EMODnet Data Ingestion
+o	SeaDataCloud (maar weet niet of we daar nog in blijven)
+o	Wind op Zee Ecologisch Programma
+o	Schelde onderzoek
+o	Andere EU projecten zoals JERICO
+-	Key persons:
+o	Willem Stolte (standaarden, portalen, scripting, WOZEP data management)
+o	Gerrit Hendriksen(databases, (geo)informatiesystemen, Waterinfo Extra)
+o	Wouter Schoonveld (Databases, geautomatisceerde workflows)
+o	Girgio Santinelli/Fedor Baart – SeaDataCloud
+o	Anouk Blauw – Jerico en andere EU marine dataprojecten
