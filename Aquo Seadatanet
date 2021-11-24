@@ -1,0 +1,12 @@
+SDN L111 koppelingen onderdeel van Domeintabel Hoedanigheid. Om een lijst van alleen de SDN verwijzingen op te vragen, kan onderstaande query worden gebruikt.
+https://www.aquo.nl/index.php?title=Speciaal:Vragen&q=%5B%5BSDN+L111+code%3A%3A%2B%5D%5D+&p=format%3Dbroadtable%2Flink%3Dall%2Fheaders%3Dshow%2Fsearchlabel%3D...-20meer-20resultaten%2Fclass%3Dsortable-20wikitable-20smwtable&po=%3FId%0A%3FCodes%0A%3FOmschrijving%0A%3FOmschrijving+Engels%0A%3FSDN+L111+code%0A%3FGerelateerd%0A&sort=&order=asc&eq=no&offset=0&limit=50
+
+SDN L201 koppelingen onderdeel van Domeintabel Kwaliteitsoordeel. Om een lijst van alleen de SDN verwijzingen op te vragen, kan onderstaande query worden gebruikt.
+https://www.aquo.nl/index.php?title=Speciaal:Vragen&q=%5B%5BSDN+L201+code%3A%3A%2B%5D%5D+&p=format%3Dbroadtable%2Flink%3Dall%2Fheaders%3Dshow%2Fsearchlabel%3D...-20meer-20resultaten%2Fclass%3Dsortable-20wikitable-20smwtable&po=%3FId%0A%3FCodes%0A%3FOmschrijving%0A%3FOmschrijving+Engels%0A%3FSDN+L201+code%0A%3FGerelateerd%0A&sort=&order=asc&eq=no&offset=0&limit=50
+
+SDN L05 koppelingen onderdeel van Domeintabel Bemonsteringsapparaat. Om een lijst van alleen de SDN verwijzingen op te vragen, kan onderstaande query worden gebruikt.
+https://www.aquo.nl/index.php?title=Speciaal:Vragen&q=%5B%5BSDN+L05+code%3A%3A%2B%5D%5D+&p=format%3Dbroadtable%2Flink%3Dall%2Fheaders%3Dshow%2Fsearchlabel%3D...-20meer-20resultaten%2Fclass%3Dsortable-20wikitable-20smwtable&po=%3FId%0A%3FCodes%0A%3FOmschrijving%0A%3FOmschrijving+Engels%0A%3FSDN+L05+code%0A%3FGerelateerd%0A&sort=&order=asc&eq=no&offset=0&limit=50
+
+SDN P01 is binnen SDN een vreemde eend in de bijt en bijna een uitwisselmodel op zich gezien de combinaties die hierin gemaakt worden. Zodoende kan deze lijst niet op dezelfde manier geïmplementeerd worden als de andere lijsten van SDN aangezien er koppelingen naar meerdere domeintabellen worden gemaakt. Daarom is er gekozen om deze tabel als mapping domeintabel te handhaven:
+https://www.aquo.nl/index.php/Id-e96fe356-41d9-42eb-bbc0-7aab27743554
+
