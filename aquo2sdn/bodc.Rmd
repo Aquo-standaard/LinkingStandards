@@ -1,0 +1,36 @@
+# BODC semantic standard
+
+```{r}
+require(tidyverse)
+require(data.table)
+```
+
+De Brittisch Oceanographic Data Centre ([BODC](https://www.bodc.ac.uk/)) is in 1969 ingesteld door de Natural Environmental Research Council ([NERC](https://www.ukri.org/councils/nerc/)), en beheert een set vocabulaires voor gebruik in het mariene domein. Bij de oprichting van [SeaDataNet](https://www.seadatanet.org/), een infrastructuur voor het zoeken, vinden en distribueren van in situ data, zijn deze vocabulaires geadopteerd als "[common vocabularies](https://www.seadatanet.org/Standards/Common-Vocabularies)"voor gebruik als semantische standaard. Additioneel zijn binnen SeaDataNet [metadataformats](https://www.seadatanet.org/Standards/Metadata-formats) voor bijv instaituten, projecten en platforms toegevoegd. 
+
+## De "wat" beschrijving - koppeling P01 met S tabellen (one-armed bandit)
+
+De relatie tussen de primaire parameternamen (P01) en de afzonderlijke componenten voor al bestaande P01 namen kan interactief doorzocht worden in [deze link](https://vocab.seadatanet.org/p01-facet-search?&step_more=6). 
+
+```{r p01s-tabel}
+# p01s <- data.table::fread("https://vocab.seadatanet.org/bandit/browse_step_export.php?&export_type=decomposed&step=")
+# data.table::fwrite(p01s, "data/bodc/p01s.csv")
+
+p01s <- data.table::fread("data/bodc/p01s.csv")
+
+knitr::kable((sample_n(p01s, 100)), caption = "Random selectie van 100 elementen uit de tabel [P01 VOCABULARY - FACET SEARCH ON SEMANTIC COMPONENTS]. ")
+
+```
+
+
+## Gebruik van de koppelingstabel
+
+Voor veel combinaties van AQUO (um-aquo) velden zijn in het verleden P01 parameternamen gezocht. Deels staan deze in de mappingP01 tabel die onderhouden wordt door AQUO. Deels staan deze in andere locale bestanden die ad hoc mappings hebben gefaciliteerd (bronnen: RWS, MARIS, Deltares). In dit project hebben we in eerste instantie geprobeerd om AQUO codes te koppelen aan P01 namen. In een tweede stap worden de P01 namen opgesplitst in hun semantische onderdelen, en deze zullen dan gematcht worden met de afzonderlijke AQUO namen in de daarvoor geschikte velden. Hiervoor is het nodig de verschillende "S" velden te koppelen aan AQUO tabellen. De waarden in deze tabellen worden dan gekoppeld met behulp van tabel \@ref(tab:p01s-tabel).
+
+Op 25 mei 2022 zijn de volgende "S" tabellen gevonden
+
+```{r}
+read.csv2("data/bodc/s-tabellen.csv") %>%
+  knitr::kable(caption = "Beschrijving van tabellen met semantische componenten voor de P01 beschrijvende parameters. Deze versie is op 25 mei 2022 van de [seadata website](https://vocab.seadatanet.org/search) opgehaaald. ")
+```
+
+

@@ -1,0 +1,165 @@
+# Mapping van eenheden
+
+```{r}
+require(tidyverse)
+require(data.table)
+require(rwsapi)
+require(rlist)
+require(stringr)
+# Lees functie in voor download domeintabellen
+source("c:/git_checkouts/Accessing-MediaWiki-Aquo-Code-Examples/ExampleCodeRStudio/GetDomainTable.R")
+# source_url("https://github.com/Aquo-standaard/Accessing-MediaWiki-Aquo-Code-Examples/blob/main/ExampleCodeRStudio/GetDomainTable.R")
+
+ddlmetadata <- rws_metadata() 
+metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
+  list.flatten() %>% as.data.frame(stringsAsFactors = F)
+```
+
+## Voorkomen van eenheden
+
+*   BODC - De vocabulary [P06](https://vocab.nerc.ac.uk/search_nvs/P06/)
+*   AQUO - De door AQUO beheerde lijst [Eenheid](https://www.aquo.nl/index.php/Id-04f4f467-021b-4218-baa8-9742ed977c61)
+*   DDL - Eenheden in de [metadata]((https://rijkswaterstaat.github.io/wm-ws-dl/#ophalencatalogus)) van in de praktijk uitgeleverde gegevens uit de [Data Distributielaag](https://rijkswaterstaat.github.io/wm-ws-dl/#introduction)
+
+
+```{r leesEenheidLijsten, message=FALSE, warning=FALSE}
+
+p06 <- data.table::fread("data/bodc/vocab_p06.csv") # manual download
+idsw_aquo_Eenheid <- GetDomainTable(pDomeintabel <- "Eenheid")
+ddl_eenheden <- metadataLijst %>% distinct(Eenheid.Code, Eenheid.Omschrijving)
+```
+
+### Vergelijking DDL en AQUO
+
+De verwachting is dat alle eenheden die in de DDL gebruikt worden in de AQUO Eenheid lijst voorkomen. Dit is onderzocht door de eenheidcodes van de DDL te vergelijken met de eenheidcodes in de AQUO tabel Eenheid. Verreweg de meeste eenheden uit de DDL werden teruggevonden in de AQUO tabel. Tabel \@ref(tab:missingDDL) laat de eenheden zien die wel in de DDL gebruikt worden, maar niet teruggevonden konden worden in de AQUO Eenheid tabel, met de bijbehorende parameter.wat.omschrijving uit de DDL. 
+
+
+::: {.rmdnote}
+
+
+```{r missingDDL}
+ddl_eenheden %>% 
+  anti_join(idsw_aquo_Eenheid, by = c(Eenheid.Code = "Codes")) %>%
+  left_join(metadataLijst) %>%
+  select(Eenheid.Code, Eenheid.Omschrijving, Parameter_Wat_Omschrijving) %>%
+  knitr::kable(caption = "DDL eenheid codes die niet in de AQUO eenheid lijst voorkomen.")
+```
+
+
+
+
+Hierbij moet aangetekend worden dat de eenheid "/l" in dit geval ook gelijkgesteld kan worden met de eenheid "n/l", die wel in de AQUO lijst voorkomt. 
+
+AANBEVELING: verander eenheid "/l" in "n/l" in de DDL.
+
+:::
+
+
+### Vergelijking DDL en SDN (P0)
+
+Het "Eenheid.Code" veld uit de ddl tabel lijkt op het veld "altlabel" uit de SDN tabel. Hierbij zijn alle "^" (bijv. in g/m^2) tekens uit de SDN tabel voor de vergelijking verwijderd. Een eerste poging om de twee modellen te mappen wordt daarom gedaan op die twee velden. Het blijkt (tabel \@ref(tab:ddl-sdn-eenheden)) dat er `r ddl_eenheden %>% inner_join(p06, by = c(Eenheid.Code = "altlabel")) %>% nrow()` codes precies gelijk zijn. De validiteit van deze mapping kan in de tabel \@ref(tab:ddl-sdn-eenheden)) geïnspecteerd worden. 
+
+```{r ddl-sdn-eenheden}
+
+p06 <- p06 %>% mutate(altlabel2 = stringr::str_replace_all(altlabel, "\\^", ""))
+
+DDL_SDN_eenheid_auto <- ddl_eenheden %>% 
+  inner_join(
+    p06, 
+    by = c(Eenheid.Code = "altlabel2")
+    ) %>% 
+  select(Eenheid.Code, Eenheid.Omschrijving, altlabel, preflabel, conceptid)
+knitr::kable(DDL_SDN_eenheid_auto, caption = "Eenheidcodes uit de DDL die direct vergelijkbaar zijn met de eenheidcodes uit de SDN tabel (veldnaam altlabel).")
+```
+
+Eenheden uit de DDL waar met de automatische methode geen exacte match gevonden werd in de SDN eenhedentabel (`r ddl_eenheden %>% anti_join(p06, by = c(Eenheid.Code = "altlabel")) %>% nrow()`) staan in tabel \@ref(tab:DDL-SDN-antijoin). 
+
+```{r DDL-SDN-antijoin}
+DDL_SDN_verschil <- ddl_eenheden %>% 
+  anti_join(p06, by = c(Eenheid.Code = "altlabel2"))
+  knitr::kable(DDL_SDN_verschil, caption = "Eenheidcodes uit de DDL die niet direct vergelijkbaar zijn met de eenheidcodes uit de SDN tabel (veldnaam altlabel).")
+```
+
+
+### Handmatige mapping
+
+Voor de niet-gematchte eenheden uit tabel \@ref(tab:DDL-SDN-antijoin) wordt hieronder een voorstel gedaan voor een handmatige mapping. 
+
+```{r, echo = T}
+DDL_SDN_eenheid_hand <- DDL_SDN_verschil %>%
+  mutate(altlabel = 
+           case_when(
+             Eenheid.Code == "mg" ~ NA_character_,
+             Eenheid.Code == "n" ~ NA_character_,
+             Eenheid.Code == "n/m2" ~ "#/m^2",
+             Eenheid.Code == "n/l" ~ "#/l",
+             Eenheid.Code == "DIMSLS" ~ "",
+             Eenheid.Code == "graad" ~ "deg",
+             Eenheid.Code == "oC" ~ "degC",
+             Eenheid.Code == "/l" ~ "#/l",
+             Eenheid.Code == "n/hm" ~ NA_character_, # (#/m komt wel voor)
+             Eenheid.Code == "FTU" ~ NA_character_,
+             Eenheid.Code == "JTU" ~ NA_character_,
+             Eenheid.Code == "meq/l" ~ "mEquiv/l",
+             Eenheid.Code == "mHz" ~ NA_character_, # (Hz komt wel voor)
+             Eenheid.Code == "m3/d" ~ NA_character_,  # (m^3/s komt wel voor)
+             Eenheid.Code == "n/ml" ~ "#/ml",
+             Eenheid.Code == "oD" ~ NA_character_,  # (duitse graad, komt in mariene metingen niet voor)
+             Eenheid.Code == "RFU" ~ NA_character_,
+             Eenheid.Code == "U" ~ NA_character_,
+             Eenheid.Code == "uE"  ~ NA_character_  # waarschijnlijk uE/cm^2/s, vraag is of het voorkomt in marien milieu
+           )
+         )
+
+
+```
+
+
+
+Er is een probleem bij het mappen van de eenheid "DIMSLS" die in de DDL gebruikt wordt. Weliswaar is er een eenheid met preflabel = "Dimensionless" in de P06 tabel, maar dit leidt vermoedelijk niet tot een goede mapping. 
+
+De eenheid "DIMSLS" wordt in de DDL gebruikt voor de parameter.wat.omschrijvingen zoals in tabel \@ref(tab:DDL-DIMSLS)).  Hier zitten grootheden als Extinctie, Zuurgraad en Saliniteit tussen, die in SDN termen een eigen eenheid hebben. In de P06 tabel zijn de eenheden "pH units", "per metre" en "g/kg" te vinden die gangbaar zijn voor respectievelijk Zuurgraad, Extinctie en Saliniteit. Een mapping hiervan kan in de huidige situatie niet alleen op grond van eenheidcode, maar moet ook de grootheid meenemen. 
+
+Afgezien van het feit dat er geen een-op-een mapping mogelijk is, is ook de meer inhoudelijke vraag belangrijk of "dimensieloos" wel informatief is in deze gevallen. 
+
+
+```{r DDL-DIMSLS}
+metadataLijst %>% 
+  filter(Eenheid.Code == "DIMSLS") %>%
+  distinct(Grootheid.Omschrijving, Parameter_Wat_Omschrijving) %>% 
+  knitr::kable(caption = "DDL Grootheid.Omschrijving waarden die de eenheid DIMSLS hebben. ")
+```
+
+::: {.rmdnote}
+
+**Aanbeveling**
+
+De AQUO eenheidcode DIMSLS (Dimensieloos) die in de DDL gebruikt wordt is misschien formeel correct, maar is niet informatief. Bovendien zorgt dit ervoor dat eenheden niet te converteren zijn naar BODC termen. Het verdient daarom aanbeveling om deze te veranderen naar een meer informatieve eenheid. Voor een koppeling naar BODC (beperkt tot waarnemingen in mariene milie) zijn vooral eenheden voor de volgende grootheden van belang:
+
+Grootheid | Huidige eenheid DDL | Voorstel nieuwe eenheid | P06 alt label
+--------|----------|----------
+Saliniteit | DIMSLS | g/kg | g/kg
+Zuurgraad | DIMSLS| pH-eenheid | pH units
+Extinctie | DIMSLS | /m | per metre
+
+:::
+
+### Uiteindelijke mapping van eenheden.
+
+Door de tabellen met de automatische en de handmatige mapping samen te voegen, wordt een mappingtabel gemaakt die zo veel mogelijk compleet is. 
+
+```{r}
+vocabulary <- "P06"
+nerc_eenheid_prefix <- paste0("http://vocab.nerc.ac.uk/collection/",vocabulary,"/current/")
+nerc_eenheid_prefix <- "http://vocab.nerc.ac.uk/collection/P06/current/"
+
+DDL_SDN_eenheid <- DDL_SDN_eenheid_auto %>% bind_rows(DDL_SDN_eenheid_hand) %>%
+  # mutate(handmatig = if_else(Eenheid.Code %in% DDL_SDN_verschil$Eenheid.Code, TRUE, FALSE))%>%
+  mutate(uri = paste0(nerc_eenheid_prefix, conceptid, "/")) %>% 
+  select(-conceptid)
+
+knitr::kable(DDL_SDN_eenheid, caption = "Samengevoegde tabel (automatisch en handmatig gematcht. ")
+
+```
+
+
