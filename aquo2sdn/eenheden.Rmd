@@ -93,8 +93,8 @@ Voor de niet-gematchte eenheden uit tabel \@ref(tab:DDL-SDN-antijoin) wordt hier
 DDL_SDN_eenheid_hand <- DDL_SDN_verschil %>%
   mutate(altlabel = 
            case_when(
-             Eenheid.Code == "mg" ~ NA_character_,
-             Eenheid.Code == "n" ~ NA_character_,
+             Eenheid.Code == "mg" ~ NA_character_, # Grams (UGRM) en Micrograms (UGUG) komt wel voor
+             Eenheid.Code == "n" ~ NA_character_, # in BODC altijd gerelateerd aan volume of lengte
              Eenheid.Code == "n/m2" ~ "#/m^2",
              Eenheid.Code == "n/l" ~ "#/l",
              Eenheid.Code == "DIMSLS" ~ "",
@@ -102,15 +102,15 @@ DDL_SDN_eenheid_hand <- DDL_SDN_verschil %>%
              Eenheid.Code == "oC" ~ "degC",
              Eenheid.Code == "/l" ~ "#/l",
              Eenheid.Code == "n/hm" ~ NA_character_, # (#/m komt wel voor)
-             Eenheid.Code == "FTU" ~ NA_character_,
-             Eenheid.Code == "JTU" ~ NA_character_,
+             Eenheid.Code == "FTU" ~ NA_character_, # komt ook niet in AQUO voor
+             Eenheid.Code == "JTU" ~ NA_character_, # komt ook niet in AQUO voor
              Eenheid.Code == "meq/l" ~ "mEquiv/l",
              Eenheid.Code == "mHz" ~ NA_character_, # (Hz komt wel voor)
              Eenheid.Code == "m3/d" ~ NA_character_,  # (m^3/s komt wel voor)
              Eenheid.Code == "n/ml" ~ "#/ml",
              Eenheid.Code == "oD" ~ NA_character_,  # (duitse graad, komt in mariene metingen niet voor)
-             Eenheid.Code == "RFU" ~ NA_character_,
-             Eenheid.Code == "U" ~ NA_character_,
+             Eenheid.Code == "RFU" ~ NA_character_, # komt ook niet in AQUO voor
+             Eenheid.Code == "U" ~ NA_character_,   # komt ook niet in AQUO voor
              Eenheid.Code == "uE"  ~ NA_character_  # waarschijnlijk uE/cm^2/s, vraag is of het voorkomt in marien milieu
            )
          )
