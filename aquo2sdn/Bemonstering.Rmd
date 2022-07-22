@@ -11,14 +11,13 @@ source("c:/git_checkouts/Accessing-MediaWiki-Aquo-Code-Examples/ExampleCodeRStud
 
 ```
 
-
 ## Bemonsteringsapparaat of Veldapparaat
 
 ```{r}
 idsw_aquo_bemonsteringsapparaat <- GetDomainTable(pDomeintabel <- "Bemonsteringsapparaat")
 0
 idsw_aquo_bemonsteringsapparaat %>% select(Omschrijving) %>% 
-  knitr::kable(caption = 'Lijst met bemonsteringsapparaten in AQUO domeintabel "bemonsterinsapparaat"')
+  kableExtra::kbl(caption = 'Lijst met bemonsteringsapparaten in AQUO domeintabel "bemonsterinsapparaat"')
 ```
 
 
@@ -33,7 +32,7 @@ bodc_sdn_bemonsteringsapparaat <- read_delim(file.path("data\\bodc\\vocab_l22.cs
 bodc_sdn_bemonsteringsapparaat %>% 
   head() %>%
   select(conceptid, preflabel) %>%
-  knitr::kable(caption = "Eerste elementen van BODC L22 tabel SeaVoX Device Catalogue.")
+  kableExtra::kbl(caption = "Eerste elementen van BODC L22 tabel SeaVoX Device Catalogue.")
 ```
 
 In eerdere transformaties van Nederlandse data naar EMODnet Biologie zijn wel eens mappings gemaakt. Hieruit is de ad hoc handmatige mapping hieronder samengesteld. 
@@ -70,7 +69,7 @@ bemonsteringsapparaat_mapping <- idsw_aquo_bemonsteringsapparaat %>%
   ) %>% 
   arrange(bodc_code)
 
-bemonsteringsapparaat_mapping %>% knitr::kable()
+bemonsteringsapparaat_mapping %>% kableExtra::kbl()
 
 ```
 
@@ -90,7 +89,7 @@ bemonsteringsapparaat_mapping %>% knitr::kable()
 idsw_aquo_bemonsteringsmethode <- GetDomainTable(pDomeintabel <- "Bemonsteringsmethode")
 
 idsw_aquo_bemonsteringsmethode %>% select(Omschrijving) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 Conclusie: Vooral Nederlandse methodieken. Best lastig te vergelijken met internationale codes. Even parkeren.
@@ -103,7 +102,7 @@ Conclusie: Vooral Nederlandse methodieken. Best lastig te vergelijken met intern
 idsw_aquo_Bemonsteringssoort <- GetDomainTable(pDomeintabel <- "Bemonsteringssoort")
 
 idsw_aquo_Bemonsteringssoort %>% select(Omschrijving) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 
@@ -117,56 +116,6 @@ Mappen naar welke BODC tabel?
 
 ## Kleur
 
-
-## Kwaliteitsoordeel
-
-In AQUO kunnen verschillende kwaliteitsoordelen worden toegekend aan een meetwaarde (tabel \@ref(tab:aquoKwaliteitsoordeel)). Het is niet eenvoudig om te bepalen welke codes in de praktijk worden toegepast. Het gebruik in de Data Distributielaag kan alleen bepaald worden wanneer data daadwerkelijk gedownloadt worden.
-
-
-
-```{r aquoKwaliteitsoordeel}
-idsw_aquo_kwaliteitsoordeel <- GetDomainTable(pDomeintabel <- "Kwaliteitsoordeel")
-
-idsw_aquo_kwaliteitsoordeel %>% select(Codes, Omschrijving) %>%
-  knitr::kable(caption = "Aquo kwaliteitsoordeelcodes en -omschrijvingen.")
-```
-De corresponderende tabel met algemene kwalititeitsoordelen van BODC is de tabel [L20](http://vocab.nerc.ac.uk/collection/L20/current/) (figuur \@ref(tab:bodcKwaliteitsoordeel)). BODC hanteert hiernaast tabellen met  meer specifieke "quality flags" voor bepaalde apparaten of organisaties (IODE). Hier gaan we nu niet verder op in. 
-
-
-
-
-```{r bodcKwaliteitsoordeel}
-bodc_sdn_kwaliteitsoordeel <- read_delim(file.path("data\\bodc\\vocab_l20.csv"), delim = ";")
-
-bodc_sdn_kwaliteitsoordeel %>% select(conceptid, preflabel, definition) %>%
-  knitr::kable()
-```
-
-
-In eerder werk (NWDM) is een mapping gemaakt op basis van data uit de DDL voor Noordzee en Waddenzee (fysische-chemische data). Het voorstel is om deze als basis te gebruiken. De tabel 
-
-```{r readQualityCodeMappingTable}
-L201_mapping <- read_delim(file.path("data\\otherMappings\\Mapping_SDN_L201.csv"), delim = ";")
-```
-
-Dit
-
-
-```{r Kwaliteitscodecomparison}
-# compare verbose versions of AQUO and BODC
-kwaliteitescodemapping <- L201_mapping %>% 
-  mutate(SDN_L201_code = as.character(SDN_L201_code)) %>%
-  full_join(idsw_aquo_kwaliteitsoordeel, by = c(Aquo_Kwaliteitsoordeel_code = "Codes")) %>%
-  full_join(bodc_sdn_kwaliteitsoordeel, by = c(SDN_L201_code = "conceptid")) %>%
-  select(aquo_code = Aquo_Kwaliteitsoordeel_code,
-         aquo_omschrijving = Omschrijving,
-         conceptid = SDN_L201_code,
-         preflabel
-         )
-
-knitr::kable(kwaliteitescodemapping, caption = "Voorgestelde apping van kwaliteitscodes.")
-
-```
 
 
 

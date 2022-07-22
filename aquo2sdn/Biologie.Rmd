@@ -22,7 +22,7 @@ De AQUO tabel "Orgaan" bevat standaardnamen voor de verschillende lichaamsonderd
 idsw_aquo_orgaan <- GetDomainTable(pDomeintabel <- "Orgaan")
 
 idsw_aquo_orgaan %>% select(Omschrijving) %>% 
-  knitr::kable(caption = 'Lijst met organen in AQUO domeintabel "Orgaan"')
+  kableExtra::kbl(caption = 'Lijst met organen in AQUO domeintabel "Orgaan"')
 ```
 
 
@@ -34,7 +34,7 @@ BiologischKenmerk
 idsw_aquo_biologischkenmerk <- GetDomainTable(pDomeintabel <- "BiologischKenmerk")
 
 idsw_aquo_biologischkenmerk %>% select(Omschrijving) %>% 
-  knitr::kable(caption = 'Lijst met biologische kenmerken in AQUO domeintabel "BiologischKenmerk"')
+  kableExtra::kbl(caption = 'Lijst met biologische kenmerken in AQUO domeintabel "BiologischKenmerk"')
 ```
 
 De BODC vocabulaire die hier het meest mee verwant is [S11](https://vocab.seadatanet.org/v_bodc_vocab_v2/search.asp?lib=S11). Deze bevat voornamelijk grootteklassen voor zoöplankton alsmede algemene namen voor biologische ontwikkelingsstadia. 

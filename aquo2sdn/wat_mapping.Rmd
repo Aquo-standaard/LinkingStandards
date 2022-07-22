@@ -39,10 +39,10 @@ idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
   select(-Id, -`Begin geldigheid`, -`Eind geldigheid`, -Gerelateerd, -Wijzigingsnummer, -Guid)
 ```
 
-De metadata uit de DDL worden hierna gecombineerd (join) met de mapping_P01 tabel op de velden:
+De metadata uit de DDL worden hierna gecombineerd met de mapping_P01 tabel op de velden:
 
 
-```{r, echo=T}
+```{r, include = F}
 table = c(
   Grootheid.Code = 'Aquo_Grootheid_code',
   Parameter.Code = 'Aquo_ChemischeStof_code',
@@ -50,11 +50,11 @@ table = c(
   Compartiment.Code = 'Aquo_Compartiment_code',
   # Aquo_Monstercriterium_code
   Hoedanigheid.Code = 'Aquo_Monstercriterium_Hoedanigheid_code')
-knitr::kable(tibble("ddl_metadata" = names(table), "mapping_P01" = table), caption = "Veldnamen die gecombineerd worden in de ddl_metadata de gemodificeerde mapping_P01 tabel. Hierbij zijn de velden monstercriterium en hoedanigheid gecombineerd in een veld Aquo_Monstercriterium_Hoedanighed_code")
+kableExtra::kbl(tibble("ddl_metadata" = names(table), "mapping_P01" = table), caption = "Veldnamen die gecombineerd worden om de ddl_metadata te koppelen aan de gemodificeerde mapping_P01 tabel. Hierbij zijn de velden monstercriterium en hoedanigheid gecombineerd in een veld Aquo_Monstercriterium_Hoedanighed_code")
 ```
 
 
-waarin "Aquo_Monstercriterium_Hoedanigheid_code" de combinatie is van monstercriterium en hoedanigheid. 
+waarin *Aquo_Monstercriterium_Hoedanigheid_code* de combinatie is van monstercriterium en hoedanigheid. 
 
 
 
@@ -83,7 +83,7 @@ De uiteindelijke mapping geeft als resultaat een tabel met `r dim(ddl_p01_joined
 ```{r, eval=F}
 ddl_p01_joined %>%
   filter(!is.na(`SDN P01 code`)) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 
@@ -92,15 +92,17 @@ ddl_p01_joined %>%
 ```{r}
 read.csv2("data//bodc/s-tabellen.csv") %>%
   select(Library, Alt.Title, Title) %>%
-  knitr::kable()
+  kableExtra::kbl(caption = 'BODC "S-tabellen" die onderdelen bevatten van de P01 parameter tabel.') %>%
+  # kableExtra::column_spec(3, width = "15em") %>%
+  kableExtra::kable_styling(font_size = 10, full_width = T)
 
 ```
 
 
 
 ```{r koppeling-aquo-sdn-s}
+
 p01s <- data.table::fread("data//bodc/p01s.csv")
-names(p01s)
 
 ddl_p01_joined_p01s <- ddl_p01_joined %>% left_join(p01s, by = c(`SDN P01 code`= "P01_conceptid"))
 
@@ -130,7 +132,7 @@ ddl_p01_joined_p01s %>%
   distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>%
   filter(Parameter.Code != "NVT") %>% 
   filter(!is.na(s27_conceptid)) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 
@@ -147,7 +149,7 @@ ddl_p01_joined_p01s %>%
   distinct(Compartiment.Code, Compartiment.Omschrijving, Hoedanigheid.Code, S26_preflabel, S26_conceptid) %>%
   filter(Compartiment.Code != "NVT") %>% 
   filter(!is.na(S26_conceptid)) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 
@@ -161,7 +163,7 @@ ddl_p01_joined_p01s %>%
   distinct(Grootheid.Code, Grootheid.Omschrijving, Hoedanigheid.Code, S06_preflabel, S06_conceptid) %>%
   filter(Grootheid.Code != "NVT") %>% 
   filter(!is.na(S06_conceptid)) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 
@@ -174,7 +176,7 @@ ddl_p01_joined_p01s %>%
 p01s %>% 
   filter(S06_preflabel == "Grain-size") %>%
   filter(grepl("water body", S26_preflabel)) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 
@@ -186,7 +188,7 @@ p01s %>%
 p01s %>% 
   filter(S06_preflabel == "Grain-size") %>%
   filter(grepl("sediment", S26_preflabel)) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 
@@ -197,7 +199,7 @@ p01s %>%
 p01s %>% 
   head(100) %>%
   distinct(S25_preflabel) %>%
-  knitr::kable()
+  kableExtra::kbl()
 ```
 
 
