@@ -1,0 +1,2404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Hoofdstuk 7 Bemonstering | AQUO2SDN mapping</title>
+<meta name="author" content="Willem Stolte">
+<meta name="description" content="7.1 Bemonsteringsapparaat of Veldapparaat #&gt; [1] 0 Table 3.2: Lijst met bemonsteringsapparaten in AQUO domeintabel “bemonsterinsapparaat”   Omschrijving  1  Edelmanboor  21  Riversideboor  64 ...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Hoofdstuk 7 Bemonstering | AQUO2SDN mapping">
+<meta property="og:type" content="book">
+<meta property="og:description" content="7.1 Bemonsteringsapparaat of Veldapparaat #&gt; [1] 0 Table 3.2: Lijst met bemonsteringsapparaten in AQUO domeintabel “bemonsterinsapparaat”   Omschrijving  1  Edelmanboor  21  Riversideboor  64 ...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hoofdstuk 7 Bemonstering | AQUO2SDN mapping">
+<meta name="twitter:description" content="7.1 Bemonsteringsapparaat of Veldapparaat #&gt; [1] 0 Table 3.2: Lijst met bemonsteringsapparaten in AQUO domeintabel “bemonsterinsapparaat”   Omschrijving  1  Edelmanboor  21  Riversideboor  64 ...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">AQUO2SDN mapping</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Voorwoord</a></li>
+<li><a class="" href="aquo.html"><span class="header-section-number">2</span> AQUO</a></li>
+<li><a class="" href="bodc-semantic-standard.html"><span class="header-section-number">3</span> BODC semantic standard</a></li>
+<li><a class="" href="mapping-van-wat-tabellen.html"><span class="header-section-number">4</span> Mapping van “wat” tabellen</a></li>
+<li><a class="" href="mapping-van-eenheden.html"><span class="header-section-number">5</span> Mapping van eenheden</a></li>
+<li><a class="" href="kwaliteitsoordeel.html"><span class="header-section-number">6</span> Kwaliteitsoordeel</a></li>
+<li><a class="active" href="bemonstering.html"><span class="header-section-number">7</span> Bemonstering</a></li>
+<li><a class="" href="biologie-overig.html"><span class="header-section-number">8</span> Biologie overig</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="bemonstering" class="section level1" number="7">
+<h1>
+<span class="header-section-number">Hoofdstuk 7</span> Bemonstering<a class="anchor" aria-label="anchor" href="#bemonstering"><i class="fas fa-link"></i></a>
+</h1>
+<div id="bemonsteringsapparaat-of-veldapparaat" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Bemonsteringsapparaat of Veldapparaat<a class="anchor" aria-label="anchor" href="#bemonsteringsapparaat-of-veldapparaat"><i class="fas fa-link"></i></a>
+</h2>
+<pre><code>#&gt; [1] 0</code></pre>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:unnamed-chunk-2">Table 3.2: </span>Lijst met bemonsteringsapparaten in AQUO domeintabel “bemonsterinsapparaat”
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Omschrijving
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Edelmanboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+21
+</td>
+<td style="text-align:left;">
+Riversideboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+64
+</td>
+<td style="text-align:left;">
+Puinboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+Ramguts
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+Gutsboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+Steektoestel zonder folie
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+Aqualock
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+Avegaarboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+Beeker-sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+Begeman-sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:left;">
+Box-corer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+Continuous soil sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+Drukkend boorsysteem
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+Eckman-Birge happer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24
+</td>
+<td style="text-align:left;">
+Foliesteektoestel
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:left;">
+Grindboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+26
+</td>
+<td style="text-align:left;">
+Hamerend boorsysteem
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+27
+</td>
+<td style="text-align:left;">
+Handpuls
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28
+</td>
+<td style="text-align:left;">
+Holle avegaar
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+Jenkins-mudsampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+30
+</td>
+<td style="text-align:left;">
+Kernboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+31
+</td>
+<td style="text-align:left;">
+Mostap
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+32
+</td>
+<td style="text-align:left;">
+Multi-sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+33
+</td>
+<td style="text-align:left;">
+Akkermanboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+34
+</td>
+<td style="text-align:left;">
+Pulsboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+35
+</td>
+<td style="text-align:left;">
+Sonisch boorsysteem
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+36
+</td>
+<td style="text-align:left;">
+Spitsmuisboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+37
+</td>
+<td style="text-align:left;">
+Valbom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+38
+</td>
+<td style="text-align:left;">
+Van der Horst-steektoestel
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+39
+</td>
+<td style="text-align:left;">
+Van Veen happer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40
+</td>
+<td style="text-align:left;">
+Veenboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+41
+</td>
+<td style="text-align:left;">
+Vibro-corer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+42
+</td>
+<td style="text-align:left;">
+Vrijwitboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+43
+</td>
+<td style="text-align:left;">
+Zuigerboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44
+</td>
+<td style="text-align:left;">
+Akoestische zandtransportmeter
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+45
+</td>
+<td style="text-align:left;">
+Automatisch monstername apparaat
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+46
+</td>
+<td style="text-align:left;">
+Bodemschaaf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+47
+</td>
+<td style="text-align:left;">
+Boomkor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+48
+</td>
+<td style="text-align:left;">
+Dompelpomp
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+49
+</td>
+<td style="text-align:left;">
+Doorstroomcentrifuge
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+Elektrisch schepnet
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+51
+</td>
+<td style="text-align:left;">
+Emmer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+52
+</td>
+<td style="text-align:left;">
+Flushing sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+53
+</td>
+<td style="text-align:left;">
+Fuik
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+54
+</td>
+<td style="text-align:left;">
+Handnet
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+55
+</td>
+<td style="text-align:left;">
+Korf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+56
+</td>
+<td style="text-align:left;">
+Kuil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+57
+</td>
+<td style="text-align:left;">
+Modderpuls
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+58
+</td>
+<td style="text-align:left;">
+Mosselkorf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+59
+</td>
+<td style="text-align:left;">
+Pelagic trawl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+60
+</td>
+<td style="text-align:left;">
+Piston-corer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+61
+</td>
+<td style="text-align:left;">
+Planktonnet
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+62
+</td>
+<td style="text-align:left;">
+Poliepgrijper
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+63
+</td>
+<td style="text-align:left;">
+Pollepel
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+65
+</td>
+<td style="text-align:left;">
+Pomp
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+66
+</td>
+<td style="text-align:left;">
+Roset sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+67
+</td>
+<td style="text-align:left;">
+Schietfuik
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+68
+</td>
+<td style="text-align:left;">
+Sedimentval
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+69
+</td>
+<td style="text-align:left;">
+Siliconen rubber passive sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+70
+</td>
+<td style="text-align:left;">
+Slib sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+71
+</td>
+<td style="text-align:left;">
+Snoeischaar
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+72
+</td>
+<td style="text-align:left;">
+Sondeerapparaat
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+73
+</td>
+<td style="text-align:left;">
+Speeddisk passive sampler
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+74
+</td>
+<td style="text-align:left;">
+Spiraal
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+Steekbuis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+76
+</td>
+<td style="text-align:left;">
+Vacuümpomp
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+77
+</td>
+<td style="text-align:left;">
+Cilindrisch monsternemingstoestel
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+78
+</td>
+<td style="text-align:left;">
+Werpkorf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+79
+</td>
+<td style="text-align:left;">
+Elektrisch schepnet met keernetten
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+80
+</td>
+<td style="text-align:left;">
+Stortkuil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+81
+</td>
+<td style="text-align:left;">
+Wonderkuil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+82
+</td>
+<td style="text-align:left;">
+Zegen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+83
+</td>
+<td style="text-align:left;">
+Zegen met keernetten
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+84
+</td>
+<td style="text-align:left;">
+Elektrostramienkor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+85
+</td>
+<td style="text-align:left;">
+Zuigkor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+86
+</td>
+<td style="text-align:left;">
+Hamon happer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+87
+</td>
+<td style="text-align:left;">
+Videocamera
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+88
+</td>
+<td style="text-align:left;">
+Atoomkuil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+89
+</td>
+<td style="text-align:left;">
+Ankerkuil
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+90
+</td>
+<td style="text-align:left;">
+Graafmachine
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+Schep
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+Wortelboor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+Veenguts
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+Geoprobe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Maatbeker
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+Peristaltische pomp
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+Telescopische stok met flessenhouder
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+Stootijzer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+Vacuüm steekbuis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+Macrozoöbenthos zuiger
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>BODC onderhoudt verschillende tabellen waar bemonsteringsapparaten in voorkomen. De meest gedetailleerde tabel is de <a href="http://vocab.nerc.ac.uk/collection/L22/current/">SeaVoX Device Catalogue L22</a>. Een minder gedetailleerde (broader) tabel is <a href="http://vocab.nerc.ac.uk/collection/L05/current/">SeaDataNet device category</a>.</p>
+<p>De mapping die hier gepresenteerd wordt is slechts</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:bodcBemonsteringsapparaat">Table 7.1: </span>Eerste elementen van BODC L22 tabel SeaVoX Device Catalogue.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+conceptid
+</th>
+<th style="text-align:left;">
+preflabel
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+NETT0001
+</td>
+<td style="text-align:left;">
+Adriatic plankton sampler - Krsinic (1990)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NETT0002
+</td>
+<td style="text-align:left;">
+High-speed sampler - Apstein (1906)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NETT0003
+</td>
+<td style="text-align:left;">
+Apstein net as described by Apstein (1896); Dakin (1908)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NETT0004
+</td>
+<td style="text-align:left;">
+Autosampling and Recording Instrumental Environmental Sampler - Dunn et al. (1993)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NETT0005
+</td>
+<td style="text-align:left;">
+Automatic high-speed plankton sampler - Williamson (1962, 1963)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NETT0006
+</td>
+<td style="text-align:left;">
+Closing net - Barnes (1953)
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>In eerdere transformaties van Nederlandse data naar EMODnet Biologie zijn wel eens mappings gemaakt. Hieruit is de ad hoc handmatige mapping hieronder samengesteld.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+aquo_omschrijving
+</th>
+<th style="text-align:left;">
+aquo_cijfercode
+</th>
+<th style="text-align:left;">
+bodc_code
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Pelagic trawl
+</td>
+<td style="text-align:left;">
+62
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L05/current/23/" class="uri">http://vocab.nerc.ac.uk/collection/L05/current/23/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Videocamera
+</td>
+<td style="text-align:left;">
+96
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L05/current/311/" class="uri">http://vocab.nerc.ac.uk/collection/L05/current/311/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vacuüm steekbuis
+</td>
+<td style="text-align:left;">
+108
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L05/current/391/" class="uri">http://vocab.nerc.ac.uk/collection/L05/current/391/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Piston-corer
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L05/current/51/" class="uri">http://vocab.nerc.ac.uk/collection/L05/current/51/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fuik
+</td>
+<td style="text-align:left;">
+57
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L05/current/63/" class="uri">http://vocab.nerc.ac.uk/collection/L05/current/63/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zuigkor
+</td>
+<td style="text-align:left;">
+94
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L05/current/64/" class="uri">http://vocab.nerc.ac.uk/collection/L05/current/64/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pomp
+</td>
+<td style="text-align:left;">
+68
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L22/current/NETT0173/" class="uri">http://vocab.nerc.ac.uk/collection/L22/current/NETT0173/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bodemschaaf
+</td>
+<td style="text-align:left;">
+45
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L22/current/NETT0190/" class="uri">http://vocab.nerc.ac.uk/collection/L22/current/NETT0190/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Emmer
+</td>
+<td style="text-align:left;">
+33
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0536/" class="uri">http://vocab.nerc.ac.uk/collection/L22/current/TOOL0536/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Boomkor
+</td>
+<td style="text-align:left;">
+55
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0651/" class="uri">http://vocab.nerc.ac.uk/collection/L22/current/TOOL0651/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Van Veen happer
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/" class="uri">http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hamon happer
+</td>
+<td style="text-align:left;">
+95
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0960/" class="uri">http://vocab.nerc.ac.uk/collection/L22/current/TOOL0960/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Box-corer
+</td>
+<td style="text-align:left;">
+46
+</td>
+<td style="text-align:left;">
+<a href="http://vocab.nerc.ac.uk/collection/L22/current/TOOL1177/" class="uri">http://vocab.nerc.ac.uk/collection/L22/current/TOOL1177/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Edelmanboor
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Riversideboor
+</td>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Puinboor
+</td>
+<td style="text-align:left;">
+87
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ramguts
+</td>
+<td style="text-align:left;">
+27
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gutsboor
+</td>
+<td style="text-align:left;">
+31
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Steektoestel zonder folie
+</td>
+<td style="text-align:left;">
+53
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Aqualock
+</td>
+<td style="text-align:left;">
+83
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Avegaarboor
+</td>
+<td style="text-align:left;">
+54
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Beeker-sampler
+</td>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Begeman-sampler
+</td>
+<td style="text-align:left;">
+44
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Continuous soil sampler
+</td>
+<td style="text-align:left;">
+72
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Drukkend boorsysteem
+</td>
+<td style="text-align:left;">
+73
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Eckman-Birge happer
+</td>
+<td style="text-align:left;">
+41
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Foliesteektoestel
+</td>
+<td style="text-align:left;">
+74
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Grindboor
+</td>
+<td style="text-align:left;">
+24
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hamerend boorsysteem
+</td>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Handpuls
+</td>
+<td style="text-align:left;">
+76
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Holle avegaar
+</td>
+<td style="text-align:left;">
+77
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jenkins-mudsampler
+</td>
+<td style="text-align:left;">
+78
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kernboor
+</td>
+<td style="text-align:left;">
+79
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mostap
+</td>
+<td style="text-align:left;">
+80
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Multi-sampler
+</td>
+<td style="text-align:left;">
+48
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Akkermanboor
+</td>
+<td style="text-align:left;">
+42
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pulsboor
+</td>
+<td style="text-align:left;">
+26
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sonisch boorsysteem
+</td>
+<td style="text-align:left;">
+81
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spitsmuisboor
+</td>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Valbom
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Van der Horst-steektoestel
+</td>
+<td style="text-align:left;">
+82
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Veenboor
+</td>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vibro-corer
+</td>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vrijwitboor
+</td>
+<td style="text-align:left;">
+52
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zuigerboor
+</td>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Akoestische zandtransportmeter
+</td>
+<td style="text-align:left;">
+43
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Automatisch monstername apparaat
+</td>
+<td style="text-align:left;">
+71
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dompelpomp
+</td>
+<td style="text-align:left;">
+35
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Doorstroomcentrifuge
+</td>
+<td style="text-align:left;">
+85
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Elektrisch schepnet
+</td>
+<td style="text-align:left;">
+56
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Flushing sampler
+</td>
+<td style="text-align:left;">
+67
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Handnet
+</td>
+<td style="text-align:left;">
+58
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Korf
+</td>
+<td style="text-align:left;">
+59
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kuil
+</td>
+<td style="text-align:left;">
+60
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Modderpuls
+</td>
+<td style="text-align:left;">
+47
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mosselkorf
+</td>
+<td style="text-align:left;">
+61
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Planktonnet
+</td>
+<td style="text-align:left;">
+63
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Poliepgrijper
+</td>
+<td style="text-align:left;">
+49
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pollepel
+</td>
+<td style="text-align:left;">
+69
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Roset sampler
+</td>
+<td style="text-align:left;">
+70
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Schietfuik
+</td>
+<td style="text-align:left;">
+64
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sedimentval
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Siliconen rubber passive sampler
+</td>
+<td style="text-align:left;">
+84
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Slib sampler
+</td>
+<td style="text-align:left;">
+51
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Snoeischaar
+</td>
+<td style="text-align:left;">
+65
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sondeerapparaat
+</td>
+<td style="text-align:left;">
+28
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Speeddisk passive sampler
+</td>
+<td style="text-align:left;">
+86
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spiraal
+</td>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Steekbuis
+</td>
+<td style="text-align:left;">
+34
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vacuümpomp
+</td>
+<td style="text-align:left;">
+36
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cilindrisch monsternemingstoestel
+</td>
+<td style="text-align:left;">
+32
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Werpkorf
+</td>
+<td style="text-align:left;">
+66
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Elektrisch schepnet met keernetten
+</td>
+<td style="text-align:left;">
+88
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stortkuil
+</td>
+<td style="text-align:left;">
+89
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wonderkuil
+</td>
+<td style="text-align:left;">
+90
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zegen
+</td>
+<td style="text-align:left;">
+91
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zegen met keernetten
+</td>
+<td style="text-align:left;">
+92
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Elektrostramienkor
+</td>
+<td style="text-align:left;">
+93
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Atoomkuil
+</td>
+<td style="text-align:left;">
+97
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ankerkuil
+</td>
+<td style="text-align:left;">
+98
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Graafmachine
+</td>
+<td style="text-align:left;">
+99
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Schep
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wortelboor
+</td>
+<td style="text-align:left;">
+101
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Veenguts
+</td>
+<td style="text-align:left;">
+102
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Geoprobe
+</td>
+<td style="text-align:left;">
+103
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Maatbeker
+</td>
+<td style="text-align:left;">
+104
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Peristaltische pomp
+</td>
+<td style="text-align:left;">
+105
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Telescopische stok met flessenhouder
+</td>
+<td style="text-align:left;">
+106
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stootijzer
+</td>
+<td style="text-align:left;">
+107
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Macrozoöbenthos zuiger
+</td>
+<td style="text-align:left;">
+109
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="bemonsteringsmethode" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Bemonsteringsmethode<a class="anchor" aria-label="anchor" href="#bemonsteringsmethode"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Omschrijving
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+HH-W10A:2010 Bemonstering van zoöplankton voor EBeo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HH-W11A:2010 Inventarisatie van vegetatie
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HH-W12A:2010 Bemonstering van macrofauna
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HH-W13A:2010 Bestandsopname van vis voor de KRW
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HH-W7A:2010 Bemonstering van fytoplankton in opp.water
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HH-W8A:2010 Bemonstering van sieralgen in opp.water
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HH-W9A:2010 Bemonstering van kiezelwieren in opp.water
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stowa 2002-07 - HVB-AM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stowa 2002-07 - HVB-BOM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stowa 2002-07 - HVB-KVM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stowa 2002-07 - HVB-MTM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN-ISO 16665:2005 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN-ISO 19458:2007 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-ISO 23893-1:2007 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-10:1992 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-11:1993 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-12:1995 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN-ISO 5667-13:1998 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN-ISO 5667-16:1998 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-17:2000 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-18:2001 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN-ISO 5667-19:2004
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-4:1987 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-ISO 5667-5:2007
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-6:2005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-7:1993
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-8:1993
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ISO 5667-9:1992
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-ISO 7828:1994 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN-ISO 9391:1995 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN 13946:2003 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN 14011:2003 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN 14184:2003 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN 14757:2005 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN 15196:2006 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN 15460:2007 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN 15708:2007 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 5625:2007 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 6600-1:2002 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 6600-2:2002 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.B001b
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.B002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.B004b
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.B005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.B007
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.B050
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.B051
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.B200
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.W001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.W002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.W003
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.W005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RWSV - 913.00.W010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 6600-1:2009 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 6600-2:2019 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 5744:1991 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 5744:2011 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 5744:2011/A1:2013 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 5745:1997 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NTA 8017:2008 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NTA 8017:2016 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SIKB Protocol 2002, 12-12-2013
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SIKB Protocol 2002, 1-2-2018
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SIKB Protocol 2003 v6 1-2-2018
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RIVM Blauwalgenprotocol 2020
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN 6600-1:2019 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CMA/1/A.14 september 2020
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEN-EN-ISO 5667-3:2012 en
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Leidraad voor passive sampling 2012
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NPR 8066:2010 nl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Eigen methode
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+onbekend
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Conclusie: Vooral Nederlandse methodieken. Best lastig te vergelijken met internationale codes. Even parkeren.</p>
+</div>
+<div id="bemonsteringssoort" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Bemonsteringssoort<a class="anchor" aria-label="anchor" href="#bemonsteringssoort"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Omschrijving
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+Mengbemonstering
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+Verzamelbemonstering
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Steekbemonstering
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+Volumeproportionele bemonstering
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+Tijdsproportionele bemonstering
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+Passieve bemonstering
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Mappen naar welke BODC tabel?</p>
+</div>
+<div id="meetapparaat" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> Meetapparaat<a class="anchor" aria-label="anchor" href="#meetapparaat"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="kleur" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Kleur<a class="anchor" aria-label="anchor" href="#kleur"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="statistischeparameter" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> Statistischeparameter<a class="anchor" aria-label="anchor" href="#statistischeparameter"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="waardebepalingsmethode" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> Waardebepalingsmethode<a class="anchor" aria-label="anchor" href="#waardebepalingsmethode"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="waardebepalingstechniek" class="section level2" number="7.8">
+<h2>
+<span class="header-section-number">7.8</span> Waardebepalingstechniek<a class="anchor" aria-label="anchor" href="#waardebepalingstechniek"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="waardebewerkingsmethode" class="section level2" number="7.9">
+<h2>
+<span class="header-section-number">7.9</span> Waardebewerkingsmethode<a class="anchor" aria-label="anchor" href="#waardebewerkingsmethode"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="biologie-orgaan" class="section level2" number="7.10">
+<h2>
+<span class="header-section-number">7.10</span> Biologie: Orgaan<a class="anchor" aria-label="anchor" href="#biologie-orgaan"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="biologie-biologisch-kenmerk" class="section level2" number="7.11">
+<h2>
+<span class="header-section-number">7.11</span> Biologie: Biologisch Kenmerk<a class="anchor" aria-label="anchor" href="#biologie-biologisch-kenmerk"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="kwaliteitsoordeel.html"><span class="header-section-number">6</span> Kwaliteitsoordeel</a></div>
+<div class="next"><a href="biologie-overig.html"><span class="header-section-number">8</span> Biologie overig</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#bemonstering"><span class="header-section-number">7</span> Bemonstering</a></li>
+<li><a class="nav-link" href="#bemonsteringsapparaat-of-veldapparaat"><span class="header-section-number">7.1</span> Bemonsteringsapparaat of Veldapparaat</a></li>
+<li><a class="nav-link" href="#bemonsteringsmethode"><span class="header-section-number">7.2</span> Bemonsteringsmethode</a></li>
+<li><a class="nav-link" href="#bemonsteringssoort"><span class="header-section-number">7.3</span> Bemonsteringssoort</a></li>
+<li><a class="nav-link" href="#meetapparaat"><span class="header-section-number">7.4</span> Meetapparaat</a></li>
+<li><a class="nav-link" href="#kleur"><span class="header-section-number">7.5</span> Kleur</a></li>
+<li><a class="nav-link" href="#statistischeparameter"><span class="header-section-number">7.6</span> Statistischeparameter</a></li>
+<li><a class="nav-link" href="#waardebepalingsmethode"><span class="header-section-number">7.7</span> Waardebepalingsmethode</a></li>
+<li><a class="nav-link" href="#waardebepalingstechniek"><span class="header-section-number">7.8</span> Waardebepalingstechniek</a></li>
+<li><a class="nav-link" href="#waardebewerkingsmethode"><span class="header-section-number">7.9</span> Waardebewerkingsmethode</a></li>
+<li><a class="nav-link" href="#biologie-orgaan"><span class="header-section-number">7.10</span> Biologie: Orgaan</a></li>
+<li><a class="nav-link" href="#biologie-biologisch-kenmerk"><span class="header-section-number">7.11</span> Biologie: Biologisch Kenmerk</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn/blob/master/Bemonstering.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn/edit/master/Bemonstering.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>AQUO2SDN mapping</strong>" was written by Willem Stolte. It was last built on 2022-07-20.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

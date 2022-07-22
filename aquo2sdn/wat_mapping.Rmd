@@ -1,0 +1,210 @@
+# Mapping van "wat" tabellen
+
+
+
+```{r}
+require(tidyverse)
+require(data.table)
+require(rwsapi)
+require(rlist)
+require(stringr)
+# Lees functie in voor download domeintabellen
+source("c:/git_checkouts/Accessing-MediaWiki-Aquo-Code-Examples/ExampleCodeRStudio/GetDomainTable.R")
+# source_url("https://github.com/Aquo-standaard/Accessing-MediaWiki-Aquo-Code-Examples/blob/main/ExampleCodeRStudio/GetDomainTable.R")
+
+ddlmetadata <- rws_metadata() 
+metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
+  list.flatten() %>% as.data.frame(stringsAsFactors = F)
+
+KwaliteitswaardecodeLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$KwaliteitswaardecodeLijst)
+ReferentievlakLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$ReferentievlakLijst)
+
+```
+
+
+## Vergelijking DDL metadata en P01 vocabulaire
+
+De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een overzicht [deze weblink](https://rijkswaterstaatdata.nl/waterdata/). Hier staan ook links naar instructies voor benadering van de webservices. Een beknopt overzicht van de DDL kan worden opgevraagd via de metadata service. Hieruit blijkt dat het totale aantal unieke combinaties van de metadatavelden `r names(metadataLijst)[c(3, 7, 9, 11)]` in de DDL is `r metadataLijst %>% distinct(Grootheid.Code, Parameter.Code, Hoedanigheid.Code, Compartiment.Code) %>% nrow()`. 
+
+Binnen de aquo domeintabellen is in eerdere projecten de mapping tabel idsw_aquo_map_PO1 gemaakt om sommige elementen van aquo te koppelen aan de seadatanet semantiek. Deze tabel wordt hier als uitgangspunt gebruikt om P01 termen te koppelen aan metadata uit de Data Distributielaag (DDL). Hierna moeten de P01 termen uitgesplitst worden in de verschillende onderliggende componenten om een 1:1 mapping te verkrijgen van de individuele *S*-termen.
+
+De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO IM-metingen, maar wijkt op een aantal punten af. Onder andere doordat het veld Hoedanigheid.code is opgebouwd uit twee verschillende AQUO codes, namelijk Hoedanigheid.code en Monstercriterium.code. Idem voor de omschrijvingen. In de idsw_aquo_map_PO1 zijn deze twee velden niet gecombineerd. Voor een kansrijke automatische mapping worden in idsw_aquo_map_PO1 deze velden aan elkaar geplakt. In idsw_aquo_map_PO1 zijn "lege" velden echt leeg terwijl deze in de DDL metadata gevuld zijn met "NVT". Dus, vóórdat de P01 koppeltabel gekoppeld kan worden aan de AQUO catalogustabel worden Hoedanigheid.code en Monstercriterium.code gecombineerd in één veld en alle lege plekken gevuld met "NVT". 
+
+```{r bestaandeMapping, message=FALSE, warning=FALSE}
+idsw_aquo_map_PO1 <- GetDomainTable(pDomeintabel <- "Mapping_SDN_P01")
+idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
+  replace(is.na(.), "") %>%
+  unite('Aquo_Monstercriterium_Hoedanigheid_code', c(`Aquo Monstercriterium code`, `Aquo Hoedanigheid code`), sep = "") %>%
+  replace((. == ''), "NVT") %>%
+  select(-Id, -`Begin geldigheid`, -`Eind geldigheid`, -Gerelateerd, -Wijzigingsnummer, -Guid)
+```
+
+De metadata uit de DDL worden hierna gecombineerd met de mapping_P01 tabel op de velden:
+
+
+```{r, include = F}
+table = c(
+  Grootheid.Code = 'Aquo_Grootheid_code',
+  Parameter.Code = 'Aquo_ChemischeStof_code',
+  # Parameter.Omschrijving = 'Aquo_biotaxon_code',
+  Compartiment.Code = 'Aquo_Compartiment_code',
+  # Aquo_Monstercriterium_code
+  Hoedanigheid.Code = 'Aquo_Monstercriterium_Hoedanigheid_code')
+kableExtra::kbl(tibble("ddl_metadata" = names(table), "mapping_P01" = table), caption = "Veldnamen die gecombineerd worden om de ddl_metadata te koppelen aan de gemodificeerde mapping_P01 tabel. Hierbij zijn de velden monstercriterium en hoedanigheid gecombineerd in een veld Aquo_Monstercriterium_Hoedanighed_code")
+```
+
+
+waarin *Aquo_Monstercriterium_Hoedanigheid_code* de combinatie is van monstercriterium en hoedanigheid. 
+
+
+
+```{r}
+
+# join new metadata from ddl with mapping table from aquo
+
+ddl_p01_joined <- metadataLijst %>% 
+  left_join(
+    idsw_aquo_map_PO1 %>% select(-`Aquo biotaxon code`), 
+    by = c(
+      Grootheid.Code = 'Aquo Grootheid code',
+      Parameter.Code = 'Aquo ChemischeStof code',
+      # Parameter.Omschrijving = 'Aquo_biotaxon_code',
+      Compartiment.Code = 'Aquo Compartiment code',
+      # Aquo_Monstercriterium_code
+      Hoedanigheid.Code = 'Aquo_Monstercriterium_Hoedanigheid_code'
+    )
+  )
+
+```
+
+
+De uiteindelijke mapping geeft als resultaat een tabel met `r dim(ddl_p01_joined)[1]  ` regels. 
+
+```{r, eval=F}
+ddl_p01_joined %>%
+  filter(!is.na(`SDN P01 code`)) %>%
+  kableExtra::kbl()
+```
+
+
+## Uitsplitsing in onderdelen van P01
+
+```{r}
+read.csv2("data//bodc/s-tabellen.csv") %>%
+  select(Library, Alt.Title, Title) %>%
+  kableExtra::kbl(caption = 'BODC "S-tabellen" die onderdelen bevatten van de P01 parameter tabel.') %>%
+  # kableExtra::column_spec(3, width = "15em") %>%
+  kableExtra::kable_styling(font_size = 10, full_width = T)
+
+```
+
+
+
+```{r koppeling-aquo-sdn-s}
+
+p01s <- data.table::fread("data//bodc/p01s.csv")
+
+ddl_p01_joined_p01s <- ddl_p01_joined %>% left_join(p01s, by = c(`SDN P01 code`= "P01_conceptid"))
+
+```
+
+### parameter vs BODC substances
+
+!!! Een eenduidige mapping kan onafhankelijk van eerdere mappings worden gemaakt door het vergelijken van CAS nummers, deze staan in p01s tabel, maar het staat verborgen in de P01 beschrijving. Een betere manier is waarschijnlijk om de S27 termen te relateren aan CAS nummers door deze op te halen via https://www.w3.org/2002/07/owl#sameAs , bijvoorbeeld:
+
+S27 http://vocab.nerc.ac.uk/collection/S27/current/CS026903/ 
+https://www.w3.org/2002/07/owl#sameAs
+https://chem.nlm.nih.gov/chemidplus/rn/17181-37-2
+
+zo is voor Silicate een van de bijbehorende links "same as" naar https://chem.nlm.nih.gov/chemidplus/rn/17181-37-2. Hierin staat een CAS nummer. Door deze te relateren kan een verbinding worden gemaakt met de technische tabel "chemische stof". 
+
+
+
+
+
+
+Vanuit de gekoppelde tabel wordt een mapping geëxtraheerd door de unieke combinaties van relevante AQUO (parameter.code, parameter.omschrijving) en SDN (S27_preflabel, S27_altlabel, s27_conceptid) velden te combineren. Deze lijst dient nog handmatig gecontroleerd te worden. Met deze methode kunnen `r ddl_p01_joined_p01s %>% distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>% filter(Parameter.Code != "NVT") %>% filter(!is.na(s27_conceptid)) %>% nrow()` van de `r ddl_p01_joined_p01s %>% distinct(Parameter.Code) %>% nrow()` (totaal aantal unieke parameter.code waarden) gecombineerd worden met een S27 term.
+
+```{r}
+
+
+ddl_p01_joined_p01s %>% 
+  distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>%
+  filter(Parameter.Code != "NVT") %>% 
+  filter(!is.na(s27_conceptid)) %>%
+  kableExtra::kbl()
+```
+
+
+
+
+### Compartimenten vs S26	BODC matrices
+
+```{r}
+
+idsw_aquo_compartimenten <- GetDomainTable(pDomeintabel <- "Compartiment")
+
+
+ddl_p01_joined_p01s %>% 
+  distinct(Compartiment.Code, Compartiment.Omschrijving, Hoedanigheid.Code, S26_preflabel, S26_conceptid) %>%
+  filter(Compartiment.Code != "NVT") %>% 
+  filter(!is.na(S26_conceptid)) %>%
+  kableExtra::kbl()
+```
+
+
+### Grootheden vs S06	Parameter entity names
+
+
+
+```{r}
+
+ddl_p01_joined_p01s %>% 
+  distinct(Grootheid.Code, Grootheid.Omschrijving, Hoedanigheid.Code, S06_preflabel, S06_conceptid) %>%
+  filter(Grootheid.Code != "NVT") %>% 
+  filter(!is.na(S06_conceptid)) %>%
+  kableExtra::kbl()
+```
+
+
+
+### Specials - Grain size
+
+**in water**
+
+```{r}
+p01s %>% 
+  filter(S06_preflabel == "Grain-size") %>%
+  filter(grepl("water body", S26_preflabel)) %>%
+  kableExtra::kbl()
+```
+
+
+
+
+**in sediment**
+
+```{r}
+p01s %>% 
+  filter(S06_preflabel == "Grain-size") %>%
+  filter(grepl("sediment", S26_preflabel)) %>%
+  kableExtra::kbl()
+```
+
+
+
+### Specials - Taxonomical names
+
+```{r}
+p01s %>% 
+  head(100) %>%
+  distinct(S25_preflabel) %>%
+  kableExtra::kbl()
+```
+
+
+
+
+
+
+

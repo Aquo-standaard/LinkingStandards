@@ -1,0 +1,140 @@
+# Bemonstering
+
+```{r}
+require(tidyverse)
+require(data.table)
+require(stringr)
+# Lees functie in voor download domeintabellen
+source("c:/git_checkouts/Accessing-MediaWiki-Aquo-Code-Examples/ExampleCodeRStudio/GetDomainTable.R")
+# source_url("https://github.com/Aquo-standaard/Accessing-MediaWiki-Aquo-Code-Examples/blob/main/ExampleCodeRStudio/GetDomainTable.R")
+
+
+```
+
+## Bemonsteringsapparaat of Veldapparaat
+
+```{r}
+idsw_aquo_bemonsteringsapparaat <- GetDomainTable(pDomeintabel <- "Bemonsteringsapparaat")
+0
+idsw_aquo_bemonsteringsapparaat %>% select(Omschrijving) %>% 
+  kableExtra::kbl(caption = 'Lijst met bemonsteringsapparaten in AQUO domeintabel "bemonsterinsapparaat"')
+```
+
+
+BODC onderhoudt verschillende tabellen waar bemonsteringsapparaten in voorkomen. De meest gedetailleerde tabel is de [SeaVoX Device Catalogue L22](http://vocab.nerc.ac.uk/collection/L22/current/). Een minder gedetailleerde (broader) tabel is [SeaDataNet device category](http://vocab.nerc.ac.uk/collection/L05/current/).
+
+De mapping die hier gepresenteerd wordt is slechts 
+
+
+```{r bodcBemonsteringsapparaat}
+bodc_sdn_bemonsteringsapparaat <- read_delim(file.path("data\\bodc\\vocab_l22.csv"), delim = ";")
+
+bodc_sdn_bemonsteringsapparaat %>% 
+  head() %>%
+  select(conceptid, preflabel) %>%
+  kableExtra::kbl(caption = "Eerste elementen van BODC L22 tabel SeaVoX Device Catalogue.")
+```
+
+In eerdere transformaties van Nederlandse data naar EMODnet Biologie zijn wel eens mappings gemaakt. Hieruit is de ad hoc handmatige mapping hieronder samengesteld. 
+
+
+```{r}
+
+bemonsteringsapparaat_mapping <- idsw_aquo_bemonsteringsapparaat %>%
+  mutate(
+    bodc_code = case_when(
+      Omschrijving == "Box-corer"  ~ 'http://vocab.nerc.ac.uk/collection/L22/current/TOOL1177/',
+      Omschrijving == "Bodemschaaf"  ~ 'http://vocab.nerc.ac.uk/collection/L22/current/NETT0190/',
+      Omschrijving == "Hamon happer"  ~  "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0960/",   # to be added to BODC L22
+      Omschrijving == "Video"  ~ 'http://vocab.nerc.ac.uk/collection/L05/current/180/',
+      Omschrijving == "Van Veen happer"~ "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/",
+      Omschrijving == "Zuigkor"~ "http://vocab.nerc.ac.uk/collection/L05/current/64/",
+      Omschrijving == "Boomkor"~ "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0651/",
+      Omschrijving == "Emmer"~ "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0536/",
+      Omschrijving == "Pomp"~ "http://vocab.nerc.ac.uk/collection/L22/current/NETT0173/",
+      Omschrijving == "Pelagic trawl"~ "http://vocab.nerc.ac.uk/collection/L05/current/23/",
+      Omschrijving == "Fuik"~ "http://vocab.nerc.ac.uk/collection/L05/current/63/",
+      Omschrijving == "Piston-corer"~ "http://vocab.nerc.ac.uk/collection/L05/current/51/",
+      Omschrijving == "Videocamera"~ "http://vocab.nerc.ac.uk/collection/L05/current/311/",
+      Omschrijving == "Vacuüm steekbuis"~ "http://vocab.nerc.ac.uk/collection/L05/current/391/",
+      Omschrijving == "Pelagic trawl"~ "http://vocab.nerc.ac.uk/collection/L05/current/23/",
+      Omschrijving == "Pelagic trawl"~ "http://vocab.nerc.ac.uk/collection/L05/current/23/",
+      Omschrijving == "Pelagic trawl"~ "http://vocab.nerc.ac.uk/collection/L05/current/23/"
+    )
+  ) %>%
+  select(
+    aquo_omschrijving = Omschrijving,
+    aquo_cijfercode = Cijfercode,
+    bodc_code
+  ) %>% 
+  arrange(bodc_code)
+
+bemonsteringsapparaat_mapping %>% kableExtra::kbl()
+
+```
+
+
+
+
+
+
+
+
+
+
+
+## Bemonsteringsmethode
+
+```{r}
+idsw_aquo_bemonsteringsmethode <- GetDomainTable(pDomeintabel <- "Bemonsteringsmethode")
+
+idsw_aquo_bemonsteringsmethode %>% select(Omschrijving) %>%
+  kableExtra::kbl()
+```
+
+Conclusie: Vooral Nederlandse methodieken. Best lastig te vergelijken met internationale codes. Even parkeren.
+
+
+
+## Bemonsteringssoort
+
+```{r}
+idsw_aquo_Bemonsteringssoort <- GetDomainTable(pDomeintabel <- "Bemonsteringssoort")
+
+idsw_aquo_Bemonsteringssoort %>% select(Omschrijving) %>%
+  kableExtra::kbl()
+```
+
+
+Mappen naar welke BODC tabel?
+
+
+
+## Meetapparaat
+
+
+
+## Kleur
+
+
+
+
+## Statistischeparameter
+
+
+## Waardebepalingsmethode
+
+
+## Waardebepalingstechniek
+
+
+## Waardebewerkingsmethode
+
+
+
+## Biologie: Orgaan
+
+
+
+## Biologie: Biologisch Kenmerk
+

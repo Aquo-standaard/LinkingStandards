@@ -1,0 +1,73 @@
+--- 
+title: "AQUO2SDN mapping"
+author: "Willem Stolte"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::bs4_book,
+  set in the _output.yml file.
+biblio-style: apalike
+csl: chicago-fullnote-bibliography.csl
+---
+
+# Voorwoord
+
+Uitwisseling van watergerelateerde data met andere landen is belangrijk voor analyses en beoordelingen van internationale wateren. Van oudsher is er veel uitwisseling van mariene data. Sinds SeaDataNet ([SDN](https://www.seadatanet.org/)) zijn hiervoor internationale standaarden gebruikt en ontwikkeld. Als uitgangspunt is het systeem van de Brittisch Oceanographic Data Center ([BODC](https://www.bodc.ac.uk/)) genomen. Dit heeft geleid tot een set internationaal geaccepteerde semantische standaarden (vocabulaires) voor registratie van in situ metingen in het mariene domein. 
+
+Er zijn binnen SeaDataNet ook technische standaarden ontwikkeld voor het zoeken, vinden en transporteren van metadata en data. Het gangbare formaat voor metadata is de Common Data Index (CDI), en voor data het Ocean Data View (ODV) formaat. 
+
+De nederlandse standaard voor waterdata is [AQUO](https://www.aquo.nl/index.php/Hoofdpagina). Er is op dit moment geen eenduidigen en complete mapping om AQUO-gestandaardiseerde data te transformeren naar SDN-gestandaardiseerde data. De technische standaard voor uitlevering van data variëert. 
+
+We beperken ons in dit project tot het mappen van de semantische standaarden.
+
+
+
+
+
+
+
+
+<!-- ## Usage  -->
+
+<!-- Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading. -->
+
+<!-- Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`. -->
+
+<!-- The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book. -->
+
+<!-- ## Render book -->
+
+<!-- You can render the HTML version of this example book without changing anything: -->
+
+<!-- 1. Find the **Build** pane in the RStudio IDE, and -->
+
+<!-- 1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files. -->
+
+<!-- Or build the book from the R console: -->
+
+<!-- ```{r, eval=FALSE} -->
+<!-- bookdown::render_book() -->
+<!-- ``` -->
+
+<!-- To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>. -->
+
+<!-- ## Preview book -->
+
+<!-- As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console: -->
+
+<!-- ```{r eval=FALSE} -->
+<!-- bookdown::serve_book() -->
+<!-- ``` -->
+
+
+<!-- ```{r include=FALSE} -->
+<!-- # automatically create a bib database for R packages -->
+<!-- knitr::write_bib(c( -->
+<!--   .packages(), 'bookdown', 'knitr', 'rmarkdown' -->
+<!-- ), 'packages.bib') -->
+<!-- ``` -->

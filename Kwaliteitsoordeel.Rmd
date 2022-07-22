@@ -1,0 +1,71 @@
+# Kwaliteitsoordeel
+
+```{r setupKwaliteitswaarde}
+require(tidyverse)
+require(data.table)
+require(rwsapi)
+require(rlist)
+require(stringr)
+require(aquodom)
+# Lees functie in voor download domeintabellen
+source("c:/git_checkouts/Accessing-MediaWiki-Aquo-Code-Examples/ExampleCodeRStudio/GetDomainTable.R")
+# source_url("https://github.com/Aquo-standaard/Accessing-MediaWiki-Aquo-Code-Examples/blob/main/ExampleCodeRStudio/GetDomainTable.R")
+
+ddlmetadata <- rws_metadata() 
+metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
+  list.flatten() %>% as.data.frame(stringsAsFactors = F)
+
+KwaliteitswaardecodeLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$KwaliteitswaardecodeLijst)
+ReferentievlakLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$ReferentievlakLijst)
+
+
+```
+
+In AQUO kunnen verschillende kwaliteitsoordelen worden toegekend aan een meetwaarde (tabel \@ref(tab:aquoKwaliteitsoordeel)). Het is niet eenvoudig om te bepalen welke codes in de praktijk worden toegepast. Het gebruik in de Data Distributielaag kan alleen bepaald worden wanneer data daadwerkelijk gedownloadt worden.
+
+
+
+```{r aquoKwaliteitsoordeel}
+idsw_aquo_kwaliteitsoordeel <- GetDomainTable(pDomeintabel <- "Kwaliteitsoordeel")
+
+idsw_aquo_kwaliteitsoordeel %>% select(Codes, Omschrijving) %>%
+  knitr::kable(caption = "Aquo kwaliteitsoordeelcodes en -omschrijvingen.")
+```
+De corresponderende tabel met algemene kwalititeitsoordelen van BODC is de tabel [L20](http://vocab.nerc.ac.uk/collection/L20/current/) (figuur \@ref(tab:bodcKwaliteitsoordeel)). BODC hanteert hiernaast tabellen met  meer specifieke "quality flags" voor bepaalde apparaten of organisaties (IODE). Hier gaan we nu niet verder op in. 
+
+
+
+
+```{r bodcKwaliteitsoordeel}
+bodc_sdn_kwaliteitsoordeel <- read_delim(file.path("data/bodc/vocab_l20.csv"), delim = ";")
+
+bodc_sdn_kwaliteitsoordeel %>% select(conceptid, preflabel, definition) %>%
+  knitr::kable()
+```
+
+
+In eerder werk (NWDM) is een mapping gemaakt op basis van data uit de DDL voor Noordzee en Waddenzee (fysische-chemische data). Het voorstel is om deze als basis te gebruiken. De tabel 
+
+```{r readQualityCodeMappingTable}
+L201_mapping <- read_delim(file.path("data\\aquo\\Mapping_SDN_L201.csv"), delim = ";")
+```
+
+Tekst toevoegen ........
+
+
+```{r Kwaliteitscodecomparison}
+# compare verbose versions of AQUO and BODC
+kwaliteitescodemapping <- L201_mapping %>% 
+  mutate(SDN_L201_code = as.character(SDN_L201_code)) %>%
+  full_join(idsw_aquo_kwaliteitsoordeel, by = c(Aquo_Kwaliteitsoordeel_code = "Codes")) %>%
+  full_join(bodc_sdn_kwaliteitsoordeel, by = c(SDN_L201_code = "conceptid")) %>%
+  select(aquo_code = Aquo_Kwaliteitsoordeel_code,
+         aquo_omschrijving = Omschrijving,
+         conceptid = SDN_L201_code,
+         preflabel
+         )
+
+knitr::kable(kwaliteitescodemapping, caption = "Voorgestelde apping van kwaliteitscodes.")
+
+```
+

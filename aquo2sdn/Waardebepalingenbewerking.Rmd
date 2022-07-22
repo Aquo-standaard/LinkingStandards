@@ -1,0 +1,71 @@
+# Waardebepaling en -bewerking
+
+```{r}
+require(tidyverse)
+require(data.table)
+require(stringr)
+# Lees functie in voor download domeintabellen
+source("c:/git_checkouts/Accessing-MediaWiki-Aquo-Code-Examples/ExampleCodeRStudio/GetDomainTable.R")
+# source_url("https://github.com/Aquo-standaard/Accessing-MediaWiki-Aquo-Code-Examples/blob/main/ExampleCodeRStudio/GetDomainTable.R")
+
+
+```
+
+
+## Statistischeparameter
+
+```{r aquoStatistischeParameter}
+
+idsw_aquo_statistischeparameter <- GetDomainTable(pDomeintabel <- "StatistischeParameter")
+
+idsw_aquo_statistischeparameter %>% select(Codes, Omschrijving) %>%
+  kableExtra::kbl(caption = "Aquo statistischeparametercodes en -omschrijvingen.")
+```
+
+## Waardebepalingsmethode
+
+```{r aquoWaardebepalingsmethode}
+
+idsw_aquo_Waardebepalingsmethode <- GetDomainTable(pDomeintabel <- "Waardebepalingsmethode")
+
+idsw_aquo_Waardebepalingsmethode %>% select(Codes, Omschrijving) %>%
+  kableExtra::kbl(caption = "Aquo Waardebepalingsmethodecodes en -omschrijvingen.")
+```
+
+## Waardebepalingstechniek
+
+```{r aquoWaardebepalingstechniek}
+
+idsw_aquo_Waardebepalingstechniek <- GetDomainTable(pDomeintabel <- "Waardebepalingstechniek")
+
+idsw_aquo_Waardebepalingstechniek %>% select(Codes, Omschrijving) %>%
+  kableExtra::kbl(caption = "Aquo Waardebepalingstechniekcodes en -omschrijvingen.")
+```
+
+
+## Waardebewerkingsmethode
+
+```{r aquoWaardebewerkingsmethode}
+
+idsw_aquo_Waardebewerkingsmethode <- GetDomainTable(pDomeintabel <- "Waardebewerkingsmethode")
+
+idsw_aquo_Waardebewerkingsmethode %>% select(Codes, Omschrijving) %>%
+  kableExtra::kbl(caption = "Aquo Waardebewerkingsmethodecodes en -omschrijvingen.")
+```
+
+
+
+De meest gerelateerde BODC vocabulary is [S07](https://vocab.nerc.ac.uk/search_nvs/S07/). 
+
+
+```{r bodcKwaliteitsoordeel}
+bodc_sdn_statistics <- read_delim(file.path("data\\bodc\\vocab_S07.csv"), delim = ";")
+
+bodc_sdn_statistics %>% select(conceptid, preflabel, definition) %>%
+  kableExtra::kbl()
+```
+
+De BODC tabel (tabel \@ref(tab:bodcKwaliteitsoordeel)) bevat soortgelijke termen als de AQUO tabel (tabel \@ref(tab:aquoWaardebewerkingsmethode)). Beide tabellen lijken geen verwijzingen opgenomen te hebben naar externe standaarden. 
+
+Op dit moment is er nog geen mapping tussen deze twee tabellen. De verwachting is dat dit zeker mogelijk is voor een aantal termen zoals "gemiddelde", "percentielen", "minimum", "maximum" enzovoort. Er zullen ook zeker een aantal termen uit de AQUO tabel niet gemapt kunnen worden in de BODC S07 tabel. Hiervan is het de vraag of deze ook in de praktijk voor mariene gegevens gebruikt worden. 
+

@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Hoofdstuk 6 Kwaliteitsoordeel | AQUO2SDN mapping</title>
+<meta name="author" content="Willem Stolte">
+<meta name="description" content="In AQUO kunnen verschillende kwaliteitsoordelen worden toegekend aan een meetwaarde (tabel 6.1). Het is niet eenvoudig om te bepalen welke codes in de praktijk worden toegepast. Het gebruik in de...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Hoofdstuk 6 Kwaliteitsoordeel | AQUO2SDN mapping">
+<meta property="og:type" content="book">
+<meta property="og:description" content="In AQUO kunnen verschillende kwaliteitsoordelen worden toegekend aan een meetwaarde (tabel 6.1). Het is niet eenvoudig om te bepalen welke codes in de praktijk worden toegepast. Het gebruik in de...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hoofdstuk 6 Kwaliteitsoordeel | AQUO2SDN mapping">
+<meta name="twitter:description" content="In AQUO kunnen verschillende kwaliteitsoordelen worden toegekend aan een meetwaarde (tabel 6.1). Het is niet eenvoudig om te bepalen welke codes in de praktijk worden toegepast. Het gebruik in de...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">AQUO2SDN mapping</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Voorwoord</a></li>
+<li><a class="" href="aquo.html"><span class="header-section-number">2</span> AQUO</a></li>
+<li><a class="" href="bodc-semantic-standard.html"><span class="header-section-number">3</span> BODC semantic standard</a></li>
+<li><a class="" href="mapping-van-wat-tabellen.html"><span class="header-section-number">4</span> Mapping van “wat” tabellen</a></li>
+<li><a class="" href="mapping-van-eenheden.html"><span class="header-section-number">5</span> Mapping van eenheden</a></li>
+<li><a class="active" href="kwaliteitsoordeel.html"><span class="header-section-number">6</span> Kwaliteitsoordeel</a></li>
+<li><a class="" href="bemonstering.html"><span class="header-section-number">7</span> Bemonstering</a></li>
+<li><a class="" href="biologie-overig.html"><span class="header-section-number">8</span> Biologie overig</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="kwaliteitsoordeel" class="section level1" number="6">
+<h1>
+<span class="header-section-number">Hoofdstuk 6</span> Kwaliteitsoordeel<a class="anchor" aria-label="anchor" href="#kwaliteitsoordeel"><i class="fas fa-link"></i></a>
+</h1>
+<p>In AQUO kunnen verschillende kwaliteitsoordelen worden toegekend aan een meetwaarde (tabel <a href="kwaliteitsoordeel.html#tab:aquoKwaliteitsoordeel">6.1</a>). Het is niet eenvoudig om te bepalen welke codes in de praktijk worden toegepast. Het gebruik in de Data Distributielaag kan alleen bepaald worden wanneer data daadwerkelijk gedownloadt worden.</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:aquoKwaliteitsoordeel">Table 6.1: </span>Aquo kwaliteitsoordeelcodes en -omschrijvingen.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Codes
+</th>
+<th style="text-align:left;">
+Omschrijving
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+00
+</td>
+<td style="text-align:left;">
+Normale waarde
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+Waarde heeft een grotere spreiding dan beschreven
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:left;">
+Bepaald met hele detectiegrens
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+05
+</td>
+<td style="text-align:left;">
+Bepaald met halve detectiegrens
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+Bepaald met nul waarde voor detectiegrens
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+07
+</td>
+<td style="text-align:left;">
+Waarde is verhoogde rapportagegrens
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+In de ruimte geïnterpoleerde waarde
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+In de tijd geïnterpoleerde waarde
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:left;">
+In ruimte en tijd geïnterpoleerde waarde
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+30
+</td>
+<td style="text-align:left;">
+Waarde beïnvloedt door ruimtelijke activiteiten
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+Niet-plausibele waarde
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+55
+</td>
+<td style="text-align:left;">
+Gevlagde waarde, bepaald met halve detectiegrens
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+56
+</td>
+<td style="text-align:left;">
+Gevlagde waarde, bepaald met nul waarde voor detectiegrens
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+61
+</td>
+<td style="text-align:left;">
+Gecorrigeerde waarde op basis van systematische fout
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+70
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van trendgedrag
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+71
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van harde grenzen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+72
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van ionenbalans
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+73
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van springerigheid
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:left;">
+74
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van levendigheid
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van uitbijter
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+21
+</td>
+<td style="text-align:left;">
+76
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde o.b.v. correlatie tussen meetlocaties
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+77
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van correlatie tussen parameters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:left;">
+78
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde opgeloste parameter is hoger dan totaal
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24
+</td>
+<td style="text-align:left;">
+79
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde agv rapportage lager dan rapportagegrens
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:left;">
+80
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van trendbreuk
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+26
+</td>
+<td style="text-align:left;">
+81
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van controlemeting
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+27
+</td>
+<td style="text-align:left;">
+82
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van waterbalans
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28
+</td>
+<td style="text-align:left;">
+83
+</td>
+<td style="text-align:left;">
+Afwijkende waarde als gevolg van buiten meetbereik
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+84
+</td>
+<td style="text-align:left;">
+Afwijkende waarde als gevolg van foutieve nulpunt
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+30
+</td>
+<td style="text-align:left;">
+90
+</td>
+<td style="text-align:left;">
+Afwijkende waarde na validatie goedgekeurd
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+31
+</td>
+<td style="text-align:left;">
+91
+</td>
+<td style="text-align:left;">
+Afwijkende waarde i.v.m. extreme situatie (calamiteit)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+32
+</td>
+<td style="text-align:left;">
+98
+</td>
+<td style="text-align:left;">
+Waarde bepaald op onvolledige basis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+33
+</td>
+<td style="text-align:left;">
+99
+</td>
+<td style="text-align:left;">
+Hiaat waarde
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>De corresponderende tabel met algemene kwalititeitsoordelen van BODC is de tabel <a href="http://vocab.nerc.ac.uk/collection/L20/current/">L20</a> (figuur <a href="#tab:bodcKwaliteitsoordeel"><strong>??</strong></a>). BODC hanteert hiernaast tabellen met meer specifieke “quality flags” voor bepaalde apparaten of organisaties (IODE). Hier gaan we nu niet verder op in.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+conceptid
+</th>
+<th style="text-align:left;">
+preflabel
+</th>
+<th style="text-align:left;">
+definition
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+no quality control
+</td>
+<td style="text-align:left;">
+No quality control procedures have been applied to the data value. This is the initial status for all data values entering the working archive.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+good value
+</td>
+<td style="text-align:left;">
+Good quality data value that is not part of any identified malfunction and has been verified as consistent with real phenomena during the quality control process.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+<td style="text-align:left;">
+Data value that is probably consistent with real phenomena but this is unconfirmed or data value forming part of a malfunction that is considered too small to affect the overall quality of the data object of which it is a part.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+probably bad value
+</td>
+<td style="text-align:left;">
+Data value recognised as unusual during quality control that forms part of a feature that is probably inconsistent with real phenomena.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+bad value
+</td>
+<td style="text-align:left;">
+An obviously erroneous data value.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+changed value
+</td>
+<td style="text-align:left;">
+Data value adjusted during quality control. Best practice strongly recommends that the value before the change be preserved in the data or its accompanying metadata.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+value below detection
+</td>
+<td style="text-align:left;">
+The level of the measured phenomenon was less than the limit of detection (LoD) for the method employed to measure it. The accompanying value is the detection limit for the technique or zero if that value is unknown.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+value in excess
+</td>
+<td style="text-align:left;">
+The level of the measured phenomenon was too large to be quantified by the technique employed to measure it. The accompanying value is the measurement limit for the technique.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+interpolated value
+</td>
+<td style="text-align:left;">
+This value has been derived by interpolation from other values in the data object.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+missing value
+</td>
+<td style="text-align:left;">
+The data value is missing. There should be no accompanying value in ODV format files. The accompanying value in SeaDataNet NetCDF data must be the absent data representation specified by the _FillValue parameter attribute and lie outside the range of data not flagged bad (4) or probably bad (3).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+value phenomenon uncertain
+</td>
+<td style="text-align:left;">
+There is uncertainty in the description of the measured phenomenon associated with the value such as chemical species or biological entity.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Q
+</td>
+<td style="text-align:left;">
+value below limit of quantification
+</td>
+<td style="text-align:left;">
+The level of the measured phenomenon was less than the limit of quantification (LoQ). The accompanying value is the limit of quantification for the analytical method.
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>In eerder werk (NWDM) is een mapping gemaakt op basis van data uit de DDL voor Noordzee en Waddenzee (fysische-chemische data). Het voorstel is om deze als basis te gebruiken. De tabel</p>
+<p>Dit</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:Kwaliteitscodecomparison">Table 6.2: </span>Voorgestelde apping van kwaliteitscodes.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+aquo_code
+</th>
+<th style="text-align:left;">
+aquo_omschrijving
+</th>
+<th style="text-align:left;">
+conceptid
+</th>
+<th style="text-align:left;">
+preflabel
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+00
+</td>
+<td style="text-align:left;">
+Normale waarde
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:left;">
+Waarde heeft een grotere spreiding dan beschreven
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:left;">
+Bepaald met hele detectiegrens
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+05
+</td>
+<td style="text-align:left;">
+Bepaald met halve detectiegrens
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:left;">
+Bepaald met nul waarde voor detectiegrens
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+07
+</td>
+<td style="text-align:left;">
+Waarde is verhoogde rapportagegrens
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+In de ruimte geïnterpoleerde waarde
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+In de tijd geïnterpoleerde waarde
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:left;">
+In ruimte en tijd geïnterpoleerde waarde
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+30
+</td>
+<td style="text-align:left;">
+Waarde beïnvloedt door ruimtelijke activiteiten
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+probably good value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+Niet-plausibele waarde
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+probably bad value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+98
+</td>
+<td style="text-align:left;">
+Waarde bepaald op onvolledige basis
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+probably bad value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+99
+</td>
+<td style="text-align:left;">
+Hiaat waarde
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+bad value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+55
+</td>
+<td style="text-align:left;">
+Gevlagde waarde, bepaald met halve detectiegrens
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+56
+</td>
+<td style="text-align:left;">
+Gevlagde waarde, bepaald met nul waarde voor detectiegrens
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+61
+</td>
+<td style="text-align:left;">
+Gecorrigeerde waarde op basis van systematische fout
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+70
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van trendgedrag
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+71
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van harde grenzen
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+72
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van ionenbalans
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+73
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van springerigheid
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+74
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van levendigheid
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van uitbijter
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+76
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde o.b.v. correlatie tussen meetlocaties
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+77
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van correlatie tussen parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+78
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde opgeloste parameter is hoger dan totaal
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+79
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde agv rapportage lager dan rapportagegrens
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+80
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van trendbreuk
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+81
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van controlemeting
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+82
+</td>
+<td style="text-align:left;">
+Afgekeurde waarde op basis van waterbalans
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+83
+</td>
+<td style="text-align:left;">
+Afwijkende waarde als gevolg van buiten meetbereik
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+84
+</td>
+<td style="text-align:left;">
+Afwijkende waarde als gevolg van foutieve nulpunt
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+90
+</td>
+<td style="text-align:left;">
+Afwijkende waarde na validatie goedgekeurd
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+91
+</td>
+<td style="text-align:left;">
+Afwijkende waarde i.v.m. extreme situatie (calamiteit)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+no quality control
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+changed value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+value below detection
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+value in excess
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+interpolated value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+missing value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+value phenomenon uncertain
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Q
+</td>
+<td style="text-align:left;">
+value below limit of quantification
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="mapping-van-eenheden.html"><span class="header-section-number">5</span> Mapping van eenheden</a></div>
+<div class="next"><a href="bemonstering.html"><span class="header-section-number">7</span> Bemonstering</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#kwaliteitsoordeel"><span class="header-section-number">6</span> Kwaliteitsoordeel</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn/blob/master/kwaliteitsoordeel.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn/edit/master/kwaliteitsoordeel.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>AQUO2SDN mapping</strong>" was written by Willem Stolte. It was last built on 2022-07-20.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
