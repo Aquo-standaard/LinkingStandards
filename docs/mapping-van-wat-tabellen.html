@@ -1,0 +1,6897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Hoofdstuk 4 Mapping van “wat” tabellen | AQUO2SDN mapping</title>
+<meta name="author" content="Willem Stolte">
+<meta name="description" content="4.1 Vergelijking DDL metadata en P01 vocabulaire De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="Hoofdstuk 4 Mapping van “wat” tabellen | AQUO2SDN mapping">
+<meta property="og:type" content="book">
+<meta property="og:description" content="4.1 Vergelijking DDL metadata en P01 vocabulaire De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hoofdstuk 4 Mapping van “wat” tabellen | AQUO2SDN mapping">
+<meta name="twitter:description" content="4.1 Vergelijking DDL metadata en P01 vocabulaire De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">AQUO2SDN mapping</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Voorwoord</a></li>
+<li><a class="" href="aquo.html"><span class="header-section-number">2</span> AQUO</a></li>
+<li><a class="" href="bodc-semantic-standard.html"><span class="header-section-number">3</span> BODC semantic standard</a></li>
+<li><a class="active" href="mapping-van-wat-tabellen.html"><span class="header-section-number">4</span> Mapping van “wat” tabellen</a></li>
+<li><a class="" href="mapping-van-eenheden.html"><span class="header-section-number">5</span> Mapping van eenheden</a></li>
+<li><a class="" href="kwaliteitsoordeel.html"><span class="header-section-number">6</span> Kwaliteitsoordeel</a></li>
+<li><a class="" href="bemonstering.html"><span class="header-section-number">7</span> Bemonstering</a></li>
+<li><a class="" href="biologie-overig.html"><span class="header-section-number">8</span> Biologie overig</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="mapping-van-wat-tabellen" class="section level1" number="4">
+<h1>
+<span class="header-section-number">Hoofdstuk 4</span> Mapping van “wat” tabellen<a class="anchor" aria-label="anchor" href="#mapping-van-wat-tabellen"><i class="fas fa-link"></i></a>
+</h1>
+<div id="vergelijking-ddl-metadata-en-p01-vocabulaire" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Vergelijking DDL metadata en P01 vocabulaire<a class="anchor" aria-label="anchor" href="#vergelijking-ddl-metadata-en-p01-vocabulaire"><i class="fas fa-link"></i></a>
+</h2>
+<p>De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een overzicht <a href="https://rijkswaterstaatdata.nl/waterdata/">deze weblink</a>. Hier staan ook links naar instructies voor benadering van de webservices. Een beknopt overzicht van de DDL kan worden opgevraagd via de metadata service. Hieruit blijkt dat het totale aantal unieke combinaties van de metadatavelden Compartiment.Code, Grootheid.Code, Hoedanigheid.Code, Parameter.Code in de DDL is 1710.</p>
+<p>Binnen de aquo domeintabellen is in eerdere projecten de mapping tabel idsw_aquo_map_PO1 gemaakt om sommige elementen van aquo te koppelen aan de seadatanet semantiek. Deze tabel wordt hier als uitgangspunt gebruikt om P01 termen te koppelen aan metadata uit de Data Distributielaag (DDL). Hierna moeten de P01 termen uitgesplitst worden in de verschillende onderliggende componenten om een 1:1 mapping te verkrijgen van de individuele <em>S</em>-termen.</p>
+<p>De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO IM-metingen, maar wijkt op een aantal punten af. Onder andere doordat het veld Hoedanigheid.code is opgebouwd uit twee verschillende AQUO codes, namelijk Hoedanigheid.code en Monstercriterium.code. Idem voor de omschrijvingen. In de idsw_aquo_map_PO1 zijn deze twee velden niet gecombineerd. Voor een kansrijke automatische mapping worden in idsw_aquo_map_PO1 deze velden aan elkaar geplakt. In idsw_aquo_map_PO1 zijn “lege” velden echt leeg terwijl deze in de DDL metadata gevuld zijn met “NVT”. Dus, vóórdat de P01 koppeltabel gekoppeld kan worden aan de AQUO catalogustabel worden Hoedanigheid.code en Monstercriterium.code gecombineerd in één veld en alle lege plekken gevuld met “NVT”.</p>
+<p>De metadata uit de DDL worden hierna gecombineerd met de mapping_P01 tabel op de velden:</p>
+<p>waarin <em>Aquo_Monstercriterium_Hoedanigheid_code</em> de combinatie is van monstercriterium en hoedanigheid.</p>
+<p>De uiteindelijke mapping geeft als resultaat een tabel met 2015 regels.</p>
+</div>
+<div id="uitsplitsing-in-onderdelen-van-p01" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Uitsplitsing in onderdelen van P01<a class="anchor" aria-label="anchor" href="#uitsplitsing-in-onderdelen-van-p01"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:unnamed-chunk-5">Table 4.1: </span>BODC “S-tabellen” die onderdelen bevatten van de P01 parameter tabel.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Library
+</th>
+<th style="text-align:left;">
+Alt.Title
+</th>
+<th style="text-align:left;">
+Title
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+S02
+</td>
+<td style="text-align:left;">
+Where/what relationships
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model relationships between what theme and where theme
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S03
+</td>
+<td style="text-align:left;">
+Sample preparation
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model sample preparation entity descriptions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S04
+</td>
+<td style="text-align:left;">
+Analytical method
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model analytical method entity descriptions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S05
+</td>
+<td style="text-align:left;">
+Data processing
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model data processing entity descriptions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S06
+</td>
+<td style="text-align:left;">
+Parameter entity names
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model parameter entity names
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S07
+</td>
+<td style="text-align:left;">
+Parameter statistic
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model parameter statistic
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S11
+</td>
+<td style="text-align:left;">
+Biological entity life stage terms
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model biological entity development stage terms
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S21
+</td>
+<td style="text-align:left;">
+Sphere names
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model sphere names
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S23
+</td>
+<td style="text-align:left;">
+Sphere phase names
+</td>
+<td style="text-align:left;">
+BODC semantic model sphere phase names
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S25
+</td>
+<td style="text-align:left;">
+Biological entity names
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model biological entity names
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S26
+</td>
+<td style="text-align:left;">
+BODC matrices
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model matrices
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+S27
+</td>
+<td style="text-align:left;">
+BODC substances
+</td>
+<td style="text-align:left;">
+BODC parameter semantic model chemical substances
+</td>
+</tr>
+</tbody>
+</table></div>
+<div id="parameter-vs-bodc-substances" class="section level3" number="4.2.1">
+<h3>
+<span class="header-section-number">4.2.1</span> parameter vs BODC substances<a class="anchor" aria-label="anchor" href="#parameter-vs-bodc-substances"><i class="fas fa-link"></i></a>
+</h3>
+<p>!!! Een eenduidige mapping kan onafhankelijk van eerdere mappings worden gemaakt door het vergelijken van CAS nummers, deze staan in p01s tabel, maar het staat verborgen in de P01 beschrijving. Een betere manier is waarschijnlijk om de S27 termen te relateren aan CAS nummers door deze op te halen via <a href="https://www.w3.org/2002/07/owl#sameAs" class="uri">https://www.w3.org/2002/07/owl#sameAs</a> , bijvoorbeeld:</p>
+<p>S27 <a href="http://vocab.nerc.ac.uk/collection/S27/current/CS026903/" class="uri">http://vocab.nerc.ac.uk/collection/S27/current/CS026903/</a>
+<a href="https://www.w3.org/2002/07/owl#sameAs" class="uri">https://www.w3.org/2002/07/owl#sameAs</a>
+<a href="https://chem.nlm.nih.gov/chemidplus/rn/17181-37-2" class="uri">https://chem.nlm.nih.gov/chemidplus/rn/17181-37-2</a></p>
+<p>zo is voor Silicate een van de bijbehorende links “same as” naar <a href="https://chem.nlm.nih.gov/chemidplus/rn/17181-37-2" class="uri">https://chem.nlm.nih.gov/chemidplus/rn/17181-37-2</a>. Hierin staat een CAS nummer. Door deze te relateren kan een verbinding worden gemaakt met de technische tabel “chemische stof”.</p>
+<p>Vanuit de gekoppelde tabel wordt een mapping geëxtraheerd door de unieke combinaties van relevante AQUO (parameter.code, parameter.omschrijving) en SDN (S27_preflabel, S27_altlabel, s27_conceptid) velden te combineren. Deze lijst dient nog handmatig gecontroleerd te worden. Met deze methode kunnen 161 van de 875 (totaal aantal unieke parameter.code waarden) gecombineerd worden met een S27 term.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Parameter.Code
+</th>
+<th style="text-align:left;">
+Parameter.Omschrijving
+</th>
+<th style="text-align:left;">
+s27_conceptid
+</th>
+<th style="text-align:left;">
+S27_preflabel
+</th>
+<th style="text-align:left;">
+S27_altlabel
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+O2
+</td>
+<td style="text-align:left;">
+zuurstof
+</td>
+<td style="text-align:left;">
+CS002779
+</td>
+<td style="text-align:left;">
+oxygen
+</td>
+<td style="text-align:left;">
+O2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fe
+</td>
+<td style="text-align:left;">
+ijzer
+</td>
+<td style="text-align:left;">
+CS000284
+</td>
+<td style="text-align:left;">
+total iron
+</td>
+<td style="text-align:left;">
+total_Fe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ca
+</td>
+<td style="text-align:left;">
+calcium
+</td>
+<td style="text-align:left;">
+CS002921
+</td>
+<td style="text-align:left;">
+calcium
+</td>
+<td style="text-align:left;">
+Ca
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+K
+</td>
+<td style="text-align:left;">
+kalium
+</td>
+<td style="text-align:left;">
+CS002923
+</td>
+<td style="text-align:left;">
+potassium
+</td>
+<td style="text-align:left;">
+K
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mg
+</td>
+<td style="text-align:left;">
+magnesium
+</td>
+<td style="text-align:left;">
+CS002981
+</td>
+<td style="text-align:left;">
+magnesium
+</td>
+<td style="text-align:left;">
+Mg
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Na
+</td>
+<td style="text-align:left;">
+natrium
+</td>
+<td style="text-align:left;">
+CS002904
+</td>
+<td style="text-align:left;">
+sodium
+</td>
+<td style="text-align:left;">
+Na
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DC4ySn
+</td>
+<td style="text-align:left;">
+dibutyltin (kation)
+</td>
+<td style="text-align:left;">
+CS000431
+</td>
+<td style="text-align:left;">
+dibutyltin
+</td>
+<td style="text-align:left;">
+DBT dibutylstannane
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DFySn
+</td>
+<td style="text-align:left;">
+difenyltin (kation)
+</td>
+<td style="text-align:left;">
+CS000452
+</td>
+<td style="text-align:left;">
+diphenyltin
+</td>
+<td style="text-align:left;">
+DPT diphenylstannane
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TC4ySn
+</td>
+<td style="text-align:left;">
+tributyltin (kation)
+</td>
+<td style="text-align:left;">
+CS002650
+</td>
+<td style="text-align:left;">
+tributyltin cation
+</td>
+<td style="text-align:left;">
+tributylstannylium TBT+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+T4C4ySn
+</td>
+<td style="text-align:left;">
+tetrabutyltin
+</td>
+<td style="text-align:left;">
+CS003148
+</td>
+<td style="text-align:left;">
+tetrabutyltin
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ag
+</td>
+<td style="text-align:left;">
+zilver
+</td>
+<td style="text-align:left;">
+CS002615
+</td>
+<td style="text-align:left;">
+silver
+</td>
+<td style="text-align:left;">
+Ag
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+As
+</td>
+<td style="text-align:left;">
+arseen
+</td>
+<td style="text-align:left;">
+CS002328
+</td>
+<td style="text-align:left;">
+arsenic
+</td>
+<td style="text-align:left;">
+As
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+boor
+</td>
+<td style="text-align:left;">
+CS003263
+</td>
+<td style="text-align:left;">
+boron
+</td>
+<td style="text-align:left;">
+B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ba
+</td>
+<td style="text-align:left;">
+barium
+</td>
+<td style="text-align:left;">
+CS002335
+</td>
+<td style="text-align:left;">
+barium
+</td>
+<td style="text-align:left;">
+Ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Be
+</td>
+<td style="text-align:left;">
+beryllium
+</td>
+<td style="text-align:left;">
+CS003266
+</td>
+<td style="text-align:left;">
+beryllium
+</td>
+<td style="text-align:left;">
+Be
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cd
+</td>
+<td style="text-align:left;">
+cadmium
+</td>
+<td style="text-align:left;">
+CS002363
+</td>
+<td style="text-align:left;">
+cadmium
+</td>
+<td style="text-align:left;">
+Cd
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Co
+</td>
+<td style="text-align:left;">
+kobalt
+</td>
+<td style="text-align:left;">
+CS002447
+</td>
+<td style="text-align:left;">
+cobalt
+</td>
+<td style="text-align:left;">
+Co
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cr
+</td>
+<td style="text-align:left;">
+chroom
+</td>
+<td style="text-align:left;">
+CS002377
+</td>
+<td style="text-align:left;">
+chromium
+</td>
+<td style="text-align:left;">
+Cr
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cu
+</td>
+<td style="text-align:left;">
+koper
+</td>
+<td style="text-align:left;">
+CS002454
+</td>
+<td style="text-align:left;">
+copper
+</td>
+<td style="text-align:left;">
+Cu
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hg
+</td>
+<td style="text-align:left;">
+kwik
+</td>
+<td style="text-align:left;">
+CS001621
+</td>
+<td style="text-align:left;">
+total mercury
+</td>
+<td style="text-align:left;">
+total_Hg
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Li
+</td>
+<td style="text-align:left;">
+lithium
+</td>
+<td style="text-align:left;">
+CS002552
+</td>
+<td style="text-align:left;">
+lithium
+</td>
+<td style="text-align:left;">
+Li
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mn
+</td>
+<td style="text-align:left;">
+mangaan
+</td>
+<td style="text-align:left;">
+CS000305
+</td>
+<td style="text-align:left;">
+total manganese
+</td>
+<td style="text-align:left;">
+total_Mn
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mo
+</td>
+<td style="text-align:left;">
+molybdeen
+</td>
+<td style="text-align:left;">
+CS003003
+</td>
+<td style="text-align:left;">
+molybdenum
+</td>
+<td style="text-align:left;">
+Mo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ni
+</td>
+<td style="text-align:left;">
+nikkel
+</td>
+<td style="text-align:left;">
+CS002566
+</td>
+<td style="text-align:left;">
+nickel
+</td>
+<td style="text-align:left;">
+Ni
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pb
+</td>
+<td style="text-align:left;">
+lood
+</td>
+<td style="text-align:left;">
+CS002545
+</td>
+<td style="text-align:left;">
+lead
+</td>
+<td style="text-align:left;">
+Pb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rb
+</td>
+<td style="text-align:left;">
+rubidium
+</td>
+<td style="text-align:left;">
+CS003116
+</td>
+<td style="text-align:left;">
+rubidium
+</td>
+<td style="text-align:left;">
+Rb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sb
+</td>
+<td style="text-align:left;">
+antimoon
+</td>
+<td style="text-align:left;">
+CS002962
+</td>
+<td style="text-align:left;">
+antimony
+</td>
+<td style="text-align:left;">
+Sb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Se
+</td>
+<td style="text-align:left;">
+seleen
+</td>
+<td style="text-align:left;">
+CS002608
+</td>
+<td style="text-align:left;">
+selenium
+</td>
+<td style="text-align:left;">
+Se
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sn
+</td>
+<td style="text-align:left;">
+tin
+</td>
+<td style="text-align:left;">
+CS003004
+</td>
+<td style="text-align:left;">
+tin
+</td>
+<td style="text-align:left;">
+Sn
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sr
+</td>
+<td style="text-align:left;">
+strontium
+</td>
+<td style="text-align:left;">
+CS002622
+</td>
+<td style="text-align:left;">
+strontium
+</td>
+<td style="text-align:left;">
+Sr
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Te
+</td>
+<td style="text-align:left;">
+tellurium
+</td>
+<td style="text-align:left;">
+CS003145
+</td>
+<td style="text-align:left;">
+tellurium
+</td>
+<td style="text-align:left;">
+Te
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ti
+</td>
+<td style="text-align:left;">
+titaan
+</td>
+<td style="text-align:left;">
+CS002918
+</td>
+<td style="text-align:left;">
+titanium
+</td>
+<td style="text-align:left;">
+Ti
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tl
+</td>
+<td style="text-align:left;">
+thallium
+</td>
+<td style="text-align:left;">
+CS003132
+</td>
+<td style="text-align:left;">
+thallium
+</td>
+<td style="text-align:left;">
+Tl
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+U
+</td>
+<td style="text-align:left;">
+uranium
+</td>
+<td style="text-align:left;">
+CS026907
+</td>
+<td style="text-align:left;">
+uranium
+</td>
+<td style="text-align:left;">
+U
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+V
+</td>
+<td style="text-align:left;">
+vanadium
+</td>
+<td style="text-align:left;">
+CS002664
+</td>
+<td style="text-align:left;">
+vanadium
+</td>
+<td style="text-align:left;">
+V
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zn
+</td>
+<td style="text-align:left;">
+zink
+</td>
+<td style="text-align:left;">
+CS002678
+</td>
+<td style="text-align:left;">
+zinc
+</td>
+<td style="text-align:left;">
+Zn
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aedsfn
+</td>
+<td style="text-align:left;">
+alfa-endosulfan
+</td>
+<td style="text-align:left;">
+CS002307
+</td>
+<td style="text-align:left;">
+alpha-endosulfan
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aHCH
+</td>
+<td style="text-align:left;">
+alfa-hexachloorcyclohexaan
+</td>
+<td style="text-align:left;">
+CS002321
+</td>
+<td style="text-align:left;">
+alpha-hexachlorocyclohexane
+</td>
+<td style="text-align:left;">
+alpha-HCH
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+alCl
+</td>
+<td style="text-align:left;">
+alachloor
+</td>
+<td style="text-align:left;">
+CS001173
+</td>
+<td style="text-align:left;">
+alachlor
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aldn
+</td>
+<td style="text-align:left;">
+aldrin
+</td>
+<td style="text-align:left;">
+CS002293
+</td>
+<td style="text-align:left;">
+aldrin
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ant
+</td>
+<td style="text-align:left;">
+antraceen
+</td>
+<td style="text-align:left;">
+CS002027
+</td>
+<td style="text-align:left;">
+anthracene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+atzne
+</td>
+<td style="text-align:left;">
+atrazine
+</td>
+<td style="text-align:left;">
+CS001579
+</td>
+<td style="text-align:left;">
+atrazine
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BaP
+</td>
+<td style="text-align:left;">
+benzo(a)pyreen
+</td>
+<td style="text-align:left;">
+CS001908
+</td>
+<td style="text-align:left;">
+benzo(a)pyrene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BbF
+</td>
+<td style="text-align:left;">
+benzo(b)fluorantheen
+</td>
+<td style="text-align:left;">
+CS001915
+</td>
+<td style="text-align:left;">
+benzo(b)fluoranthene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bedsfn
+</td>
+<td style="text-align:left;">
+beta-endosulfan
+</td>
+<td style="text-align:left;">
+CS003282
+</td>
+<td style="text-align:left;">
+beta-endosulfan
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ben
+</td>
+<td style="text-align:left;">
+benzeen
+</td>
+<td style="text-align:left;">
+CS003272
+</td>
+<td style="text-align:left;">
+benzene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bentzn
+</td>
+<td style="text-align:left;">
+bentazon
+</td>
+<td style="text-align:left;">
+CS001187
+</td>
+<td style="text-align:left;">
+bentazone
+</td>
+<td style="text-align:left;">
+bentazon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BghiPe
+</td>
+<td style="text-align:left;">
+benzo(ghi)peryleen
+</td>
+<td style="text-align:left;">
+CS001936
+</td>
+<td style="text-align:left;">
+benzo(g,h,i)perylene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bHCH
+</td>
+<td style="text-align:left;">
+beta-hexachloorcyclohexaan
+</td>
+<td style="text-align:left;">
+CS002349
+</td>
+<td style="text-align:left;">
+beta-hexachlorocyclohexane
+</td>
+<td style="text-align:left;">
+beta-HCH
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BkF
+</td>
+<td style="text-align:left;">
+benzo(k)fluorantheen
+</td>
+<td style="text-align:left;">
+CS001950
+</td>
+<td style="text-align:left;">
+benzo(k)fluoranthene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+captn
+</td>
+<td style="text-align:left;">
+captan
+</td>
+<td style="text-align:left;">
+CS003284
+</td>
+<td style="text-align:left;">
+captan
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cHCH
+</td>
+<td style="text-align:left;">
+gamma-hexachloorcyclohexaan (lindaan)
+</td>
+<td style="text-align:left;">
+CS002503
+</td>
+<td style="text-align:left;">
+gamma-hexachlorocyclohexane
+</td>
+<td style="text-align:left;">
+lindane gamma-HCH
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CHLFa
+</td>
+<td style="text-align:left;">
+chlorofyl-a
+</td>
+<td style="text-align:left;">
+CS002942
+</td>
+<td style="text-align:left;">
+chlorophyllide-a
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cHpClepO
+</td>
+<td style="text-align:left;">
+cis-heptachloorepoxide
+</td>
+<td style="text-align:left;">
+CS002440
+</td>
+<td style="text-align:left;">
+cis-heptachlor epoxide
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ClBen
+</td>
+<td style="text-align:left;">
+chloorbenzeen
+</td>
+<td style="text-align:left;">
+CS003286
+</td>
+<td style="text-align:left;">
+chlorobenzene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Clfvfs
+</td>
+<td style="text-align:left;">
+chloorfenvinfos
+</td>
+<td style="text-align:left;">
+CS001201
+</td>
+<td style="text-align:left;">
+chlorfenvinphos
+</td>
+<td style="text-align:left;">
+chlorfenvinfos
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Clidzn
+</td>
+<td style="text-align:left;">
+chloridazon
+</td>
+<td style="text-align:left;">
+CS001208
+</td>
+<td style="text-align:left;">
+chloridazon
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Clpfm
+</td>
+<td style="text-align:left;">
+chloorprofam
+</td>
+<td style="text-align:left;">
+CS001600
+</td>
+<td style="text-align:left;">
+chlorpropham
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cltlrn
+</td>
+<td style="text-align:left;">
+chloortoluron
+</td>
+<td style="text-align:left;">
+CS001222
+</td>
+<td style="text-align:left;">
+chlortoluron
+</td>
+<td style="text-align:left;">
+chlorotoluron
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cumfs
+</td>
+<td style="text-align:left;">
+cumafos
+</td>
+<td style="text-align:left;">
+CS000375
+</td>
+<td style="text-align:left;">
+coumaphos
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cumn
+</td>
+<td style="text-align:left;">
+cumeen
+</td>
+<td style="text-align:left;">
+CS003258
+</td>
+<td style="text-align:left;">
+(1-methylethyl)benzene
+</td>
+<td style="text-align:left;">
+isopropylbenzene cumene
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C1yazfs
+</td>
+<td style="text-align:left;">
+methylazinfos
+</td>
+<td style="text-align:left;">
+CS001586
+</td>
+<td style="text-align:left;">
+azinphos-methyl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C1yClprfs
+</td>
+<td style="text-align:left;">
+methylchloorpyrifos
+</td>
+<td style="text-align:left;">
+CS001215
+</td>
+<td style="text-align:left;">
+chlorpyrifos-methyl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C1ymsfrn
+</td>
+<td style="text-align:left;">
+methyl-metsulfuron
+</td>
+<td style="text-align:left;">
+CS000725
+</td>
+<td style="text-align:left;">
+metsulfuron-methyl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C1yprmfs
+</td>
+<td style="text-align:left;">
+methylpirimifos
+</td>
+<td style="text-align:left;">
+CS001425
+</td>
+<td style="text-align:left;">
+pirimiphos-methyl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C1yprton
+</td>
+<td style="text-align:left;">
+methylparathion
+</td>
+<td style="text-align:left;">
+CS003164
+</td>
+<td style="text-align:left;">
+parathion-methyl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+c12DClC2e
+</td>
+<td style="text-align:left;">
+cis-1,2-dichlooretheen
+</td>
+<td style="text-align:left;">
+CS000333
+</td>
+<td style="text-align:left;">
+cis-1,2-dichloroethene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C2yazfs
+</td>
+<td style="text-align:left;">
+ethylazinfos
+</td>
+<td style="text-align:left;">
+CS001180
+</td>
+<td style="text-align:left;">
+azinphos-ethyl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C2yBen
+</td>
+<td style="text-align:left;">
+ethylbenzeen
+</td>
+<td style="text-align:left;">
+CS003317
+</td>
+<td style="text-align:left;">
+ethylbenzene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C2yClprfs
+</td>
+<td style="text-align:left;">
+ethylchloorpyrifos
+</td>
+<td style="text-align:left;">
+CS003289
+</td>
+<td style="text-align:left;">
+chlorpyrifos
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C2yprton
+</td>
+<td style="text-align:left;">
+ethylparathion
+</td>
+<td style="text-align:left;">
+CS000781
+</td>
+<td style="text-align:left;">
+parathion-ethyl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Daznn
+</td>
+<td style="text-align:left;">
+diazinon
+</td>
+<td style="text-align:left;">
+CS000424
+</td>
+<td style="text-align:left;">
+diazinon
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DClC1a
+</td>
+<td style="text-align:left;">
+dichloormethaan
+</td>
+<td style="text-align:left;">
+CS003270
+</td>
+<td style="text-align:left;">
+dichloromethane
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DClvs
+</td>
+<td style="text-align:left;">
+dichloorvos
+</td>
+<td style="text-align:left;">
+CS003283
+</td>
+<td style="text-align:left;">
+dichlorvos
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEHP
+</td>
+<td style="text-align:left;">
+bis(2-ethylhexyl)ftalaat (DEHP)
+</td>
+<td style="text-align:left;">
+CS001194
+</td>
+<td style="text-align:left;">
+bis(2-ethylhexyl)phthalate
+</td>
+<td style="text-align:left;">
+DEHP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dHCH
+</td>
+<td style="text-align:left;">
+delta-hexachloorcyclohexaan
+</td>
+<td style="text-align:left;">
+CS000396
+</td>
+<td style="text-align:left;">
+delta-hexachlorocyclohexane
+</td>
+<td style="text-align:left;">
+delta-HCH
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dieldn
+</td>
+<td style="text-align:left;">
+dieldrin
+</td>
+<td style="text-align:left;">
+CS002468
+</td>
+<td style="text-align:left;">
+dieldrin
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dmtat
+</td>
+<td style="text-align:left;">
+dimethoaat
+</td>
+<td style="text-align:left;">
+CS000438
+</td>
+<td style="text-align:left;">
+dimethoate
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dmtn
+</td>
+<td style="text-align:left;">
+deltamethrin
+</td>
+<td style="text-align:left;">
+CS000403
+</td>
+<td style="text-align:left;">
+deltamethrin
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dodne
+</td>
+<td style="text-align:left;">
+dodine
+</td>
+<td style="text-align:left;">
+CS000508
+</td>
+<td style="text-align:left;">
+dodine
+</td>
+<td style="text-align:left;">
+1-dodecylguanidine acetate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dtann
+</td>
+<td style="text-align:left;">
+dithianon
+</td>
+<td style="text-align:left;">
+CS000459
+</td>
+<td style="text-align:left;">
+dithianon
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Durn
+</td>
+<td style="text-align:left;">
+diuron
+</td>
+<td style="text-align:left;">
+CS003293
+</td>
+<td style="text-align:left;">
+diuron
+</td>
+<td style="text-align:left;">
+3-(3,4-dichlorophenyl)-1,1-dimethylurea
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+endn
+</td>
+<td style="text-align:left;">
+endrin
+</td>
+<td style="text-align:left;">
+CS002489
+</td>
+<td style="text-align:left;">
+endrin
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+esfvlrt
+</td>
+<td style="text-align:left;">
+esfenvaleraat
+</td>
+<td style="text-align:left;">
+CS000543
+</td>
+<td style="text-align:left;">
+esfenvalerate
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fenamfs
+</td>
+<td style="text-align:left;">
+fenamifos
+</td>
+<td style="text-align:left;">
+CS000564
+</td>
+<td style="text-align:left;">
+fenamiphos
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fenOxcb
+</td>
+<td style="text-align:left;">
+fenoxycarb
+</td>
+<td style="text-align:left;">
+CS000578
+</td>
+<td style="text-align:left;">
+fenoxycarb
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+feNO2ton
+</td>
+<td style="text-align:left;">
+fenitrothion
+</td>
+<td style="text-align:left;">
+CS000571
+</td>
+<td style="text-align:left;">
+fenitrothion
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fenton
+</td>
+<td style="text-align:left;">
+fenthion
+</td>
+<td style="text-align:left;">
+CS000585
+</td>
+<td style="text-align:left;">
+fenthion
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Flu
+</td>
+<td style="text-align:left;">
+fluorantheen
+</td>
+<td style="text-align:left;">
+CS002069
+</td>
+<td style="text-align:left;">
+fluoranthene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HCB
+</td>
+<td style="text-align:left;">
+hexachloorbenzeen
+</td>
+<td style="text-align:left;">
+CS002531
+</td>
+<td style="text-align:left;">
+hexachlorobenzene
+</td>
+<td style="text-align:left;">
+HCB
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+heptnfs
+</td>
+<td style="text-align:left;">
+heptenofos
+</td>
+<td style="text-align:left;">
+CS000641
+</td>
+<td style="text-align:left;">
+heptenophos
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HpCl
+</td>
+<td style="text-align:left;">
+heptachloor
+</td>
+<td style="text-align:left;">
+CS002510
+</td>
+<td style="text-align:left;">
+heptachlor
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HxClbtDen
+</td>
+<td style="text-align:left;">
+hexachloorbutadieen
+</td>
+<td style="text-align:left;">
+CS002524
+</td>
+<td style="text-align:left;">
+hexachloro-1,3-butadiene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HxClC2a
+</td>
+<td style="text-align:left;">
+hexachloorethaan
+</td>
+<td style="text-align:left;">
+CS000648
+</td>
+<td style="text-align:left;">
+hexachloroethane
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+idn
+</td>
+<td style="text-align:left;">
+isodrin
+</td>
+<td style="text-align:left;">
+CS002538
+</td>
+<td style="text-align:left;">
+isodrin
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+imdcpd
+</td>
+<td style="text-align:left;">
+imidacloprid
+</td>
+<td style="text-align:left;">
+CS000683
+</td>
+<td style="text-align:left;">
+imidacloprid
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+InP
+</td>
+<td style="text-align:left;">
+indeno(1,2,3-cd)pyreen
+</td>
+<td style="text-align:left;">
+CS002118
+</td>
+<td style="text-align:left;">
+indeno(1,2,3-cd)pyrene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iptrn
+</td>
+<td style="text-align:left;">
+isoproturon
+</td>
+<td style="text-align:left;">
+CS000690
+</td>
+<td style="text-align:left;">
+isoproturon
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+irgrl
+</td>
+<td style="text-align:left;">
+irgarol
+</td>
+<td style="text-align:left;">
+CS003184
+</td>
+<td style="text-align:left;">
+irgarol
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lcyhltn
+</td>
+<td style="text-align:left;">
+lambda-cyhalothrin
+</td>
+<td style="text-align:left;">
+CS003187
+</td>
+<td style="text-align:left;">
+lambda-cyhalothrin
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+linrn
+</td>
+<td style="text-align:left;">
+linuron
+</td>
+<td style="text-align:left;">
+CS000697
+</td>
+<td style="text-align:left;">
+linuron
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+malton
+</td>
+<td style="text-align:left;">
+malathion
+</td>
+<td style="text-align:left;">
+CS001348
+</td>
+<td style="text-align:left;">
+malathion
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+metbtazrn
+</td>
+<td style="text-align:left;">
+metabenzthiazuron
+</td>
+<td style="text-align:left;">
+CS000704
+</td>
+<td style="text-align:left;">
+methabenzthiazuron
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+metlCl
+</td>
+<td style="text-align:left;">
+metolachloor
+</td>
+<td style="text-align:left;">
+CS001362
+</td>
+<td style="text-align:left;">
+metolachlor
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mevfs
+</td>
+<td style="text-align:left;">
+mevinfos
+</td>
+<td style="text-align:left;">
+CS000732
+</td>
+<td style="text-align:left;">
+mevinphos
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mlnrn
+</td>
+<td style="text-align:left;">
+monolinuron
+</td>
+<td style="text-align:left;">
+CS000739
+</td>
+<td style="text-align:left;">
+monolinuron
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Naf
+</td>
+<td style="text-align:left;">
+naftaleen
+</td>
+<td style="text-align:left;">
+CS002013
+</td>
+<td style="text-align:left;">
+naphthalene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE100
+</td>
+<td style="text-align:left;">
+2,2’,4,4’,6-pentabroomdifenylether
+</td>
+<td style="text-align:left;">
+CS002146
+</td>
+<td style="text-align:left;">
+2,2’,4,4’,6-pentabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE138
+</td>
+<td style="text-align:left;">
+2,2’,3,4,4’,5’-hexabroomdifenylether
+</td>
+<td style="text-align:left;">
+CS002132
+</td>
+<td style="text-align:left;">
+2,2’,3,4,4’,5’-hexabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE138
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE153
+</td>
+<td style="text-align:left;">
+2,2’,4,4’,5,5’-hexabroomdifenylether
+</td>
+<td style="text-align:left;">
+CS000998
+</td>
+<td style="text-align:left;">
+2,2’,4,4’,5,5’-hexabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE153
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE154
+</td>
+<td style="text-align:left;">
+2,2’,4,4’,5,6’-hexabroomdifenylether
+</td>
+<td style="text-align:left;">
+CS001005
+</td>
+<td style="text-align:left;">
+2,2’,4,4’,5,6’-hexabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE154
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE209
+</td>
+<td style="text-align:left;">
+2,2’,3,3’,4,4’,5,5’,6,6’-decabroomdiphenylether
+</td>
+<td style="text-align:left;">
+CS000382
+</td>
+<td style="text-align:left;">
+decabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE209 decabromodiphenyl oxide
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE28
+</td>
+<td style="text-align:left;">
+2,4,4’-tribroomdifenylether
+</td>
+<td style="text-align:left;">
+CS002209
+</td>
+<td style="text-align:left;">
+2,4,4’-tribromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE47
+</td>
+<td style="text-align:left;">
+2,2’,4,4’-tetrabroomdifenylether
+</td>
+<td style="text-align:left;">
+CS001026
+</td>
+<td style="text-align:left;">
+2,2’,4,4’-tetrabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE49
+</td>
+<td style="text-align:left;">
+2,2’,4,5’-tetrabroomdifenylether
+</td>
+<td style="text-align:left;">
+CS001040
+</td>
+<td style="text-align:left;">
+2,2’,4,5’-tetrabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE85
+</td>
+<td style="text-align:left;">
+2,2’,3,4,4’-pentabroomdifenylether
+</td>
+<td style="text-align:left;">
+CS002139
+</td>
+<td style="text-align:left;">
+2,2’,3,4,4’-pentabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE85
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PBDE99
+</td>
+<td style="text-align:left;">
+2,2’,4,4’,5-pentabroomdifenylether
+</td>
+<td style="text-align:left;">
+CS001012
+</td>
+<td style="text-align:left;">
+2,2’,4,4’,5-pentabromodiphenyl ether
+</td>
+<td style="text-align:left;">
+BDE99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PeClBen
+</td>
+<td style="text-align:left;">
+pentachloorbenzeen
+</td>
+<td style="text-align:left;">
+CS002587
+</td>
+<td style="text-align:left;">
+pentachlorobenzene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PeClFol
+</td>
+<td style="text-align:left;">
+pentachloorfenol
+</td>
+<td style="text-align:left;">
+CS003165
+</td>
+<td style="text-align:left;">
+pentachlorophenol
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pirmcb
+</td>
+<td style="text-align:left;">
+pirimicarb
+</td>
+<td style="text-align:left;">
+CS000809
+</td>
+<td style="text-align:left;">
+pirimicarb
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+propxr
+</td>
+<td style="text-align:left;">
+propoxur
+</td>
+<td style="text-align:left;">
+CS001432
+</td>
+<td style="text-align:left;">
+propoxur
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pyrdbn
+</td>
+<td style="text-align:left;">
+pyridaben
+</td>
+<td style="text-align:left;">
+CS000830
+</td>
+<td style="text-align:left;">
+pyridaben
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pyrpxfn
+</td>
+<td style="text-align:left;">
+pyriproxyfen
+</td>
+<td style="text-align:left;">
+CS001439
+</td>
+<td style="text-align:left;">
+pyriproxyfen
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+simzne
+</td>
+<td style="text-align:left;">
+simazine
+</td>
+<td style="text-align:left;">
+CS000837
+</td>
+<td style="text-align:left;">
+simazine
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+styrn
+</td>
+<td style="text-align:left;">
+styreen
+</td>
+<td style="text-align:left;">
+CS003166
+</td>
+<td style="text-align:left;">
+styrene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+s4C9yFol
+</td>
+<td style="text-align:left;">
+som 4-nonylfenol-isomeren (vertakt)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tazfs
+</td>
+<td style="text-align:left;">
+triazofos
+</td>
+<td style="text-align:left;">
+CS001495
+</td>
+<td style="text-align:left;">
+triazophos
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TClC1a
+</td>
+<td style="text-align:left;">
+trichloormethaan (chloroform)
+</td>
+<td style="text-align:left;">
+CS003033
+</td>
+<td style="text-align:left;">
+trichloromethane
+</td>
+<td style="text-align:left;">
+chloroform
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TClC2e
+</td>
+<td style="text-align:left;">
+trichlooretheen (tri)
+</td>
+<td style="text-align:left;">
+CS003226
+</td>
+<td style="text-align:left;">
+1,1,2-trichloroethene
+</td>
+<td style="text-align:left;">
+trichloroethylene TCE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tefbzrn
+</td>
+<td style="text-align:left;">
+teflubenzuron
+</td>
+<td style="text-align:left;">
+CS001446
+</td>
+<td style="text-align:left;">
+teflubenzuron
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+terbtn
+</td>
+<td style="text-align:left;">
+terbutrin
+</td>
+<td style="text-align:left;">
+CS000851
+</td>
+<td style="text-align:left;">
+terbutryn
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+terC4yazne
+</td>
+<td style="text-align:left;">
+terbutylazine
+</td>
+<td style="text-align:left;">
+CS000858
+</td>
+<td style="text-align:left;">
+terbuthylazine
+</td>
+<td style="text-align:left;">
+TBA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tfrlne
+</td>
+<td style="text-align:left;">
+trifluraline
+</td>
+<td style="text-align:left;">
+CS001243
+</td>
+<td style="text-align:left;">
+trifluralin
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TFySn
+</td>
+<td style="text-align:left;">
+trifenyltin (kation)
+</td>
+<td style="text-align:left;">
+CS001250
+</td>
+<td style="text-align:left;">
+triphenyltin cation
+</td>
+<td style="text-align:left;">
+TPT+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tHpClepO
+</td>
+<td style="text-align:left;">
+trans-heptachloorepoxide
+</td>
+<td style="text-align:left;">
+CS002636
+</td>
+<td style="text-align:left;">
+trans-heptachlor epoxide
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tol
+</td>
+<td style="text-align:left;">
+tolueen
+</td>
+<td style="text-align:left;">
+CS003183
+</td>
+<td style="text-align:left;">
+methylbenzene
+</td>
+<td style="text-align:left;">
+toluene
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tolcfsC1y
+</td>
+<td style="text-align:left;">
+tolclofos-methyl
+</td>
+<td style="text-align:left;">
+CS000893
+</td>
+<td style="text-align:left;">
+tolclofos-methyl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+t12DClC2e
+</td>
+<td style="text-align:left;">
+trans-1,2-dichlooretheen
+</td>
+<td style="text-align:left;">
+CS003149
+</td>
+<td style="text-align:left;">
+trans-1,2-dichloroethene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+T4ClC1a
+</td>
+<td style="text-align:left;">
+tetrachloormethaan (tetra)
+</td>
+<td style="text-align:left;">
+CS003013
+</td>
+<td style="text-align:left;">
+tetrachloromethane
+</td>
+<td style="text-align:left;">
+CCl4 carbon tetrachloride
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+T4ClC2e
+</td>
+<td style="text-align:left;">
+tetrachlooretheen (per)
+</td>
+<td style="text-align:left;">
+CS003138
+</td>
+<td style="text-align:left;">
+tetrachloroethene
+</td>
+<td style="text-align:left;">
+tetrachloroethylene
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11DClC2a
+</td>
+<td style="text-align:left;">
+1,1-dichloorethaan
+</td>
+<td style="text-align:left;">
+CS000942
+</td>
+<td style="text-align:left;">
+1,1-dichloroethane
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11DClC2e
+</td>
+<td style="text-align:left;">
+1,1-dichlooretheen
+</td>
+<td style="text-align:left;">
+CS003250
+</td>
+<td style="text-align:left;">
+1,1-dichloroethene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+111TClC2a
+</td>
+<td style="text-align:left;">
+1,1,1-trichloorethaan
+</td>
+<td style="text-align:left;">
+CS003246
+</td>
+<td style="text-align:left;">
+1,1,1-trichloroethane
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+112TClC2a
+</td>
+<td style="text-align:left;">
+1,1,2-trichloorethaan
+</td>
+<td style="text-align:left;">
+CS003233
+</td>
+<td style="text-align:left;">
+1,1,2-trichloroethane
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1122T4ClC2a
+</td>
+<td style="text-align:left;">
+1,1,2,2-tetrachloorethaan
+</td>
+<td style="text-align:left;">
+CS003232
+</td>
+<td style="text-align:left;">
+1,1,2,2-tetrachloroethane
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12DClBen
+</td>
+<td style="text-align:left;">
+1,2-dichloorbenzeen
+</td>
+<td style="text-align:left;">
+CS003235
+</td>
+<td style="text-align:left;">
+1,2-dichlorobenzene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12DClC2a
+</td>
+<td style="text-align:left;">
+1,2-dichloorethaan
+</td>
+<td style="text-align:left;">
+CS003247
+</td>
+<td style="text-align:left;">
+1,2-dichloroethane
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12DClC3a
+</td>
+<td style="text-align:left;">
+1,2-dichloorpropaan
+</td>
+<td style="text-align:left;">
+CS001516
+</td>
+<td style="text-align:left;">
+1,2-dichloropropane
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12xyln
+</td>
+<td style="text-align:left;">
+1,2-xyleen
+</td>
+<td style="text-align:left;">
+CS000963
+</td>
+<td style="text-align:left;">
+1,2-dimethylbenzene
+</td>
+<td style="text-align:left;">
+1,2-xylene o-xylene
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+123TClBen
+</td>
+<td style="text-align:left;">
+1,2,3-trichloorbenzeen
+</td>
+<td style="text-align:left;">
+CS000949
+</td>
+<td style="text-align:left;">
+1,2,3-trichlorobenzene
+</td>
+<td style="text-align:left;">
+1,2,3-TCB
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+124TClBen
+</td>
+<td style="text-align:left;">
+1,2,4-trichloorbenzeen
+</td>
+<td style="text-align:left;">
+CS000956
+</td>
+<td style="text-align:left;">
+1,2,4-trichlorobenzene
+</td>
+<td style="text-align:left;">
+1,2,4-TCB
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13DClBen
+</td>
+<td style="text-align:left;">
+1,3-dichloorbenzeen
+</td>
+<td style="text-align:left;">
+CS003249
+</td>
+<td style="text-align:left;">
+1,3-dichlorobenzene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+135TClBen
+</td>
+<td style="text-align:left;">
+1,3,5-trichloorbenzeen
+</td>
+<td style="text-align:left;">
+CS000970
+</td>
+<td style="text-align:left;">
+1,3,5-trichlorobenzene
+</td>
+<td style="text-align:left;">
+1,3,5-TCB
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14DClBen
+</td>
+<td style="text-align:left;">
+1,4-dichloorbenzeen
+</td>
+<td style="text-align:left;">
+CS003234
+</td>
+<td style="text-align:left;">
+1,4-dichlorobenzene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24DDT
+</td>
+<td style="text-align:left;">
+2,4’-dichloordifenyltrichloorethaan
+</td>
+<td style="text-align:left;">
+CS001117
+</td>
+<td style="text-align:left;">
+2,4’-dichlorodiphenyltrichloroethane
+</td>
+<td style="text-align:left;">
+o,p’-DDT
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24DP
+</td>
+<td style="text-align:left;">
+2,4-dichloorfenoxypropionzuur
+</td>
+<td style="text-align:left;">
+CS001124
+</td>
+<td style="text-align:left;">
+dichloroprop
+</td>
+<td style="text-align:left;">
+2,4-DP 2,4-dichlorophenoxypropionic acid
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44DDD
+</td>
+<td style="text-align:left;">
+4,4’-dichloordifenyldichloorethaan
+</td>
+<td style="text-align:left;">
+CS002244
+</td>
+<td style="text-align:left;">
+4,4’-dichlorodiphenyldichloroethane
+</td>
+<td style="text-align:left;">
+p,p’-DDD
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44DDE
+</td>
+<td style="text-align:left;">
+4,4’-dichloordifenyldichlooretheen
+</td>
+<td style="text-align:left;">
+CS002251
+</td>
+<td style="text-align:left;">
+4,4’-dichlorodiphenyldichloroethylene
+</td>
+<td style="text-align:left;">
+p,p’-DDE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44DDT
+</td>
+<td style="text-align:left;">
+4,4’-dichloordifenyltrichloorethaan
+</td>
+<td style="text-align:left;">
+CS002258
+</td>
+<td style="text-align:left;">
+4,4’-dichlorodiphenyltrichloroethane
+</td>
+<td style="text-align:left;">
+p,p’-DDT
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BaP
+</td>
+<td style="text-align:left;">
+benzo(a)pyreen
+</td>
+<td style="text-align:left;">
+CS001929
+</td>
+<td style="text-align:left;">
+benzo(e)pyrene
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+teldn
+</td>
+<td style="text-align:left;">
+telodrin
+</td>
+<td style="text-align:left;">
+CS002629
+</td>
+<td style="text-align:left;">
+telodrin
+</td>
+<td style="text-align:left;">
+isobenzan
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="compartimenten-vs-s26-bodc-matrices" class="section level3" number="4.2.2">
+<h3>
+<span class="header-section-number">4.2.2</span> Compartimenten vs S26 BODC matrices<a class="anchor" aria-label="anchor" href="#compartimenten-vs-s26-bodc-matrices"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Compartiment.Code
+</th>
+<th style="text-align:left;">
+Compartiment.Omschrijving
+</th>
+<th style="text-align:left;">
+Hoedanigheid.Code
+</th>
+<th style="text-align:left;">
+S26_conceptid
+</th>
+<th style="text-align:left;">
+S26_preflabel
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+BS
+</td>
+<td style="text-align:left;">
+Bodem/Sediment
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+MAT00850
+</td>
+<td style="text-align:left;">
+bed
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OW
+</td>
+<td style="text-align:left;">
+Oppervlaktewater
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+MAT00633
+</td>
+<td style="text-align:left;">
+water body [dissolved plus reactive particulate phase]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OW
+</td>
+<td style="text-align:left;">
+Oppervlaktewater
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+MAT00640
+</td>
+<td style="text-align:left;">
+water body
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OW
+</td>
+<td style="text-align:left;">
+Oppervlaktewater
+</td>
+<td style="text-align:left;">
+nf
+</td>
+<td style="text-align:left;">
+MAT00626
+</td>
+<td style="text-align:left;">
+water body [dissolved plus reactive particulate &lt;unknown phase]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OW
+</td>
+<td style="text-align:left;">
+Oppervlaktewater
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+MAT00997
+</td>
+<td style="text-align:left;">
+water body [particulate &gt;GF/F phase]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ZS
+</td>
+<td style="text-align:left;">
+Zwevende stof
+</td>
+<td style="text-align:left;">
+dg
+</td>
+<td style="text-align:left;">
+MAT00528
+</td>
+<td style="text-align:left;">
+suspended particulate material
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="grootheden-vs-s06-parameter-entity-names" class="section level3" number="4.2.3">
+<h3>
+<span class="header-section-number">4.2.3</span> Grootheden vs S06 Parameter entity names<a class="anchor" aria-label="anchor" href="#grootheden-vs-s06-parameter-entity-names"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Grootheid.Code
+</th>
+<th style="text-align:left;">
+Grootheid.Omschrijving
+</th>
+<th style="text-align:left;">
+Hoedanigheid.Code
+</th>
+<th style="text-align:left;">
+S06_conceptid
+</th>
+<th style="text-align:left;">
+S06_preflabel
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AANTPOPVTE
+</td>
+<td style="text-align:left;">
+Aantal per oppervlakte
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+S0600002
+</td>
+<td style="text-align:left;">
+Abundance
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VERZDGGD
+</td>
+<td style="text-align:left;">
+Verzadigingsgraad
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+S0600045
+</td>
+<td style="text-align:left;">
+Concentration
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SALNTT
+</td>
+<td style="text-align:left;">
+Saliniteit
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+S0600085
+</td>
+<td style="text-align:left;">
+Salinity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CONCTTE
+</td>
+<td style="text-align:left;">
+(massa)Concentratie
+</td>
+<td style="text-align:left;">
+nf
+</td>
+<td style="text-align:left;">
+S0600045
+</td>
+<td style="text-align:left;">
+Concentration
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CONCTTE
+</td>
+<td style="text-align:left;">
+(massa)Concentratie
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+S0600045
+</td>
+<td style="text-align:left;">
+Concentration
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+T
+</td>
+<td style="text-align:left;">
+Temperatuur
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+S0600082
+</td>
+<td style="text-align:left;">
+Temperature
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CONCTTE
+</td>
+<td style="text-align:left;">
+(massa)Concentratie
+</td>
+<td style="text-align:left;">
+NVT
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MASSFTE
+</td>
+<td style="text-align:left;">
+Massafractie
+</td>
+<td style="text-align:left;">
+dg
+</td>
+<td style="text-align:left;">
+S0600045
+</td>
+<td style="text-align:left;">
+Concentration
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="specials---grain-size" class="section level3" number="4.2.4">
+<h3>
+<span class="header-section-number">4.2.4</span> Specials - Grain size<a class="anchor" aria-label="anchor" href="#specials---grain-size"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>in water</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:right;">
+n_code
+</th>
+<th style="text-align:left;">
+P01_conceptid
+</th>
+<th style="text-align:left;">
+P01_preflabel
+</th>
+<th style="text-align:left;">
+S06_conceptid
+</th>
+<th style="text-align:left;">
+S06_preflabel
+</th>
+<th style="text-align:left;">
+S07_conceptid
+</th>
+<th style="text-align:left;">
+S07_preflabel
+</th>
+<th style="text-align:left;">
+s27_conceptid
+</th>
+<th style="text-align:left;">
+S27_preflabel
+</th>
+<th style="text-align:left;">
+S27_altlabel
+</th>
+<th style="text-align:left;">
+CAS no
+</th>
+<th style="text-align:left;">
+S02_conceptid
+</th>
+<th style="text-align:left;">
+S02_preflabel
+</th>
+<th style="text-align:left;">
+S26_conceptid
+</th>
+<th style="text-align:left;">
+S26_preflabel
+</th>
+<th style="text-align:left;">
+S25_conceptid
+</th>
+<th style="text-align:left;">
+S25_preflabel
+</th>
+<th style="text-align:left;">
+S03_conceptid
+</th>
+<th style="text-align:left;">
+S03_preflabel
+</th>
+<th style="text-align:left;">
+S04_conceptid
+</th>
+<th style="text-align:left;">
+S04_preflabel
+</th>
+<th style="text-align:left;">
+S05_conceptid
+</th>
+<th style="text-align:left;">
+S05_preflabel
+</th>
+<th style="text-align:left;">
+P02_conceptid
+</th>
+<th style="text-align:left;">
+P02_preflabel
+</th>
+<th style="text-align:left;">
+S21_conceptid
+</th>
+<th style="text-align:left;">
+S21_preflabel
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+23075
+</td>
+<td style="text-align:left;">
+MNGSIXAG
+</td>
+<td style="text-align:left;">
+Grain-size mean of aggregates in the water body by image analysis
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700003
+</td>
+<td style="text-align:left;">
+mean
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S028
+</td>
+<td style="text-align:left;">
+in the
+</td>
+<td style="text-align:left;">
+MAT00640
+</td>
+<td style="text-align:left;">
+water body
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S0415
+</td>
+<td style="text-align:left;">
+image analysis
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+SPGS
+</td>
+<td style="text-align:left;">
+Suspended particulate material grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23239
+</td>
+<td style="text-align:left;">
+MSAGIXPZ
+</td>
+<td style="text-align:left;">
+Grain-size median of aggregates in the water body by image analysis
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700004
+</td>
+<td style="text-align:left;">
+median
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S028
+</td>
+<td style="text-align:left;">
+in the
+</td>
+<td style="text-align:left;">
+MAT00640
+</td>
+<td style="text-align:left;">
+water body
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S0415
+</td>
+<td style="text-align:left;">
+image analysis
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+ABAG
+</td>
+<td style="text-align:left;">
+Suspended particulate material aggregates
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>in sediment</strong></p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:right;">
+n_code
+</th>
+<th style="text-align:left;">
+P01_conceptid
+</th>
+<th style="text-align:left;">
+P01_preflabel
+</th>
+<th style="text-align:left;">
+S06_conceptid
+</th>
+<th style="text-align:left;">
+S06_preflabel
+</th>
+<th style="text-align:left;">
+S07_conceptid
+</th>
+<th style="text-align:left;">
+S07_preflabel
+</th>
+<th style="text-align:left;">
+s27_conceptid
+</th>
+<th style="text-align:left;">
+S27_preflabel
+</th>
+<th style="text-align:left;">
+S27_altlabel
+</th>
+<th style="text-align:left;">
+CAS no
+</th>
+<th style="text-align:left;">
+S02_conceptid
+</th>
+<th style="text-align:left;">
+S02_preflabel
+</th>
+<th style="text-align:left;">
+S26_conceptid
+</th>
+<th style="text-align:left;">
+S26_preflabel
+</th>
+<th style="text-align:left;">
+S25_conceptid
+</th>
+<th style="text-align:left;">
+S25_preflabel
+</th>
+<th style="text-align:left;">
+S03_conceptid
+</th>
+<th style="text-align:left;">
+S03_preflabel
+</th>
+<th style="text-align:left;">
+S04_conceptid
+</th>
+<th style="text-align:left;">
+S04_preflabel
+</th>
+<th style="text-align:left;">
+S05_conceptid
+</th>
+<th style="text-align:left;">
+S05_preflabel
+</th>
+<th style="text-align:left;">
+P02_conceptid
+</th>
+<th style="text-align:left;">
+P02_preflabel
+</th>
+<th style="text-align:left;">
+S21_conceptid
+</th>
+<th style="text-align:left;">
+S21_preflabel
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+15531
+</td>
+<td style="text-align:left;">
+GRSIZEMM
+</td>
+<td style="text-align:left;">
+Grain-size minimum of particles in sediment by visual estimation
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700005
+</td>
+<td style="text-align:left;">
+minimum
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04366
+</td>
+<td style="text-align:left;">
+visual estimation
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15532
+</td>
+<td style="text-align:left;">
+GRSIZEMX
+</td>
+<td style="text-align:left;">
+Grain-size maximum of particles in sediment by visual estimation
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700002
+</td>
+<td style="text-align:left;">
+maximum
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04366
+</td>
+<td style="text-align:left;">
+visual estimation
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+21902
+</td>
+<td style="text-align:left;">
+KRGSPSXX
+</td>
+<td style="text-align:left;">
+Grain-size kurtosis of particles in sediment by particle sizer
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700030
+</td>
+<td style="text-align:left;">
+kurtosis
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+21903
+</td>
+<td style="text-align:left;">
+KRGSSSXX
+</td>
+<td style="text-align:left;">
+Grain-size kurtosis of particles in sediment by sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700030
+</td>
+<td style="text-align:left;">
+kurtosis
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+21905
+</td>
+<td style="text-align:left;">
+KRTSSSXX
+</td>
+<td style="text-align:left;">
+Grain-size kurtosis of particles in sediment by sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700030
+</td>
+<td style="text-align:left;">
+kurtosis
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22696
+</td>
+<td style="text-align:left;">
+MDGSPPXX
+</td>
+<td style="text-align:left;">
+Grain-size median of particles in sediment by optical microscopy (coarse fraction) and pipette method (fines)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700004
+</td>
+<td style="text-align:left;">
+median
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04275
+</td>
+<td style="text-align:left;">
+optical microscopy (coarse fraction) and pipette method (fines)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22698
+</td>
+<td style="text-align:left;">
+MDGSPSXX
+</td>
+<td style="text-align:left;">
+Grain-size median of particles in sediment by particle sizer
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700004
+</td>
+<td style="text-align:left;">
+median
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22699
+</td>
+<td style="text-align:left;">
+MDGSSSXX
+</td>
+<td style="text-align:left;">
+Grain-size median of particles in sediment by sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700004
+</td>
+<td style="text-align:left;">
+median
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23076
+</td>
+<td style="text-align:left;">
+MNGSPSNC
+</td>
+<td style="text-align:left;">
+Grain-size mean of particles in sediment [non-carbonate phase] by acidification and particle sizer
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700003
+</td>
+<td style="text-align:left;">
+mean
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00129
+</td>
+<td style="text-align:left;">
+sediment [non-carbonate phase]
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S0366
+</td>
+<td style="text-align:left;">
+acidification
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23078
+</td>
+<td style="text-align:left;">
+MNGSPSSA
+</td>
+<td style="text-align:left;">
+Grain-size mean of particles in sediment 63-1000um by particle sizer
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700003
+</td>
+<td style="text-align:left;">
+mean
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00059
+</td>
+<td style="text-align:left;">
+sediment 63-1000um
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23079
+</td>
+<td style="text-align:left;">
+MNGSPSXX
+</td>
+<td style="text-align:left;">
+Grain-size mean of particles in sediment by particle sizer
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700003
+</td>
+<td style="text-align:left;">
+mean
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23081
+</td>
+<td style="text-align:left;">
+MNGSSSXX
+</td>
+<td style="text-align:left;">
+Grain-size mean of particles in sediment by sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700003
+</td>
+<td style="text-align:left;">
+mean
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23133
+</td>
+<td style="text-align:left;">
+MOGSPSXX
+</td>
+<td style="text-align:left;">
+Grain-size mode of particles in sediment by particle sizer
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700041
+</td>
+<td style="text-align:left;">
+mode
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23134
+</td>
+<td style="text-align:left;">
+MOGSSSXX
+</td>
+<td style="text-align:left;">
+Grain-size mode of particles in sediment by sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700041
+</td>
+<td style="text-align:left;">
+mode
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27891
+</td>
+<td style="text-align:left;">
+PC01SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 1st percentile of particles in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700039
+</td>
+<td style="text-align:left;">
+1st percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27893
+</td>
+<td style="text-align:left;">
+PC05PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 5th percentile of particles in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700034
+</td>
+<td style="text-align:left;">
+5th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27894
+</td>
+<td style="text-align:left;">
+PC05SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 5th percentile of particles in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700034
+</td>
+<td style="text-align:left;">
+5th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27895
+</td>
+<td style="text-align:left;">
+PC10PSNC
+</td>
+<td style="text-align:left;">
+Grain-size 10th percentile of particles in sediment [non-carbonate phase] by acidification and particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700031
+</td>
+<td style="text-align:left;">
+10th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00129
+</td>
+<td style="text-align:left;">
+sediment [non-carbonate phase]
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S0366
+</td>
+<td style="text-align:left;">
+acidification
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27896
+</td>
+<td style="text-align:left;">
+PC10PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 10th percentile of particles in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700031
+</td>
+<td style="text-align:left;">
+10th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27898
+</td>
+<td style="text-align:left;">
+PC16PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 16th percentile of particles in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700032
+</td>
+<td style="text-align:left;">
+16th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27899
+</td>
+<td style="text-align:left;">
+PC16SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 16th percentile of particles in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700032
+</td>
+<td style="text-align:left;">
+16th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27900
+</td>
+<td style="text-align:left;">
+PC25PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 25th percentile of particles in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700033
+</td>
+<td style="text-align:left;">
+25th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27901
+</td>
+<td style="text-align:left;">
+PC25SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 25th percentile of particles in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700033
+</td>
+<td style="text-align:left;">
+25th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27902
+</td>
+<td style="text-align:left;">
+PC50PSNC
+</td>
+<td style="text-align:left;">
+Grain-size 50th percentile of particles {grain-size median} in sediment [non-carbonate phase] by acidification and particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700040
+</td>
+<td style="text-align:left;">
+50th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00129
+</td>
+<td style="text-align:left;">
+sediment [non-carbonate phase]
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S0366
+</td>
+<td style="text-align:left;">
+acidification
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27903
+</td>
+<td style="text-align:left;">
+PC50PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 50th percentile of particles {grain-size median} in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700040
+</td>
+<td style="text-align:left;">
+50th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27904
+</td>
+<td style="text-align:left;">
+PC50SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 50th percentile of particles {grain-size median} in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700040
+</td>
+<td style="text-align:left;">
+50th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27906
+</td>
+<td style="text-align:left;">
+PC75PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 75th percentile of particles in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700035
+</td>
+<td style="text-align:left;">
+75th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27907
+</td>
+<td style="text-align:left;">
+PC75SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 75th percentile of particles in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700035
+</td>
+<td style="text-align:left;">
+75th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27908
+</td>
+<td style="text-align:left;">
+PC84PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 84th percentile of particles in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700038
+</td>
+<td style="text-align:left;">
+84th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27909
+</td>
+<td style="text-align:left;">
+PC84SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 84th percentile of particles in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700038
+</td>
+<td style="text-align:left;">
+84th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27910
+</td>
+<td style="text-align:left;">
+PC90PSNC
+</td>
+<td style="text-align:left;">
+Grain-size 90th percentile of particles in sediment [non-carbonate phase] by acidification and particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700037
+</td>
+<td style="text-align:left;">
+90th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00129
+</td>
+<td style="text-align:left;">
+sediment [non-carbonate phase]
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S0366
+</td>
+<td style="text-align:left;">
+acidification
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27911
+</td>
+<td style="text-align:left;">
+PC90PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 90th percentile of particles in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700037
+</td>
+<td style="text-align:left;">
+90th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27913
+</td>
+<td style="text-align:left;">
+PC90SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 90th percentile of particles in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700037
+</td>
+<td style="text-align:left;">
+90th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27915
+</td>
+<td style="text-align:left;">
+PC95PSXX
+</td>
+<td style="text-align:left;">
+Grain-size 95th percentile of particles in sediment by particle sizer and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700036
+</td>
+<td style="text-align:left;">
+95th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27916
+</td>
+<td style="text-align:left;">
+PC95SSXX
+</td>
+<td style="text-align:left;">
+Grain-size 95th percentile of particles in sediment by sieving and settling tube method and analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700036
+</td>
+<td style="text-align:left;">
+95th percentile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S050063
+</td>
+<td style="text-align:left;">
+analysis of cumulative frequency ordered by phi (coarse to fine)
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+33147
+</td>
+<td style="text-align:left;">
+SED50VIS
+</td>
+<td style="text-align:left;">
+Grain-size median of particles in sediment by visual estimation
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700004
+</td>
+<td style="text-align:left;">
+median
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04366
+</td>
+<td style="text-align:left;">
+visual estimation
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+33410
+</td>
+<td style="text-align:left;">
+SKGSPSXX
+</td>
+<td style="text-align:left;">
+Grain-size skewness of particles in sediment by particle sizer
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700029
+</td>
+<td style="text-align:left;">
+skewness
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04278
+</td>
+<td style="text-align:left;">
+particle sizer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+33411
+</td>
+<td style="text-align:left;">
+SKGSSSXX
+</td>
+<td style="text-align:left;">
+Grain-size skewness of particles in sediment by sieving and settling tube method
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700029
+</td>
+<td style="text-align:left;">
+skewness
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04321
+</td>
+<td style="text-align:left;">
+sieving and settling tube method
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+33522
+</td>
+<td style="text-align:left;">
+SND50VIS
+</td>
+<td style="text-align:left;">
+Grain-size median of particles (sand size-fraction) in sediment by visual estimation
+</td>
+<td style="text-align:left;">
+S0600192
+</td>
+<td style="text-align:left;">
+Grain-size
+</td>
+<td style="text-align:left;">
+S0700004
+</td>
+<td style="text-align:left;">
+median
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S026
+</td>
+<td style="text-align:left;">
+in
+</td>
+<td style="text-align:left;">
+MAT00136
+</td>
+<td style="text-align:left;">
+sediment
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+S04366
+</td>
+<td style="text-align:left;">
+visual estimation
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+MNGS
+</td>
+<td style="text-align:left;">
+Sediment grain size parameters
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="specials---taxonomical-names" class="section level3" number="4.2.5">
+<h3>
+<span class="header-section-number">4.2.5</span> Specials - Taxonomical names<a class="anchor" aria-label="anchor" href="#specials---taxonomical-names"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+S25_preflabel
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coscinodiscus (ITIS: 2546: WoRMS 148917)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Navicula directa (ITIS: 3669: WoRMS 149467)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nitzschia (ITIS: 5070: WoRMS 119270)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rhizosolenia shrubsoleii (ITIS: 2910)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thalassiosira (ITIS: 2484: WoRMS 148912)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tropodoneis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Torodinium (ITIS: 10121: WoRMS 109479) [Size: medium]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sula nebouxii (ITIS: 174702: WoRMS 343959)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thysanoessa inermis (ITIS: 95573: WoRMS 110708) [Stage: adult Sex: male Subgroup: with spermatophores at the genital aperture or attached to the petasma]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pseudo-nitzschia (ITIS: 584561: WoRMS 149151)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Umbellula (ITIS: 52384: WoRMS 128499)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Amphidinium (ITIS: 9997: WoRMS 109473)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ceratium furca (ITIS: 10399: WoRMS 109950)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ceratium fusus (ITIS: 10400: WoRMS 109951)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ceratium lineatum (ITIS: 10401: WoRMS 109963)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gonyaulax polygramma (ITIS: 10371: WoRMS 110035)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gymnodinium splendens (ITIS: 10037: WoRMS 109832)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gyrodinium (ITIS: 10077: WoRMS 109476)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gyrodinium (ITIS: 10077: WoRMS 109476) [Subgroup: sp. B heterotrophic]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Calanus finmarchicus/helgolandicus/glacialis (ITIS: 85263: WoRMS 104152) [Stage: eggs]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chaetoceros radicans (ITIS: 2822: WoRMS 163112)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prorocentrum (ITIS: 9877: WoRMS 109566)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Amphorellopsis (WoRMS 136791) [Size: 80-99um]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mesodinium (ITIS: 46287: WoRMS 179320) [Size: &lt;30um]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stylocheiron (ITIS: 95556: WoRMS 110678) [Stage: adult Sex: female Subgroup: without spermatophores]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thalassiosira gravida (ITIS: 2490: WoRMS 149102) [Size: 25um]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oxytoxum scolopax (ITIS: 10472: WoRMS 110115)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Protoperidinium (ITIS: 10340: WoRMS 109553)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ptychodiscus noctiluca (ITIS: 331267: WoRMS 109888)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Balanion (WoRMS 292899) [Size: &lt;20um Subgroup: sp. 2]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Torodinium (ITIS: 10121: WoRMS 109479)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Protoperidinium ovum (ITIS: 573488: WoRMS 110243)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Eumicrotremus spinosus (ITIS: 167545: WoRMS 127217)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Amphipoda (ITIS: 93294: WoRMS 1135) [Size: &gt;1000um]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nematobrachion boopis (ITIS: 95537: WoRMS 110691) [Stage: sub-adult Sex: female]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Euphausia krohnii (ITIS: 660849: WoRMS 110687) [Sex: male]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Urotricha (ITIS: 46243) [Size: &lt;20um]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chaetoceros atlanticus (ITIS: 2769: WoRMS 149288)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Calanus finmarchicus (ITIS: 85272: WoRMS 104464) [Stage: copepodites C3]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Calanus finmarchicus (ITIS: 85272: WoRMS 104464) [Stage: copepodites C2]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thysanoessa inermis (ITIS: 95573: WoRMS 110708) [Stage: adult Sex: female]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hymenaster (ITIS: 157097: WoRMS 123333) [Morphology: visible interbrachial membrane]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Calanus finmarchicus (ITIS: 85272: WoRMS 104464) [Stage: adult Sex: male]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thysanoessa raschi (ITIS: 95577: WoRMS 416602) [Stage: juvenile]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ceriantharia (ITIS: 51984: WoRMS 1361) [Size: diameter ~10cm Morphology: many brown tentacles]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prorocentrum lenticulatum (WoRMS 232417)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Demospongiae (ITIS: 47528: WoRMS 164811) [Size: height ~10cm, diameter 30cm Morphology: mass of branches Colour: brown]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Microsetella (ITIS: 86208: WoRMS 115341) [Stage: copepodites plus adults]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Podolampas elegans (ITIS: 10500: WoRMS 110201)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fragilariopsis kerguelensis (ITIS: 573688: WoRMS 341555) [Subgroup: colonial]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thalassiosira angustelineata (ITIS: 550490)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thysanoessa inermis (ITIS: 95573: WoRMS 110708) [Stage: sub-adult+adult Sex: female Subgroup: without spermatophores]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thysanopoda acutifrons (ITIS: 95583: WoRMS 110712) [Stage: sub-adult+adult Sex: male Subgroup: without external spermatophores]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mysida (ITIS: 89855: WoRMS 149668) [Stage: adult]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Scomber scombrus (ITIS: 172414: WoRMS 127023) [Stage: eggs]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trachurus trachurus (ITIS: 168588: WoRMS 126822) [Stage: eggs]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nematoscelis megalops (ITIS: 95542: WoRMS 110695) [Stage: adult Sex: male Subgroup: without external spermatophores]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Strombidium (ITIS: 46608: WoRMS 101195) [Size: 40-59um Subgroup: sp. 7]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pseudorca crassidens (ITIS: 180463: WoRMS 137104)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pseudotriceratium
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Stylocheiron maximum (ITIS: 95558: WoRMS 110704) [Sex: female]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diplopeltopsis (ITIS: 10197: WoRMS 109536) [Stage: cysts]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lycodes (ITIS: 165255: WoRMS 126104)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aloricate ciliates
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Anguilla anguilla (ITIS: 161128: WoRMS 126281)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pelagostrombidium [Size: 20-39um]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thysanoessa longicaudata (ITIS: 95575: WoRMS 110709) [Stage: sub-adult+adult Sex: male Subgroup: without external spermatophores]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gammaproteobacteria (WoRMS 393018) [Subcomponent: nifH gene copies Subgroup: gamma A phylotype]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ampelisca (ITIS: 93321: WoRMS 101445) [Subgroup: sp. 1]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Amphiuridae (ITIS: 157646: WoRMS 123206) [Stage: juvenile]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ampharete (ITIS: 67727: WoRMS 129155) [Stage: juvenile]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Astrorhizidae (ITIS: 44046: WoRMS 111958)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Aphroditidae (ITIS: 64359: WoRMS 938) [Stage: juvenile]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Amphictene auricoma (ITIS: 67695: WoRMS 152448)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ampelisca (ITIS: 93321: WoRMS 101445) [Stage: juvenile]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Aponuphis bilineata (WoRMS 130452)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Abyssorchomene (WoRMS 101585)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Abyssorchomene plebs (WoRMS 237124)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Abyssorchomene rossi (WoRMS 236922)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Abylidae (WoRMS 135336)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Calanus finmarchicus (ITIS: 85272: WoRMS 104464) [Stage: copepodites C4]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Acanthoica quattrospina (ITIS: 2190: WoRMS 235802)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="bodc-semantic-standard.html"><span class="header-section-number">3</span> BODC semantic standard</a></div>
+<div class="next"><a href="mapping-van-eenheden.html"><span class="header-section-number">5</span> Mapping van eenheden</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#mapping-van-wat-tabellen"><span class="header-section-number">4</span> Mapping van “wat” tabellen</a></li>
+<li><a class="nav-link" href="#vergelijking-ddl-metadata-en-p01-vocabulaire"><span class="header-section-number">4.1</span> Vergelijking DDL metadata en P01 vocabulaire</a></li>
+<li>
+<a class="nav-link" href="#uitsplitsing-in-onderdelen-van-p01"><span class="header-section-number">4.2</span> Uitsplitsing in onderdelen van P01</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#parameter-vs-bodc-substances"><span class="header-section-number">4.2.1</span> parameter vs BODC substances</a></li>
+<li><a class="nav-link" href="#compartimenten-vs-s26-bodc-matrices"><span class="header-section-number">4.2.2</span> Compartimenten vs S26 BODC matrices</a></li>
+<li><a class="nav-link" href="#grootheden-vs-s06-parameter-entity-names"><span class="header-section-number">4.2.3</span> Grootheden vs S06 Parameter entity names</a></li>
+<li><a class="nav-link" href="#specials---grain-size"><span class="header-section-number">4.2.4</span> Specials - Grain size</a></li>
+<li><a class="nav-link" href="#specials---taxonomical-names"><span class="header-section-number">4.2.5</span> Specials - Taxonomical names</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn/blob/master/wat_mapping.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn/edit/master/wat_mapping.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>AQUO2SDN mapping</strong>" was written by Willem Stolte. It was last built on 2022-07-20.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
