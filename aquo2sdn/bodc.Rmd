@@ -19,7 +19,7 @@ De relatie tussen de primaire parameternamen (P01) en de afzonderlijke component
 
 p01s <- data.table::fread("data/bodc/p01s.csv")
 
-knitr::kable((sample_n(p01s, 10)), caption = "Voorbeeld 10 elementen uit de tabel [P01 VOCABULARY - FACET SEARCH ON SEMANTIC COMPONENTS]. ")
+kableExtra::kbl((sample_n(p01s, 10)), caption = "Voorbeeld 10 elementen uit de tabel [P01 VOCABULARY - FACET SEARCH ON SEMANTIC COMPONENTS]. ")
 
 ```
 
@@ -32,7 +32,7 @@ Op 25 mei 2022 zijn de volgende "S" tabellen gevonden
 
 ```{r}
 read.csv2("data/bodc/s-tabellen.csv") %>%
-  knitr::kable(caption = "Beschrijving van tabellen met semantische componenten voor de P01 beschrijvende parameters. Deze versie is op 25 mei 2022 van de [seadata website](https://vocab.seadatanet.org/search) opgehaaald. ")
+  kableExtra::kbl(caption = "Beschrijving van tabellen met semantische componenten voor de P01 beschrijvende parameters. Deze versie is op 25 mei 2022 van de [seadata website](https://vocab.seadatanet.org/search) opgehaaald. ")
 ```
 
 
