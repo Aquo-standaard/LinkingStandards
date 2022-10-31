@@ -32,11 +32,23 @@ De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO I
 
 ```{r bestaandeMapping, message=FALSE, warning=FALSE}
 idsw_aquo_map_PO1 <- GetDomainTable(pDomeintabel <- "Mapping_SDN_P01")
+
+# from local file
+idsw_aquo_map_PO1 <- read_delim("c:/git_checkouts/LinkingStandards/aquo2sdn/data/aquo/Mapping_SDN_P01_2021_12_13.csv", delim = ";")
+
 idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
   replace(is.na(.), "") %>%
-  unite('Aquo_Monstercriterium_Hoedanigheid_code', c(`Aquo Monstercriterium code`, `Aquo Hoedanigheid code`), sep = "") %>%
+  unite('Aquo_Monstercriterium_Hoedanigheid_code', c(`Aquo_Monstercriterium_code`, `Aquo_Hoedanigheid_code`), sep = "") %>%
   replace((. == ''), "NVT") %>%
-  select(-Id, -`Begin geldigheid`, -`Eind geldigheid`, -Gerelateerd, -Wijzigingsnummer, -Guid)
+  select(-ID, -`D_BEGIN`, -`D_EIND`)
+
+
+# idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
+#   replace(is.na(.), "") %>%
+#   unite('Aquo_Monstercriterium_Hoedanigheid_code', c(`Aquo Monstercriterium code`, `Aquo Hoedanigheid code`), sep = "") %>%
+#   replace((. == ''), "NVT") %>%
+#   select(-Id, -`Begin geldigheid`, -`Eind geldigheid`, -Gerelateerd, -Wijzigingsnummer, -Guid)
+
 ```
 
 De metadata uit de DDL worden hierna gecombineerd met de mapping_P01 tabel op de velden:
@@ -64,12 +76,12 @@ waarin *Aquo_Monstercriterium_Hoedanigheid_code* de combinatie is van monstercri
 
 ddl_p01_joined <- metadataLijst %>% 
   left_join(
-    idsw_aquo_map_PO1 %>% select(-`Aquo biotaxon code`), 
+    idsw_aquo_map_PO1 %>% select(-`Aquo_biotaxon_code`), 
     by = c(
-      Grootheid.Code = 'Aquo Grootheid code',
-      Parameter.Code = 'Aquo ChemischeStof code',
+      Grootheid.Code = 'Aquo_Grootheid_code',
+      Parameter.Code = 'Aquo_ChemischeStof_code',
       # Parameter.Omschrijving = 'Aquo_biotaxon_code',
-      Compartiment.Code = 'Aquo Compartiment code',
+      Compartiment.Code = 'Aquo_Compartiment_code',
       # Aquo_Monstercriterium_code
       Hoedanigheid.Code = 'Aquo_Monstercriterium_Hoedanigheid_code'
     )
@@ -78,11 +90,36 @@ ddl_p01_joined <- metadataLijst %>%
 ```
 
 
+```{r antijoin}
+
+# join new metadata from ddl with mapping table from aquo
+
+ddl_p01_antijoined <- metadataLijst %>% 
+  anti_join(
+    idsw_aquo_map_PO1 %>% select(-`Aquo_biotaxon_code`), 
+    by = c(
+      Grootheid.Code = 'Aquo_Grootheid_code',
+      Parameter.Code = 'Aquo_ChemischeStof_code',
+      # Parameter.Omschrijving = 'Aquo_biotaxon_code',
+      Compartiment.Code = 'Aquo_Compartiment_code',
+      # Aquo_Monstercriterium_code
+      Hoedanigheid.Code = 'Aquo_Monstercriterium_Hoedanigheid_code'
+    )
+  )
+
+ddl_p01_antijoined %>% distinct(Grootheid.Code) %>% write_delim(file = "data/2map/grootheid_antijoin.csv", delim = ";")
+ddl_p01_antijoined %>% distinct(Parameter.Code) %>% write_delim("data/2map/parameter_antijoin.csv", delim = ";")
+ddl_p01_antijoined %>% distinct(Compartiment.Code) %>% write_delim("data/2map/compartiment_antijoin.csv", delim = ";")
+ddl_p01_antijoined %>% distinct(Hoedanigheid.Code) %>% write_delim("data/2map/hoedanigheid_antijoin.csv", delim = ";")
+
+```
+
+
 De uiteindelijke mapping geeft als resultaat een tabel met `r dim(ddl_p01_joined)[1]  ` regels. 
 
 ```{r, eval=F}
 ddl_p01_joined %>%
-  filter(!is.na(`SDN P01 code`)) %>%
+  filter(!is.na(`SDN_P01_code`)) %>%
   kableExtra::kbl()
 ```
 
@@ -104,7 +141,7 @@ read.csv2("data//bodc/s-tabellen.csv") %>%
 
 p01s <- data.table::fread("data//bodc/p01s.csv")
 
-ddl_p01_joined_p01s <- ddl_p01_joined %>% left_join(p01s, by = c(`SDN P01 code`= "P01_conceptid"))
+ddl_p01_joined_p01s <- ddl_p01_joined %>% left_join(p01s, by = c(`SDN_P01_code`= "P01_conceptid"))
 
 ```
 
@@ -127,11 +164,11 @@ Vanuit de gekoppelde tabel wordt een mapping geëxtraheerd door de unieke combin
 
 ```{r}
 
-
 ddl_p01_joined_p01s %>% 
   distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>%
   filter(Parameter.Code != "NVT") %>% 
   filter(!is.na(s27_conceptid)) %>%
+  write_delim("data/mappings/ddl_p01_joined_parameter.csv") %>%
   kableExtra::kbl()
 ```
 
@@ -149,6 +186,7 @@ ddl_p01_joined_p01s %>%
   distinct(Compartiment.Code, Compartiment.Omschrijving, Hoedanigheid.Code, S26_preflabel, S26_conceptid) %>%
   filter(Compartiment.Code != "NVT") %>% 
   filter(!is.na(S26_conceptid)) %>%
+  write_delim("data/mappings/ddl_p01_joined_compartimenten.csv") %>%
   kableExtra::kbl()
 ```
 
@@ -163,6 +201,7 @@ ddl_p01_joined_p01s %>%
   distinct(Grootheid.Code, Grootheid.Omschrijving, Hoedanigheid.Code, S06_preflabel, S06_conceptid) %>%
   filter(Grootheid.Code != "NVT") %>% 
   filter(!is.na(S06_conceptid)) %>%
+  write_delim("data/mappings/ddl_p01_joined_grootheden.csv") %>%
   kableExtra::kbl()
 ```
 
