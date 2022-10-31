@@ -1,0 +1,82 @@
+Hoedanigheid.Code;Hoedanigheid.Omschrijving
+Dg0016dg;diameter groter dan 16 um / drooggewicht
+Dg0063dg;diameter groter dan 63 um / drooggewicht
+Dg2000dg;diameter groter dan 2000 um / drooggewicht
+Dk0002dg;diameter kleiner dan 2 um / drooggewicht
+Dk0004dg;diameter kleiner dan 4 um / drooggewicht
+Dk0008dg;diameter kleiner dan 8 um / drooggewicht
+Dk0010dg;diameter kleiner dan 10 um / drooggewicht
+Dk0016dg;diameter kleiner dan 16 um / drooggewicht
+Dk0020dg;diameter kleiner dan 20 um / drooggewicht
+Dk002000dg;diameter kleiner dan 2000 um / drooggewicht
+Dk0032dg;diameter kleiner dan 32 um / drooggewicht
+Dk0050dg;diameter kleiner dan 50 um / drooggewicht
+Dk0053dg;diameter kleiner dan 53 um / drooggewicht
+Dk0063dg;diameter kleiner dan 63 um / drooggewicht
+D016-2000dg;diameter tussen 16 en 2000 um / drooggewicht
+Cdg;uitgedrukt in koolstof / drooggewicht
+dg;t.o.v. drooggewicht
+NVT;Niet van toepassing
+adg;asvrij drooggewicht
+LS-AD;Levensstadium-Adult
+LS-JU;Levensstadium-Juveniel
+ng;t.o.v. natgewicht
+Ndg;uitgedrukt in stikstof / drooggewicht
+LS-LA;Levensstadium-Larve
+LS-PO;Levensstadium-Pop
+LV-KOL;Levensvorm-Kolonie
+LS-FL;Levensstadium-Flagellaat
+LV-CEL;Levensvorm-Cel (los)
+GE-M;Geslacht-Man
+GE-V;Geslacht-Vrouw
+LS-EX;Levensstadium-Exuvium
+LS-NY;Levensstadium-Nimf
+WARNDN;t.o.v. ware Noorden
+"NAP";t.o.v. Normaal Amsterdams Peil
+MSL;t.o.v. Mean Sea Level
+ngna;Natgewicht / Na verassen
+VETGWT;t.o.v. vetgewicht
+F003-050;golffrequentie tussen 30 en 500 mHz
+F003-100;golffrequentie tussen 30 en 1000 mHz
+F003-150;golffrequentie tussen 30 en 1500 mHz
+F003-010;golffrequentie tussen 30 en 100 mHz
+WATSGL;t.o.v. waterspiegel
+PLAATSLR;t.o.v. plaatselijk referentievlak
+TAW;t.o.v. Tweede Algemene Waterpassing
+F010-020;golffrequentie tussen 100 en 200 mHz
+F020-050;golffrequentie tussen 200 en 500 mHz
+F050-100;golffrequentie tussen 500 en 1000 mHz
+Gdnf;Uitgedrukt in Gadolinium na filtratie
+PtCo;uitgedrukt volgens PtCo-schaal
+KAARTNDN;t.o.v. kaart Noorden
+Cl;uitgedrukt in chloor
+Cnf;uitgedrukt in koolstof / opgeloste fractie
+Cpg;uitgedrukt in koolstof particulair gebonden
+METLN;t.o.v. metalen
+N;uitgedrukt in stikstof
+nf;opgeloste fractie (bijv. na filtratie)
+Nnf;uitgedrukt in stikstof / opgeloste fractie
+Npg;uitgedrukt in stikstof particulair gebonden
+P;uitgedrukt in fosfor
+pg;particulair gebonden
+Pnf;uitgedrukt in fosfor / opgeloste fractie
+SALNTT;T.o.v. Saliniteit
+Sinf;uitgedrukt in silicium / opgeloste fractie
+Sipg;uitgedrukt in silicium particulair gebonden
+CaCO3;uitgedrukt in calciumcarbonaat
+HALVKT;Halve kracht
+HALFOPN;Half open
+GESTN;Gesloten
+hor-vlak;in horizontaal vlak
+NOORDCPT;Noordcomponent van de stroomsnelheid (zuid = negatief)
+OOSTCPNT;Oostcomponent van de stroomsnelheid (negatief is west)
+VERTKCPT;Vertikaal component van de stroomrichting (beneden=negatief)
+ver-vlak;in verticaal vlak
+20oC;t.o.v. 20 graden Celsius
+25oC;t.o.v. 25 graden Celsius
+Sn;uitgedrukt in tin
+antpgnnf;antropogeen / opgeloste fractie
+BLAUWAL;Cyanochlorofyl
+BrO3;uitgedrukt in bromaat
+Clnf;uitgedrukt in chloor / opgeloste fractie
+Sndg;uitgedrukt in tin / drooggewicht

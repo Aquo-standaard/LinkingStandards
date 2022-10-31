@@ -1,0 +1,16 @@
+# Niet gemapte onderdelen
+
+
+```{r}
+
+# lees gemapte termen
+
+
+#lees niet gemapte termen
+grootheid_anti <- read_delim(file = "data/2map/grootheid_antijoin.csv", delim = ";")
+parameter_anti <- read_delim("data/2map/parameter_antijoin.csv", delim = ";")
+compartiment_anti <- read_delim("data/2map/compartiment_antijoin.csv", delim = ";")
+hoedanigheid_anti <- read_delim("data/2map/hoedanigheid_antijoin.csv", delim = ";")
+
+```
+
