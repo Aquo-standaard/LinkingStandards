@@ -1,12 +1,12 @@
-Compartiment.Code
-BS
-HY
-LM
-LT
-MN
-NVT
-OE
-OR
-OW
-PM
-ZS
+Compartiment.Code;Compartiment.Omschrijving
+BS;Bodem/Sediment
+HY;Hypolimnion
+LM;Litoraal
+LT;Lucht
+MN;Metalimnion
+NVT;Waarde is niet van toepassing
+OE;Organisme (biota)
+OR;Oever
+OW;Oppervlaktewater
+PM;Profundaal
+ZS;Zwevende stof

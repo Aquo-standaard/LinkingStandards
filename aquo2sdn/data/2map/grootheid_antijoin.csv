@@ -1,106 +1,106 @@
-Grootheid.Code
-KGF
-MASSFTE
-ACTVTCCTTE
-DG
-NG
-MASSA
-MASSPOPVTE
-LENGTE
-AANTL
-AANTPOPVTE
-D10
-D20
-D30
-D40
-D50
-D60
-D70
-D80
-D90
-AANTPVLME
-NVT
-WINDRTG
-WINDRTGVERWACHT
-LUCHTDK
-ZICHT
-WINDSHD
-WINDSHDVERWACHT
-WINDSTOOT
-WS10
-T
-HEFHTE
-RPSI
-ACCMLTDR
-ISI
-VDSI
-AANTPLTE
-AANTFTE
-VOLMFTE
-GGH
-Hmax
-Hm0
-Hm0V
-HOOGWTDG
-HOOGWTNT
-HTE3
-H1/10
-H1/3
-H1/50
-LAAGWTDG
-SENSHTE
-SPGH
-VAARDTE
-WATDTE
-WATHTBRKD
-WATHTE
-WATHTEASTRO
-WATHTEVERWACHT
-WATOZT
-TE
-TE3
-ECHO
-AANWZHD
-AG
-ANMLE
-AV10_H
-AV10_R
-E
-GEURVDNFTR
-pH
-REUK
-GOLFHTE
-TROEBHD
-STROOMRTG
-S0BH
-Th0
-Th3
-Fp
-DICHTHD
-ALKLTT
-HH
-HHT
-CONCTTE
-PMV
-DRAAITD
-INDCTOPDT
-OPNDR
-SPUITD
-STROOMSHD
-GELDHD
-Q
-QVERWACHT
-FLUORCTE
-GGT
-SPGT
-T_Hmax
-T_H1/3
-Tmax
-Tm01
-Tm02
-Tm-10
-T1/3
-INSLG
-NGWTTL
-BEMSRDR
-VOLME
+Grootheid.Code;Grootheid.Omschrijving
+KGF;Korrelgroottefractie
+MASSFTE;Massafractie
+ACTVTCCTTE;Activiteitsconcentratie
+DG;Drooggewicht
+NG;Natgewicht
+MASSA;Massa
+MASSPOPVTE;Massa per oppervlakte
+LENGTE;Lengte
+AANTL;Aantal
+AANTPOPVTE;Aantal per oppervlakte
+D10;maximale korreldiameter voor 10% van het monstervolume
+D20;maximale korreldiameter voor 20% van het monstervolume
+D30;maximale korreldiameter voor 30% van het monstervolume
+D40;maximale korreldiameter voor 40% van het monstervolume
+D50;maximale korreldiameter voor 50% van het monstervolume
+D60;maximale korreldiameter voor 60% van het monstervolume
+D70;maximale korreldiameter voor 70% van het monstervolume
+D80;maximale korreldiameter voor 80% van het monstervolume
+D90;maximale korreldiameter voor 90% van het monstervolume
+AANTPVLME;Aantal per volume
+NVT;Waarde is niet van toepassing
+WINDRTG;Windrichting
+WINDRTGVERWACHT;Windrichting verwacht
+LUCHTDK;Luchtdruk
+ZICHT;Doorzicht
+WINDSHD;Windsnelheid
+WINDSHDVERWACHT;Windsnelheid verwacht
+WINDSTOOT;"Maximale 3"" windstoot in de afgelopen 10 minuten"
+WS10;10' scalair genmiddelde van de windsnelheid
+T;Temperatuur
+HEFHTE;Hefhoogte
+RPSI;Relatieve penisgrootte index
+ACCMLTDR;Accumulatieduur
+ISI;Intersexindex
+VDSI;Vas Deferens Sequence Index (zaadleider index)
+AANTPLTE;Aantal per lengte
+AANTFTE;Aantalfractie
+VOLMFTE;Volumefractie
+GGH;Gemiddelde golfhoogte in het tijdsdomein
+Hmax;Maximale golfhoogte in het tijdsdomein
+Hm0;Significante golfhoogte in het spectrale domein
+Hm0V;Significante golfhoogte in het spectrale domein verwacht
+HOOGWTDG;Hoogwater dag
+HOOGWTNT;Hoogwater nacht
+HTE3;Significante deiningshoogte in het spectrale domein
+H1/10;Gem. hoogte van hoogste 1/10 deel v.d. golven (tijdsdomein)
+H1/3;Gem. hoogte van hoogste 1/3 deel v.d. golven (tijdsdomein)
+H1/50;Gem. hoogte van hoogste 1/50 deel v.d. golven (tijdsdomein)
+LAAGWTDG;Laagwater dag
+SENSHTE;Sensorhoogte
+SPGH;Standaardafwijking van de golfhoogte in het tijdsdomein
+VAARDTE;Vaardiepte
+WATDTE;Waterdiepte
+WATHTBRKD;Waterhoogte berekend
+WATHTE;Waterhoogte
+WATHTEASTRO;Waterhoogte astronomisch
+WATHTEVERWACHT;Waterhoogte verwacht
+WATOZT;Wateropzet
+TE;Golfenergie in het spectrale domein
+TE3;Deiningsenergie in het spectrale domein
+ECHO;Echosterkte
+AANWZHD;Aanwezigheid
+AG;Aantal golven in 20 minuten periode
+ANMLE;Anomalie
+AV10_H;Aantal vrijheidsgraden bij het variantiedichtheidspectrum
+AV10_R;Aantal vrijheidsgraden behorend bij het golfrichtingspectrum
+E;Extinctie
+GEURVDNFTR;Geurverdunningsfactor
+pH;Zuurgraad
+REUK;Reuk
+GOLFHTE;Golfhoogte
+TROEBHD;Troebelheid
+STROOMRTG;Stroomrichting
+S0BH;Gemiddelde golfrichtingspreiding in het spectrale domein
+Th0;Gemiddelde golfrichting in het spectrale domein
+Th3;Gem. richting deining tov ware noorden in spectrale domein
+Fp;Golffrequentie bij maximum v.h. variantiedichtheidspectrum
+DICHTHD;Dichtheid (soortelijke massa)
+ALKLTT;Alkaliteit
+HH;Hardheid
+HHT;Hardheid tijdelijk
+CONCTTE;(massa)Concentratie
+PMV;Kaliumpermanganaat verbruik
+DRAAITD;Draaitijd
+INDCTOPDT;Indicatie open/dicht
+OPNDR;Openingsduur
+SPUITD;Spuitijd
+STROOMSHD;Stroomsnelheid
+GELDHD;Geleidendheid
+Q;Debiet
+QVERWACHT;Debiet verwacht
+FLUORCTE;Fluorescentie
+GGT;Gemiddelde golfperiode in het tijdsdomein
+SPGT;Standaardafwijking van de golfperiode in het tijdsdomein
+T_Hmax;Golfperiode die hoort bij Hmax
+T_H1/3;Golfperiode die hoort bij H1/3
+Tmax;Maximale golfperiode in het tijdsdomein
+Tm01;Golfperiode bepaald uit de spectrale momenten m0 en m1
+Tm02;Golfperiode bepaald uit de spectrale momenten m0 en m2
+Tm-10;Golfperiode bepaald uit de spectrale momenten m-1 en m0
+T1/3;Gem. golfperiode langste 1/3 deel v.d. golven (tijdsdomein)
+INSLG;Instraling
+NGWTTL;Nat gewicht totaal
+BEMSRDR;Bemonsteringsduur
+VOLME;Volume
