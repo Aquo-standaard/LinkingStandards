@@ -26,7 +26,7 @@ kableExtra::kbl((sample_n(p01s, 10)), caption = "Voorbeeld 10 elementen uit de t
 
 ## Gebruik van de koppelingstabel
 
-Voor veel combinaties van AQUO (um-aquo) velden zijn in het verleden P01 parameternamen gezocht. Deze combinaties staan deels in de mappingP01 tabel die onderhouden wordt door AQUO. Daarnaast staan deze comnbinaties deels in andere lokale bestanden die ad hoc mappings hebben gefaciliteerd (bronnen: RWS, MARIS, Deltares). In dit project hebben we in eerste instantie geprobeerd om AQUO codes te koppelen aan P01 namen. In de huidige versie worden de P01 namen opgesplitst in de semantische onderdelen, en deze onderdelen zullen gematcht worden met de afzonderlijke AQUO namen in de daarvoor geschikte velden. Hiervoor is het nodig de verschillende "S" velden te koppelen aan AQUO tabellen. De waarden in deze tabellen worden dan gekoppeld met behulp van tabel \@ref(tab:p01s-tabel).
+Voor veel combinaties van AQUO (um-aquo) velden zijn in het verleden P01 parameternamen gezocht. Deze combinaties staan deels in de mappingP01 tabel die onderhouden wordt door AQUO. Daarnaast staan deze combinaties deels in andere lokale bestanden die ad hoc mappings hebben gefaciliteerd (bronnen: RWS, MARIS, Deltares). In dit project hebben we in eerste instantie geprobeerd om AQUO codes te koppelen aan P01 namen. In de huidige versie worden de P01 namen opgesplitst in de semantische onderdelen, en deze onderdelen zullen gematcht worden met de afzonderlijke AQUO namen in de daarvoor geschikte velden. Hiervoor is het nodig de verschillende "S" velden te koppelen aan AQUO tabellen. De waarden in deze tabellen worden dan gekoppeld met behulp van tabel \@ref(tab:p01s-tabel).
 
 De onderstaande S-tabellen blijken nodig voor het vervolg van de automatische mapping.
 
