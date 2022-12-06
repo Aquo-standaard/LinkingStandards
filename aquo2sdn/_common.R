@@ -2,6 +2,14 @@
 options(width = 60)
 
 library(kableExtra) 
+require(tidyverse)
+require(data.table)
+require(stringr)
+# Lees functie in voor download domeintabellen
+source("R/functies.R")
+require(rwsapi)
+require(rlist)
+
 
 # example chunk options set globally
 knitr::opts_chunk$set(
