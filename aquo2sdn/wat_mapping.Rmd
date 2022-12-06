@@ -25,7 +25,7 @@ De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO I
 idsw_aquo_map_PO1 <- GetDomainTable(pDomeintabel <- "Mapping_SDN_P01")
 
 # from local file
-idsw_aquo_map_PO1 <- read_delim("c:/git_checkouts/LinkingStandards/aquo2sdn/data/aquo/Mapping_SDN_P01_2021_12_13.csv", delim = ";")
+idsw_aquo_map_PO1 <- read_delim("data/aquo/Mapping_SDN_P01_2021_12_13.csv", delim = ";")
 
 idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
   replace(is.na(.), "") %>%
