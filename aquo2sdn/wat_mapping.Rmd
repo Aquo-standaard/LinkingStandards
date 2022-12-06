@@ -181,7 +181,7 @@ ddl_p01_joined_p01s %>%
 
 
 ### Grootheden vs S06	Parameter entity names
-In de onderstaande tabel worden de resultaten van de Grootheid vs S06 Parameter entity names weergegeven. Van de Grootheden kunnen 8 Grootheid.Codes automatisch gemapt worden, Dit betekent dat de overige Grootheid.Codes handmatig gemapt moeten worden. Een eerste aanzet is hiervoor gemaakt, te vinden in tabel grootheid_antijoin_edit.
+In de onderstaande tabel worden de resultaten van de Grootheid vs S06 Parameter entity names weergegeven. Van de Grootheden kunnen 8 Grootheid.Codes automatisch gemapt worden, Dit betekent dat de overige Grootheid.Codes handmatig gemapt moeten worden. Een eerste aanzet is hiervoor gemaakt, te vinden in tabel grootheid_antijoin_edit, te vinden via [deze weblink](https://github.com/Aquo-standaard/LinkingStandards/blob/aquo2sdn/aquo2sdn/output/grootheid_antijoin_edit.csv).
 
 
 ```{r}
@@ -195,7 +195,7 @@ ddl_p01_joined_p01s %>%
 ```
 
 ### Hoedanigheid vs BODC
-Omdat de tabel *Hoedanigheid* een combinatie is van monstercriterium en hoedanigheid uit AQUO, is het lastig om hier een automatische mapping over uit te voeren. Deze tabel is gevuld met verschillende combinaties aan begrippen. Er is voor gekozen om als eerste te kijken wat er wel automatisch gemapt kon worden en daarna handmatig te kijken naar de begrippen die niet automatisch gemapt kunnen worden. De eerste resultaten zijn gepresenteerd in de tabel hoedanigheid_antijoin. Hieronder vallen de Specials, gepresenteerd in de onderstaande tabellen. Dit zijn vaak combinaties van Grootheden, Matrices en een relatietabel. Naar dit onderdeel wordt nog in detail gekeken. 
+Omdat de tabel *Hoedanigheid* een combinatie is van monstercriterium en hoedanigheid uit AQUO, is het lastig om hier een automatische mapping over uit te voeren. Deze tabel is gevuld met verschillende combinaties aan begrippen. Er is voor gekozen om als eerste te kijken wat er wel automatisch gemapt kon worden en daarna handmatig te kijken naar de begrippen die niet automatisch gemapt kunnen worden. De eerste resultaten zijn gepresenteerd in de tabel hoedanigheid_antijoin, te vinden via [deze weblink](https://github.com/Aquo-standaard/LinkingStandards/blob/aquo2sdn/aquo2sdn/output/hoedanigheid_antijoin_edit.csv). Hieronder vallen de Specials, gepresenteerd in de onderstaande tabellen. Dit zijn vaak combinaties van Grootheden, Matrices en een relatietabel. Naar dit onderdeel wordt nog in detail gekeken. 
 
 ```{r, include=FALSE}
 ddl_p01_joined_p01s %>% 
