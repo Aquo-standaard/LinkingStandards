@@ -1,15 +1,7 @@
 # AQUO
 
 ```{r setupAquo}
-require(tidyverse)
-require(data.table)
-require(rwsapi)
-require(rlist)
-require(stringr)
 require(aquodom)
-# Lees functie in voor download domeintabellen
-source("c:/git_checkouts/Accessing-MediaWiki-Aquo-Code-Examples/ExampleCodeRStudio/GetDomainTable.R")
-# source_url("https://github.com/Aquo-standaard/Accessing-MediaWiki-Aquo-Code-Examples/blob/main/ExampleCodeRStudio/GetDomainTable.R")
 
 ddlmetadata <- rws_metadata() 
 metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
