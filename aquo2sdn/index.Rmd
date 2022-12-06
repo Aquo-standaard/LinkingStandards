@@ -21,7 +21,7 @@ Uitwisseling van watergerelateerde data met andere landen is belangrijk voor ana
 
 Er zijn binnen SeaDataNet ook technische standaarden ontwikkeld voor het zoeken, vinden en transporteren van metadata en data. Het gangbare formaat voor metadata is de Common Data Index (CDI), en voor data het Ocean Data View (ODV) formaat. 
 
-De nederlandse standaard voor waterdata is [AQUO](https://www.aquo.nl/index.php/Hoofdpagina). Er is op dit moment geen eenduidigen en complete mapping om AQUO-gestandaardiseerde data te transformeren naar SDN-gestandaardiseerde data. De technische standaard voor uitlevering van data variëert. 
+De Nederlandse standaard voor waterdata is [AQUO](https://www.aquo.nl/index.php/Hoofdpagina). Er is op dit moment geen eenduidige en complete mapping om AQUO-gestandaardiseerde data te transformeren naar SDN-gestandaardiseerde data. De technische standaard voor uitlevering van data variëert. 
 
 We beperken ons in dit project tot het mappen van de semantische standaarden.
 

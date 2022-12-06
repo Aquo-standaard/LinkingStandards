@@ -22,11 +22,11 @@ De belangrijkste tabellen voor een goede mapping van in situ waarnemingen zijn:
 
 Grootheid of Typering
 
-:   Beschrijving en code van de grootheid (quantitatief) of typering (kwalitatief). Voor elke grootheid is een of meerdere Eenheden beschikbaar in de Eenheid tabel.
+:   BeschriNving en code van de grootheid (quantitatief) of typering (kwalitatief). Voor elke grootheid zijn een of meerdere Eenheden beschikbaar in de Eenheid tabel.
 
 Parameter
 
-:   Dit is een samengestelde tabel/veld. In AQUO is dit onderverdeeld in Chemische Stof, Taxonnaam, of 
+:   Dit is een samengestelde tabel/veld. In AQUO is dit onderverdeeld in Chemische Stof, Taxonnaam, of: 
 
 Hoedanigheid
 
