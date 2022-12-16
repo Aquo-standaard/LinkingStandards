@@ -1,5 +1,5 @@
 --- 
-title: "AQUO2SDN mapping"
+title: "AQUO2EMODnet mapping"
 author: "Willem Stolte"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -8,9 +8,7 @@ bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::bs4_book,
-  set in the _output.yml file.
+  Dit rapport beschrijft de methodiek, resultaten en daaruitvolgende aanbevelingen die gedaan zijn bij de mapping van relevante AQUO termen naar vocabulaires die bij EMODnet in gebruik zijn. Het gaat daarom uitsluitend om termen die gebruikt worden in mariene monitoring en projecten. 
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---

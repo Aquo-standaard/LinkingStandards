@@ -2,11 +2,11 @@ book_filename: "aquo2sdn"
 rmd_files: [
   "index.Rmd", 
   "aquo.Rmd", 
-  "bodc.Rmd", 
-  "wat_mapping.Rmd", 
+  "bodc.Rmd",
+ "wat_mapping.Rmd",
   "eenheden.Rmd",
   "kwaliteitsoordeel.Rmd",
-  # "Waardebepalingenbewerking.Rmd",
+  "Waardebepalingenbewerking.Rmd",
   "Bemonstering.Rmd",
   "Biologie.Rmd"]
 new_session: true

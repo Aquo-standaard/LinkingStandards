@@ -58,7 +58,7 @@ bemonsteringsapparaat_mapping <- idsw_aquo_bemonsteringsapparaat %>%
     bodc_code
   ) %>% 
   arrange(bodc_code) %>%
-  write_delim("output/ddl2sdn_bemonsteringsapparaat.csv", delim = ";")
+  write_delim("data/mappings/ddl2sdn_bemonsteringsapparaat.csv", delim = ";")
 
 bemonsteringsapparaat_mapping %>% drop_na(bodc_code)
 ```
@@ -100,21 +100,4 @@ De verder in dit hoofdstuk genoemde tabellen worden later ingevuld.
 ## Meetapparaat
 
 ## Kleur
-
-## Statistischeparameter
-
-
-## Waardebepalingsmethode
-
-
-## Waardebepalingstechniek
-
-
-## Waardebewerkingsmethode
-
-## Biologie: Orgaan
-
-
-
-## Biologie: Biologisch Kenmerk
 

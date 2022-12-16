@@ -7,9 +7,9 @@ require(data.table)
 require(stringr)
 # Lees functie in voor download domeintabellen
 source("R/functies.R")
+require(aquodom)
 require(rwsapi)
 require(rlist)
-
 
 # example chunk options set globally
 knitr::opts_chunk$set(
