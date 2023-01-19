@@ -1,0 +1,54 @@
+Eenheid.Code;Eenheid.Omschrijving;altlabel;preflabel;uri
+%;procent;%;Percent;http://vocab.nerc.ac.uk/collection/P06/current/UPCT/
+Bq/kg;becquerel per kilogram;Bq/kg;Becquerels per kilogram;http://vocab.nerc.ac.uk/collection/P06/current/UBQK/
+g;gram;g;Grams;http://vocab.nerc.ac.uk/collection/P06/current/UGRM/
+g/kg;gram per kilogram;g/kg;Grams per kilogram;http://vocab.nerc.ac.uk/collection/P06/current/UGKG/
+mg/g;milligram per gram;mg/g;Milligrams per gram;http://vocab.nerc.ac.uk/collection/P06/current/MGPG/
+mg/kg;milligram per kilogram;mg/kg;Milligrams per kilogram;http://vocab.nerc.ac.uk/collection/P06/current/UMKG/
+mg/m2;milligram per vierkante meter;mg/m^2;Milligrams per square metre;http://vocab.nerc.ac.uk/collection/P06/current/UMMS/
+mm;millimeter;mm;Millimetres;http://vocab.nerc.ac.uk/collection/P06/current/UXMM/
+ug/kg;microgram per kilogram;ug/kg;Micrograms per kilogram;http://vocab.nerc.ac.uk/collection/P06/current/UUKG/
+um;micrometer;um;Micrometres (microns);http://vocab.nerc.ac.uk/collection/P06/current/UMIC/
+hPa;hectopascal;hPa;Hectopascals;http://vocab.nerc.ac.uk/collection/P06/current/HPAX/
+m;meter;m;Metres;http://vocab.nerc.ac.uk/collection/P06/current/ULAA/
+m/s;meter per seconde;m/s;Metres per second;http://vocab.nerc.ac.uk/collection/P06/current/UVAA/
+cm;centimeter;cm;Centimetres;http://vocab.nerc.ac.uk/collection/P06/current/ULCM/
+d;dag;d;Days;http://vocab.nerc.ac.uk/collection/P06/current/UTAA/
+cm2;vierkante centimeter;cm^2;Square centimetres;http://vocab.nerc.ac.uk/collection/P06/current/SQCM/
+dB;decibel;dB;Decibels;http://vocab.nerc.ac.uk/collection/P06/current/UDBL/
+dm;decimeter;dm;Decimetres;http://vocab.nerc.ac.uk/collection/P06/current/ULDM/
+Hz;hertz;Hz;Hertz;http://vocab.nerc.ac.uk/collection/P06/current/UTHZ/
+kg/m3;kilogram per kubieke meter;kg/m^3;Kilograms per cubic metre;http://vocab.nerc.ac.uk/collection/P06/current/UKMC/
+mBq/l;millibecquerel per liter;mBq/l;Millibecquerels per litre;http://vocab.nerc.ac.uk/collection/P06/current/UMBQ/
+mg/l;milligram per liter;mg/l;Milligrams per litre;http://vocab.nerc.ac.uk/collection/P06/current/UMGL/
+min;minuut;min;Minutes;http://vocab.nerc.ac.uk/collection/P06/current/UMIN/
+mS/m;millisiemens per meter;mS/m;MilliSiemens per metre;http://vocab.nerc.ac.uk/collection/P06/current/MSPM/
+m3/s;kubieke meter per seconde;m^3/s;Cubic metres per second;http://vocab.nerc.ac.uk/collection/P06/current/CMPS/
+ng/l;nanogram per liter;ng/l;Nanograms per litre;http://vocab.nerc.ac.uk/collection/P06/current/UNGL/
+NTU;Nephelometric Turbidity Unit;NTU;Nephelometric Turbidity Units;http://vocab.nerc.ac.uk/collection/P06/current/USTU/
+s;seconde;s;Seconds;http://vocab.nerc.ac.uk/collection/P06/current/UTBB/
+S/m;siemens per meter;S/m;Siemens per metre;http://vocab.nerc.ac.uk/collection/P06/current/UECA/
+ug/l;microgram per liter;ug/l;Micrograms per litre;http://vocab.nerc.ac.uk/collection/P06/current/UGPL/
+h;uur;h;Hours;http://vocab.nerc.ac.uk/collection/P06/current/UHOR/
+l;liter;l;Litres;http://vocab.nerc.ac.uk/collection/P06/current/ULIT/
+ng/g;nanogram per gram;ng/g;Nanograms per gram;http://vocab.nerc.ac.uk/collection/P06/current/NGPG/
+ng/kg;nanogram per kilogram;ng/kg;Nanograms per kilogram;http://vocab.nerc.ac.uk/collection/P06/current/NGKG/
+mg;milligram;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+n;exemplaren;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+n/m2;exemplaren per vierkante meter;#/m^2;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+n/l;exemplaren per liter;#/l;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+DIMSLS;dimensieloos;;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+graad;graad;deg;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+oC;graad Celsius;degC;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+/l;per liter;#/l;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+n/hm;exemplaren per hectometer;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+FTU;Formazine Turbidity Unit;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+JTU;Jackson Turbidity Unit;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+meq/l;milliequivalent per liter;mEquiv/l;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+mHz;millihertz;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+m3/d;kubieke meter per dag;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+n/ml;exemplaren per milliliter;#/ml;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+oD;Duitse graad;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+RFU;Relative Fluorescence Units;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+U;Unit;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/
+uE;microeinstein;NA;NA;http://vocab.nerc.ac.uk/collection/P06/current/NA/

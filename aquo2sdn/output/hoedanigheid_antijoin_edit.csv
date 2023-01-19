@@ -1,0 +1,82 @@
+﻿Hoedanigheid.Code;Hoedanigheid.Omschrijving;;Direct match;Nearest;TABLE (weet nog niet zeker waar, maar belangrijk);& relation table (S02 table);;Matrix 
+Dg0016dg;diameter groter dan 16 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dg0063dg;diameter groter dan 63 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dg2000dg;diameter groter dan 2000 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0002dg;diameter kleiner dan 2 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0004dg;diameter kleiner dan 4 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0008dg;diameter kleiner dan 8 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0010dg;diameter kleiner dan 10 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0016dg;diameter kleiner dan 16 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0020dg;diameter kleiner dan 20 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk002000dg;diameter kleiner dan 2000 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0032dg;diameter kleiner dan 32 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0050dg;diameter kleiner dan 50 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0053dg;diameter kleiner dan 53 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Dk0063dg;diameter kleiner dan 63 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+D016-2000dg;diameter tussen 16 en 2000 um / drooggewicht;;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+Cdg;uitgedrukt in koolstof / drooggewicht;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;zoek: with respect to;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+dg;t.o.v. drooggewicht;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;zoek: with respect to;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+NVT;Niet van toepassing;;;;;;;
+adg;asvrij drooggewicht;;http://vocab.nerc.ac.uk/collection/S02/current/S041/;;;;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+LS-AD;Levensstadium-Adult;;;;;;;
+LS-JU;Levensstadium-Juveniel;;;;;;;
+ng;t.o.v. natgewicht;;http://vocab.nerc.ac.uk/collection/S02/current/S055/;;;;;http://vocab.nerc.ac.uk/collection/S02/current/S055/
+Ndg;uitgedrukt in stikstof / drooggewicht;;;http://vocab.nerc.ac.uk/collection/S27/current/CS002807/;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;;http://vocab.nerc.ac.uk/collection/S02/current/S041/
+LS-LA;Levensstadium-Larve;;;;;;;
+LS-PO;Levensstadium-Pop;;;;;;;
+LV-KOL;Levensvorm-Kolonie;;;;;;;
+LS-FL;Levensstadium-Flagellaat;;;;;;;
+LV-CEL;Levensvorm-Cel (los);;;;;;;
+GE-M;Geslacht-Man;;;;;;;
+GE-V;Geslacht-Vrouw;;;;;;;
+LS-EX;Levensstadium-Exuvium;;;;;;;
+LS-NY;Levensstadium-Nimf;;;;;;;
+WARNDN;t.o.v. ware Noorden;;http://vocab.nerc.ac.uk/collection/S06/current/S0600111/;;;;;
+NAP;t.o.v. Normaal Amsterdams Peil;;;http://vocab.nerc.ac.uk/collection/P01/current/ASLVMSRG/;;;;
+MSL;t.o.v. Mean Sea Level;;;http://vocab.nerc.ac.uk/collection/P01/current/ASLVRADR/;;;;
+ngna;Natgewicht / Na verassen;;;;?;;;
+VETGWT;t.o.v. vetgewicht;;;;?;;;http://vocab.nerc.ac.uk/collection/S02/current/S060/
+F003-050;golffrequentie tussen 30 en 500 mHz;;;;?;;;
+F003-100;golffrequentie tussen 30 en 1000 mHz;;;;?;;;
+F003-150;golffrequentie tussen 30 en 1500 mHz;;;;?;;;
+F003-010;golffrequentie tussen 30 en 100 mHz;;;;?;;;
+WATSGL;t.o.v. waterspiegel;;;;?;with respect to;;
+PLAATSLR;t.o.v. plaatselijk referentievlak;;?;?;?;with respect to;;
+TAW;t.o.v. Tweede Algemene Waterpassing;;?;?;?;with respect to;;
+F010-020;golffrequentie tussen 100 en 200 mHz;;?;?;?;;;
+F020-050;golffrequentie tussen 200 en 500 mHz;;?;?;?;;;
+F050-100;golffrequentie tussen 500 en 1000 mHz;;?;?;?;;;
+Gdnf;Uitgedrukt in Gadolinium na filtratie;;?;?;?;;;
+PtCo;uitgedrukt volgens PtCo-schaal;;;;?;;;
+KAARTNDN;t.o.v. kaart Noorden;;;;;;;
+Cl;uitgedrukt in chloor;;;http://vocab.nerc.ac.uk/collection/S27/current/CS003294/;;;;
+Cnf;uitgedrukt in koolstof / opgeloste fractie;;;;;http://vocab.nerc.ac.uk/collection/S26/current/MAT00626/ deze definitie is door een filter gehaald;;
+Cpg;uitgedrukt in koolstof particulair gebonden;;;;;;nog geen definitie gevonden voor particulair gebonden;
+METLN;t.o.v. metalen;;;;;with respect to;;
+N;uitgedrukt in stikstof;;;http://vocab.nerc.ac.uk/collection/S27/current/CS002807/;;;nog geen definitie gevonden voor particulair gebonden;
+nf;opgeloste fractie (bijv. na filtratie);;;;;;;
+Nnf;uitgedrukt in stikstof / opgeloste fractie;;;http://vocab.nerc.ac.uk/collection/S27/current/CS002807/;http://vocab.nerc.ac.uk/collection/S27/current/CS002866/;http://vocab.nerc.ac.uk/collection/S26/current/MAT00633/;;
+Npg;uitgedrukt in stikstof particulair gebonden;;;http://vocab.nerc.ac.uk/collection/S27/current/CS000151/;;;nog geen definitie gevonden voor particulair gebonden;
+P;uitgedrukt in fosfor;;;http://vocab.nerc.ac.uk/collection/S27/current/CS000151/;;;;
+pg;particulair gebonden;;;;;;nog geen definitie gevonden voor particulair gebonden;
+Pnf;uitgedrukt in fosfor / opgeloste fractie;;;http://vocab.nerc.ac.uk/collection/S27/current/CS000151/;;http://vocab.nerc.ac.uk/collection/S26/current/MAT00633/;;
+SALNTT;T.o.v. Saliniteit;;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600085/;with respect to;;
+Sinf;uitgedrukt in silicium / opgeloste fractie;;;http://vocab.nerc.ac.uk/collection/S27/current/CS003151/;;http://vocab.nerc.ac.uk/collection/S26/current/MAT00633/;;
+Sipg;uitgedrukt in silicium particulair gebonden;;;http://vocab.nerc.ac.uk/collection/S27/current/CS003151/;;;nog geen definitie gevonden voor particulair gebonden;
+CaCO3;uitgedrukt in calciumcarbonaat;;;;;;;
+HALVKT;Halve kracht;;;?;;;;
+HALFOPN;Half open;;;?;;;;
+GESTN;Gesloten;;;?;;;;
+hor-vlak;in horizontaal vlak;;;?;;;;
+NOORDCPT;Noordcomponent van de stroomsnelheid (zuid = negatief);;;http://vocab.nerc.ac.uk/collection/S06/current/S0600214/;;need to find the corresponding direction;;
+OOSTCPNT;Oostcomponent van de stroomsnelheid (negatief is west);;;http://vocab.nerc.ac.uk/collection/S06/current/S0600214/;;need to find the corresponding direction;;
+VERTKCPT;Vertikaal component van de stroomrichting (beneden=negatief);;;http://vocab.nerc.ac.uk/collection/S06/current/S0600214/;;need to find the corresponding direction;;
+ver-vlak;in verticaal vlak;;;http://vocab.nerc.ac.uk/collection/S06/current/S0600292/;;need to find the corresponding direction;;
+20oC;t.o.v. 20 graden Celsius;;;;;;;
+25oC;t.o.v. 25 graden Celsius;;;;;;;
+Sn;uitgedrukt in tin;;;http://vocab.nerc.ac.uk/collection/S27/current/CS003004/;;;;
+antpgnnf;antropogeen / opgeloste fractie;;;;;http://vocab.nerc.ac.uk/collection/S26/current/MAT00633/;;
+BLAUWAL;Cyanochlorofyl;;?;?;?;;;
+BrO3;uitgedrukt in bromaat;;;;;;;
+Clnf;uitgedrukt in chloor / opgeloste fractie;;;http://vocab.nerc.ac.uk/collection/S27/current/CS003294/;;http://vocab.nerc.ac.uk/collection/S26/current/MAT00633/;;
+Sndg;uitgedrukt in tin / drooggewicht;;;http://vocab.nerc.ac.uk/collection/S27/current/CS003004/;http://vocab.nerc.ac.uk/collection/S06/current/S0600148/;;;http://vocab.nerc.ac.uk/collection/S02/current/S041/

@@ -1,16 +1,6 @@
-# Mapping van "wat" tabellen
-
-
+# Mapping van AQUO "wat" termen.
 
 ```{r}
-require(tidyverse)
-require(data.table)
-require(rwsapi)
-require(rlist)
-require(stringr)
-# Lees functie in voor download domeintabellen
-source("c:/git_checkouts/Accessing-MediaWiki-Aquo-Code-Examples/ExampleCodeRStudio/GetDomainTable.R")
-# source_url("https://github.com/Aquo-standaard/Accessing-MediaWiki-Aquo-Code-Examples/blob/main/ExampleCodeRStudio/GetDomainTable.R")
 
 ddlmetadata <- rws_metadata() 
 metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
@@ -19,22 +9,24 @@ metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
 KwaliteitswaardecodeLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$KwaliteitswaardecodeLijst)
 ReferentievlakLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$ReferentievlakLijst)
 
-```
+metadatavelden <- names(metadataLijst)[c(3, 7, 9, 11)]
+aantaluniekecombinaties <- metadataLijst %>% distinct(Grootheid.Code, Parameter.Code, Hoedanigheid.Code, Compartiment.Code) %>% nrow()
 
+```
 
 ## Vergelijking DDL metadata en P01 vocabulaire
 
-De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een overzicht [deze weblink](https://rijkswaterstaatdata.nl/waterdata/). Hier staan ook links naar instructies voor benadering van de webservices. Een beknopt overzicht van de DDL kan worden opgevraagd via de metadata service. Hieruit blijkt dat het totale aantal unieke combinaties van de metadatavelden `r names(metadataLijst)[c(3, 7, 9, 11)]` in de DDL is `r metadataLijst %>% distinct(Grootheid.Code, Parameter.Code, Hoedanigheid.Code, Compartiment.Code) %>% nrow()`. 
+De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een overzicht van deze gegevens [deze weblink](https://rijkswaterstaatdata.nl/waterdata/). Hier staan ook links naar instructies voor benadering van de webservices. Een beknopt overzicht van welke soort metingen er in de DDL zitten kan worden opgevraagd via de metadata service. Hieruit blijkt dat het totale aantal unieke combinaties van de metadatavelden `r metadatavelden` in de DDL `r aantaluniekecombinaties` is.
 
-Binnen de aquo domeintabellen is in eerdere projecten de mapping tabel idsw_aquo_map_PO1 gemaakt om sommige elementen van aquo te koppelen aan de seadatanet semantiek. Deze tabel wordt hier als uitgangspunt gebruikt om P01 termen te koppelen aan metadata uit de Data Distributielaag (DDL). Hierna moeten de P01 termen uitgesplitst worden in de verschillende onderliggende componenten om een 1:1 mapping te verkrijgen van de individuele *S*-termen.
+Binnen de aquo domeintabellen is in eerdere projecten de mapping tabel Mapping\_SDN\_P01\_202\_12\_13 gemaakt om sommige elementen van aquo te koppelen aan de seadatanet semantiek. Deze tabel wordt hier als uitgangspunt gebruikt om P01 termen te koppelen aan metadata uit de Data Distributielaag (DDL). Hierna moeten de P01 termen uitgesplitst worden in de verschillende onderliggende componenten om een 1:1 mapping te verkrijgen van de individuele *S*-termen.
 
-De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO IM-metingen, maar wijkt op een aantal punten af. Onder andere doordat het veld Hoedanigheid.code is opgebouwd uit twee verschillende AQUO codes, namelijk Hoedanigheid.code en Monstercriterium.code. Idem voor de omschrijvingen. In de idsw_aquo_map_PO1 zijn deze twee velden niet gecombineerd. Voor een kansrijke automatische mapping worden in idsw_aquo_map_PO1 deze velden aan elkaar geplakt. In idsw_aquo_map_PO1 zijn "lege" velden echt leeg terwijl deze in de DDL metadata gevuld zijn met "NVT". Dus, vóórdat de P01 koppeltabel gekoppeld kan worden aan de AQUO catalogustabel worden Hoedanigheid.code en Monstercriterium.code gecombineerd in één veld en alle lege plekken gevuld met "NVT". 
+De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO IM-metingen, maar wijkt op een aantal punten af. Onder andere doordat het veld Hoedanigheid.code is opgebouwd uit twee verschillende AQUO codes, namelijk Hoedanigheid.code en Monstercriterium.code. Idem voor de omschrijvingen. In de Mapping\_SDN\_P01\_2021\_12\_13 zijn deze twee velden niet gecombineerd. Voor een kansrijke automatische mapping worden in Mapping\_SDN\_P01\_2021\_12\_13 deze velden aan elkaar geplakt. In Mapping\_SDN\_P01\_2021\_12\_13 zijn "lege" velden echt leeg terwijl deze in de DDL metadata gevuld zijn met "NVT". Dus, vóórdat de P01 koppeltabel gekoppeld kan worden aan de AQUO catalogustabel worden Hoedanigheid.code en Monstercriterium.code gecombineerd in één veld en alle lege plekken gevuld met "NVT".
 
-```{r bestaandeMapping, message=FALSE, warning=FALSE}
+```{r , message=FALSE, warning=FALSE}
 idsw_aquo_map_PO1 <- GetDomainTable(pDomeintabel <- "Mapping_SDN_P01")
 
 # from local file
-idsw_aquo_map_PO1 <- read_delim("c:/git_checkouts/LinkingStandards/aquo2sdn/data/aquo/Mapping_SDN_P01_2021_12_13.csv", delim = ";")
+idsw_aquo_map_PO1 <- read_delim("data/aquo/Mapping_SDN_P01_2021_12_13.csv", delim = ";")
 
 idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
   replace(is.na(.), "") %>%
@@ -42,19 +34,14 @@ idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
   replace((. == ''), "NVT") %>%
   select(-ID, -`D_BEGIN`, -`D_EIND`)
 
-
-# idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
-#   replace(is.na(.), "") %>%
-#   unite('Aquo_Monstercriterium_Hoedanigheid_code', c(`Aquo Monstercriterium code`, `Aquo Hoedanigheid code`), sep = "") %>%
-#   replace((. == ''), "NVT") %>%
-#   select(-Id, -`Begin geldigheid`, -`Eind geldigheid`, -Gerelateerd, -Wijzigingsnummer, -Guid)
-
 ```
 
-De metadata uit de DDL worden hierna gecombineerd met de mapping_P01 tabel op de velden:
+De metadata uit de DDL worden hierna gecombineerd met de mapping\_P01 tabel op de velden:
+
+(ref:bestaandeMappingLabel) Veldnamen die gecombineerd worden om de ddl_metadata te koppelen aan de gemodificeerde mapping\_P01 tabel. Hierbij zijn de velden monstercriterium en hoedanigheid gecombineerd in een veld Aquo_Monstercriterium\_Hoedanighed\_code
 
 
-```{r, include = F}
+```{r bestaandeMapping}
 table = c(
   Grootheid.Code = 'Aquo_Grootheid_code',
   Parameter.Code = 'Aquo_ChemischeStof_code',
@@ -62,21 +49,20 @@ table = c(
   Compartiment.Code = 'Aquo_Compartiment_code',
   # Aquo_Monstercriterium_code
   Hoedanigheid.Code = 'Aquo_Monstercriterium_Hoedanigheid_code')
-kableExtra::kbl(tibble("ddl_metadata" = names(table), "mapping_P01" = table), caption = "Veldnamen die gecombineerd worden om de ddl_metadata te koppelen aan de gemodificeerde mapping_P01 tabel. Hierbij zijn de velden monstercriterium en hoedanigheid gecombineerd in een veld Aquo_Monstercriterium_Hoedanighed_code")
+
+kableExtra::kbl(tibble("ddl_metadata" = names(table), "mapping_P01" = table), caption = "(ref:bestaandeMappingLabel)")
+
 ```
 
-
-waarin *Aquo_Monstercriterium_Hoedanigheid_code* de combinatie is van monstercriterium en hoedanigheid. 
-
-
+waarin *Aquo\_Monstercriterium\_Hoedanigheid\_code* de combinatie is van monstercriterium en hoedanigheid.
 
 ```{r}
 
 # join new metadata from ddl with mapping table from aquo
 
-ddl_p01_joined <- metadataLijst %>% 
+ddl_p01_joined <- metadataLijst %>%
   left_join(
-    idsw_aquo_map_PO1 %>% select(-`Aquo_biotaxon_code`), 
+    idsw_aquo_map_PO1 %>% select(-`Aquo_biotaxon_code`),
     by = c(
       Grootheid.Code = 'Aquo_Grootheid_code',
       Parameter.Code = 'Aquo_ChemischeStof_code',
@@ -88,15 +74,14 @@ ddl_p01_joined <- metadataLijst %>%
   )
 
 ```
-
 
 ```{r antijoin}
 
 # join new metadata from ddl with mapping table from aquo
 
-ddl_p01_antijoined <- metadataLijst %>% 
+ddl_p01_antijoined <- metadataLijst %>%
   anti_join(
-    idsw_aquo_map_PO1 %>% select(-`Aquo_biotaxon_code`), 
+    idsw_aquo_map_PO1 %>% select(-`Aquo_biotaxon_code`),
     by = c(
       Grootheid.Code = 'Aquo_Grootheid_code',
       Parameter.Code = 'Aquo_ChemischeStof_code',
@@ -107,15 +92,16 @@ ddl_p01_antijoined <- metadataLijst %>%
     )
   )
 
-ddl_p01_antijoined %>% distinct(Grootheid.Code) %>% write_delim(file = "data/2map/grootheid_antijoin.csv", delim = ";")
-ddl_p01_antijoined %>% distinct(Parameter.Code) %>% write_delim("data/2map/parameter_antijoin.csv", delim = ";")
-ddl_p01_antijoined %>% distinct(Compartiment.Code) %>% write_delim("data/2map/compartiment_antijoin.csv", delim = ";")
-ddl_p01_antijoined %>% distinct(Hoedanigheid.Code) %>% write_delim("data/2map/hoedanigheid_antijoin.csv", delim = ";")
+ddl_p01_antijoined %>% distinct(Grootheid.Code, Grootheid.Omschrijving) %>% write_delim(file = "data/2map/grootheid_antijoin.csv", delim = ";")
+ddl_p01_antijoined %>% distinct(Parameter.Code, Parameter.Omschrijving) %>% write_delim("data/2map/parameter_antijoin.csv", delim = ";")
+ddl_p01_antijoined %>% distinct(Compartiment.Code, Compartiment.Omschrijving) %>% write_delim("data/2map/compartiment_antijoin.csv", delim = ";")
+ddl_p01_antijoined %>% distinct(Hoedanigheid.Code, Hoedanigheid.Omschrijving) %>% write_delim("data/2map/hoedanigheid_antijoin.csv", delim = ";")
+
+mappingDim <- dim(ddl_p01_joined)[1]
 
 ```
 
-
-De uiteindelijke mapping geeft als resultaat een tabel met `r dim(ddl_p01_joined)[1]  ` regels. 
+De uiteindelijke automatische mapping geeft als resultaat een tabel met `r mappingDim` regels. Dit betekent dat deze metadata uit de DDL al gekoppeld kan worden met de mapping_P01 tabel die eerder gemaakt is. Daarna wordt gekeken naar welke metadata nog niet automatisch gekoppeld kan worden. Dit wordt gedaan door apart naar de verschillende velden, `r metadatavelden` te zoeken. Handmatig wordt er gezocht naar de juiste match voor de ontbrekende metadata velden.
 
 ```{r, eval=F}
 ddl_p01_joined %>%
@@ -123,18 +109,10 @@ ddl_p01_joined %>%
   kableExtra::kbl()
 ```
 
-
 ## Uitsplitsing in onderdelen van P01
 
-```{r}
-read.csv2("data//bodc/s-tabellen.csv") %>%
-  select(Library, Alt.Title, Title) %>%
-  kableExtra::kbl(caption = 'BODC "S-tabellen" die onderdelen bevatten van de P01 parameter tabel.') %>%
-  # kableExtra::column_spec(3, width = "15em") %>%
-  kableExtra::kable_styling(font_size = 10, full_width = T)
 
-```
-
+De uitsplitsing van P01 termen naar de verschillende onderdelen is te vinden in tabel \@ref(tab:s-tabellen). 
 
 
 ```{r koppeling-aquo-sdn-s}
@@ -143,107 +121,110 @@ p01s <- data.table::fread("data//bodc/p01s.csv")
 
 ddl_p01_joined_p01s <- ddl_p01_joined %>% left_join(p01s, by = c(`SDN_P01_code`= "P01_conceptid"))
 
+nrow1 <- ddl_p01_joined_p01s %>% distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>% filter(Parameter.Code != "NVT") %>% filter(!is.na(s27_conceptid)) %>% nrow()
+
+nrow2 <- ddl_p01_joined_p01s %>% distinct(Parameter.Code) %>% nrow()
+
 ```
 
-### parameter vs BODC substances
+### Parameter vs BODC substances
 
-!!! Een eenduidige mapping kan onafhankelijk van eerdere mappings worden gemaakt door het vergelijken van CAS nummers, deze staan in p01s tabel, maar het staat verborgen in de P01 beschrijving. Een betere manier is waarschijnlijk om de S27 termen te relateren aan CAS nummers door deze op te halen via https://www.w3.org/2002/07/owl#sameAs , bijvoorbeeld:
+Een eenduidige mapping kan onafhankelijk van eerdere mappings worden gemaakt, namelijk de mapping voor chemische stof. Deze mapping kan worden uitgevoerd doormiddel van het vergelijken van CAS nummers. De CAS-nummers staan in Mapping\_P01 tabel, maar het staat verborgen in de P01 beschrijving.
 
-S27 http://vocab.nerc.ac.uk/collection/S27/current/CS026903/ 
-https://www.w3.org/2002/07/owl#sameAs
-https://chem.nlm.nih.gov/chemidplus/rn/17181-37-2
+Vanuit de gekoppelde tabel wordt een mapping geëxtraheerd door de unieke combinaties van relevante AQUO (parameter.code, parameter.omschrijving) en SDN (S27\_preflabel, S27\_altlabel, s27\_conceptid) velden te combineren. Deze lijst dient nog handmatig gecontroleerd te worden. Met deze methode kunnen `r nrow1` van de `r nrow2` (totaal aantal unieke parameter.code waarden) gecombineerd worden met een S27 term.
 
-zo is voor Silicate een van de bijbehorende links "same as" naar https://chem.nlm.nih.gov/chemidplus/rn/17181-37-2. Hierin staat een CAS nummer. Door deze te relateren kan een verbinding worden gemaakt met de technische tabel "chemische stof". 
-
-
-
-
-
-
-Vanuit de gekoppelde tabel wordt een mapping geëxtraheerd door de unieke combinaties van relevante AQUO (parameter.code, parameter.omschrijving) en SDN (S27_preflabel, S27_altlabel, s27_conceptid) velden te combineren. Deze lijst dient nog handmatig gecontroleerd te worden. Met deze methode kunnen `r ddl_p01_joined_p01s %>% distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>% filter(Parameter.Code != "NVT") %>% filter(!is.na(s27_conceptid)) %>% nrow()` van de `r ddl_p01_joined_p01s %>% distinct(Parameter.Code) %>% nrow()` (totaal aantal unieke parameter.code waarden) gecombineerd worden met een S27 term.
+Een mogelijk betere manier is om de S27 termen te relateren aan CAS nummers door deze op te halen via sematische web methodes (RDF triple stores). Deze methode wordt momenteel nog onderzocht.
 
 ```{r}
 
-ddl_p01_joined_p01s %>% 
+ddl_p01_joined_p01s %>%
   distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>%
-  filter(Parameter.Code != "NVT") %>% 
+  filter(Parameter.Code != "NVT") %>%
   filter(!is.na(s27_conceptid)) %>%
-  write_delim("data/mappings/ddl_p01_joined_parameter.csv") %>%
-  kableExtra::kbl()
+  write_delim("data/mappings/ddl_p01_joined_parameter.csv")
+
+chem <- read_delim("data/mappings/ddl_p01_joined_parameter.csv")
+kableExtra::kbl((sample_n(chem,10)), caption = "Voorbeeld van 10 elementen uit de mapping AQUO en S27.") %>%
+kable_styling(latex_options = "scale_down")
 ```
 
+### Compartimenten vs S26 BODC matrices
 
-
-
-### Compartimenten vs S26	BODC matrices
+Het begrip compartimenten in AQUO is gelijk aan het begrip Matrices in BODC. In de onderstaande tabel worden de resultaten van een eerste automatische mapping gepresenteerd. De volgende stap is het handmatig vergelijken van de ontbrekende metadatabegrippen met de BODC begrippen.
 
 ```{r}
 
 idsw_aquo_compartimenten <- GetDomainTable(pDomeintabel <- "Compartiment")
 
 
-ddl_p01_joined_p01s %>% 
+ddl_p01_joined_p01s %>%
   distinct(Compartiment.Code, Compartiment.Omschrijving, Hoedanigheid.Code, S26_preflabel, S26_conceptid) %>%
-  filter(Compartiment.Code != "NVT") %>% 
+  filter(Compartiment.Code != "NVT") %>%
   filter(!is.na(S26_conceptid)) %>%
   write_delim("data/mappings/ddl_p01_joined_compartimenten.csv") %>%
-  kableExtra::kbl()
+  kableExtra::kbl(caption = "De automatische gemapte Compartimenten en S26 BODC matrices.") %>%
+kable_styling(latex_options = "scale_down")
 ```
 
+### Grootheden vs S06 Parameter entity names
 
-### Grootheden vs S06	Parameter entity names
-
-
+In de onderstaande tabel worden de resultaten van de Grootheid vs S06 Parameter entity names weergegeven. Van de Grootheden kunnen 8 Grootheid.Codes automatisch gemapt worden, Dit betekent dat de overige Grootheid.Codes handmatig gemapt moeten worden. Een eerste aanzet is hiervoor gemaakt, te vinden in tabel grootheid\_antijoin\_edit, te vinden via [deze weblink](https://github.com/Aquo-standaard/LinkingStandards/blob/aquo2sdn/aquo2sdn/output/grootheid_antijoin_edit.csv).
 
 ```{r}
 
-ddl_p01_joined_p01s %>% 
+ddl_p01_joined_p01s %>%
   distinct(Grootheid.Code, Grootheid.Omschrijving, Hoedanigheid.Code, S06_preflabel, S06_conceptid) %>%
-  filter(Grootheid.Code != "NVT") %>% 
+  filter(Grootheid.Code != "NVT") %>%
   filter(!is.na(S06_conceptid)) %>%
   write_delim("data/mappings/ddl_p01_joined_grootheden.csv") %>%
+  kableExtra::kbl(caption = "De automatisch gemapte Grootheden en S06 Parameter entity names.") %>%
+kable_styling(latex_options = "scale_down")
+```
+
+### Hoedanigheid vs BODC
+
+Omdat de tabel *Hoedanigheid* een combinatie is van monstercriterium en hoedanigheid uit AQUO, is het lastig om hier een automatische mapping over uit te voeren. Deze tabel is gevuld met verschillende combinaties aan begrippen. Er is voor gekozen om als eerste te kijken wat er wel automatisch gemapt kon worden en daarna handmatig te kijken naar de begrippen die niet automatisch gemapt kunnen worden. De eerste resultaten zijn gepresenteerd in de tabel hoedanigheid_antijoin, te vinden via [deze weblink](https://github.com/Aquo-standaard/LinkingStandards/blob/aquo2sdn/aquo2sdn/output/hoedanigheid_antijoin_edit.csv). Hieronder vallen een paar speciale gevallen, gepresenteerd in de onderstaande tabellen. Dit zijn vaak combinaties van Grootheden, Matrices en een relatietabel. Naar dit onderdeel wordt nog in detail gekeken.
+
+```{r, include=FALSE}
+ddl_p01_joined_p01s %>%
+  distinct(Hoedanigheid.Code, Hoedanigheid.Omschrijving, S06_preflabel, S06_conceptid, S26_preflabel, S26_conceptid) %>%
   kableExtra::kbl()
 ```
 
 
+### Extra termen: Korrelgrootte van deeltjes in water
 
-### Specials - Grain size
+(ref:P01grainsizeWater-label) Special S06\_preflabel is grain-size in water, onderdeel van de Hoedanigheden tabel.
 
-**in water**
-
-```{r}
-p01s %>% 
+```{r P01grainsizeWater}
+p01s %>%
   filter(S06_preflabel == "Grain-size") %>%
   filter(grepl("water body", S26_preflabel)) %>%
-  kableExtra::kbl()
+  select(P01_conceptid, P01_preflabel, ) %>%
+  kableExtra::kbl(caption = "(ref:P01grainsizeWater-label)") %>%
+kable_styling(latex_options = "scale_down")
 ```
 
+### Extra termen: Korrelgrootte van deeltjes in sediment
 
+(ref:GrainSizeSediment-label) 10 voorbeelden van de special S06\_preflabel, grain-size in sediment, onderdeel van de Hoedanigheden tabel.
 
-
-**in sediment**
-
-```{r}
-p01s %>% 
+```{r GrainSizeSediment}
+p01s %>%
   filter(S06_preflabel == "Grain-size") %>%
   filter(grepl("sediment", S26_preflabel)) %>%
-  kableExtra::kbl()
+  select(P01_conceptid, P01_preflabel, ) -> x
+
+kableExtra::kbl((sample_n(x,10)), caption = "(ref:GrainSizeSediment-label)") %>%
+kable_styling(latex_options = "scale_down")
 ```
 
+### Extra termen - Taxonomische namen
 
-
-### Specials - Taxonomical names
+De taxonomische namen voor Nederlandse soorten wordt beheerd op https://taxainfo.nl/. Deze namen kunnen in principe gemapt worden naar WoRMS, de internationaal gangbare standaard die o.a. gebruikt wordt in EMODnet. Hoewel een goede mapping van belang is, valt dit buiten het doel van dit project. 
 
 ```{r}
-p01s %>% 
-  head(100) %>%
-  distinct(S25_preflabel) %>%
-  kableExtra::kbl()
+p01s %>%
+  distinct(S25_preflabel)-> x
+  kableExtra::kbl((sample_n(x,10)), caption = "10 voorbeelden van de special Taxonomische namen.")
 ```
-
-
-
-
-
-
-

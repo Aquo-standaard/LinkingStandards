@@ -1,14 +1,14 @@
-book_filename: "aquo2sdn"
+book_filename: "aquo2emodnet"
 rmd_files: [
   "index.Rmd", 
-  "aquo.Rmd", 
-  "bodc.Rmd", 
-  "wat_mapping.Rmd", 
+  "werkwijze.Rmd",
+  "aquo.Rmd",
+ "wat_mapping.Rmd",
   "eenheden.Rmd",
   "kwaliteitsoordeel.Rmd",
-  # "Waardebepalingenbewerking.Rmd",
-  "Bemonstering.Rmd",
-  "Biologie.Rmd"]
+  "Waardebepalingenbewerking.Rmd",
+ "Bemonstering.Rmd"]
+ # "Biologie.Rmd"]
 new_session: true
 before_chapter_script: _common.R
 delete_merged_file: true

@@ -2,11 +2,13 @@ bookdown::bs4_book:
   css: style.css
   theme:
     primary: "#096B72"
-  repo: https://github.com/Aquo-standaard/LinkingStandards/tree/aquo2sdn
+  repo: https://github.com/Aquo-standaard/LinkingStandards
 bookdown::pdf_book:
-  pandoc_args: --top-level-division=chapter
+  # pandoc_args: --top-level-division=chapter
+  keep_tex: true
+  includes:
+    in_header: preamble.tex
   template: deltares-report-template.tex
   latex_engine: pdflatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+  # citation_package: natbib # niet in combinatie met Deltares-template
+
