@@ -1,0 +1,13 @@
+Library;Title;Alt Title;Version;Members;Modified
+S02;BODC parameter semantic model relationships between what theme and where theme;Where/what relationships;18;58;5/18/2022 4:00
+S03;BODC parameter semantic model sample preparation entity descriptions;Sample preparation;76;290;5/14/2022 4:00
+S04;BODC parameter semantic model analytical method entity descriptions;Analytical method;137;562;4/28/2022 4:00
+S05;BODC parameter semantic model data processing entity descriptions;Data processing;55;242;4/28/2022 4:00
+S06;BODC parameter semantic model parameter entity names;Parameter entity names;118;273;5/24/2022 4:00
+S07;BODC parameter semantic model parameter statistic;Parameter statistic;14;49;4/28/2022 4:00
+S11;BODC parameter semantic model biological entity development stage terms;Biological entity life stage terms;30;97;4/28/2022 4:00
+S21;BODC parameter semantic model sphere names;Sphere names;12;22;2/6/2015 2:00
+S23;BODC semantic model sphere phase names;Sphere phase names;7;15;11/1/2019 2:00
+S25;BODC parameter semantic model biological entity names;Biological entity names;150;8510;5/24/2022 4:00
+S26;BODC parameter semantic model matrices;BODC matrices;35;207;3/30/2022 4:00
+S27;BODC parameter semantic model chemical substances;BODC substances;147;1962;4/7/2022 4:00

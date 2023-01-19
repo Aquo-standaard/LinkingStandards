@@ -1,0 +1,46 @@
+## BODC semantic standard
+
+```{r}
+require(tidyverse)
+require(data.table)
+```
+
+Mariene gegevens die via EMODnet gedistribueerd worden maken veelal gebruik van dezelfde semantische standaard. Deze wordt beheerd door de Britisch Oceanographic Data Centre ([BODC](https://www.bodc.ac.uk/)), die in 1969 is ingesteld door de Natural Environmental Research Council ([NERC](https://www.ukri.org/councils/nerc/)). Bij de oprichting van [SeaDataNet](https://www.seadatanet.org/), een infrastructuur voor het zoeken, vinden en distribueren van in situ data en de backbone van EMODnet chemistry, physics en bathymetry, zijn deze vocabulaires geadopteerd als "[common vocabularies](https://www.seadatanet.org/Standards/Common-Vocabularies)" voor gebruik als semantische standaard. SeaDataNet houdt daarnaast catalogi bij van [metadataformats](https://www.seadatanet.org/Standards/Metadata-formats) voor bijv cruise rapporten ([CSR](https://www.seadatanet.org/Standards/Metadata-formats/CSR)), projecten ([EDMERP](https://www.seadatanet.org/Standards/Metadata-formats/EDMERP)), datasets ([EDMED](https://www.seadatanet.org/Standards/Metadata-formats/EDMED)) en platforms ([EDIOS](https://www.seadatanet.org/Standards/Metadata-formats/EDIOS)). 
+
+Voor de beschrijving van parameter namen is indertijd de P01 vocabulaire opgezet. Dit is een verzameling van beschrijvende namen die de grootheid, parameter, eventuele details in de bemonstering en/of meetmethode en de matrix vastlegt. De tabel is "organisch" gegroeid doordat veel verschillende Europese databeheerders hieraan hun eigen specifieke waarde aan toevoegden. Later is de P01 tabel onderverdeeld in de verschillende onderdelen ("S-tabellen"). De relatie hiertussen is vastgelegd in de "one-armed bandit" tabel. Merk op dat door het combineren van de verschillende S-tabelwaarden in principe nieuwe P01 namen gemaakt kunnen worden. Een mapping op het niveau van de "S"-componenten kan daarom leiden tot niet-bestaande P01 namen. 
+
+## De "wat" beschrijving - koppeling P01 met S tabellen
+
+Hieronder volgt een voorbeeld van de "wat"-beschrijving, de koppeling van P01 met een aantal verschillende S-tabellen. De relatie tussen de primaire parameternamen (P01) en de afzonderlijke componenten voor bestaande P01 namen kan interactief doorzocht worden via [deze link](https://vocab.seadatanet.org/p01-facet-search?&step_more=6). 
+
+```{r p01s-tabel, eval=F}
+# p01s <- data.table::fread("https://vocab.seadatanet.org/bandit/browse_step_export.php?&export_type=decomposed&step=")
+# data.table::fwrite(p01s, "data/bodc/p01s.csv")
+
+p01s <- data.table::fread("data/bodc/p01s.csv")
+
+if(knitr::is_html_output()){
+kableExtra::kbl(sample_n(p01s, 10), caption = "Voorbeeld 10 elementen uit de tabel [P01 VOCABULARY - FACET SEARCH ON SEMANTIC COMPONENTS]. ")
+} else {
+    knitr::kable(sample_n(p01s, 10), format = "latex", booktabs = TRUE) %>%
+          kable_styling(latex_options = "scale_down")
+}
+
+```
+
+
+## Gebruik van de koppelingstabel
+
+Voor veel combinaties van AQUO (um-aquo) velden zijn in het verleden P01 parameternamen gezocht. Deze combinaties staan deels in de mappingP01 tabel die onderhouden wordt door AQUO. Daarnaast staan deze combinaties in andere lokale bestanden die ad hoc mappings hebben gefaciliteerd (bronnen: RWS, MARIS, Deltares). In dit project hebben we in eerste instantie geprobeerd om AQUO codes te koppelen aan P01 namen. 
+In dit project worden de P01 namen opgesplitst in de semantische onderdelen (S-tabellen), en deze onderdelen zullen gematcht worden met de afzonderlijke AQUO elementen in de daarvoor geschikte tabellen Hiervoor is het nodig de verschillende "S" tabellen te koppelen aan AQUO tabellen. De waarden in deze tabellen worden dan gekoppeld met behulp van tabel \@ref(tab:p01s-tabel).
+
+De onderstaande S-tabellen zijn nodig voor een volledige mapping van AQUO termen uit de Data Distributielaag.
+
+```{r s-tabellen}
+read.csv2("data/bodc/s-tabellen.csv") %>%
+  select(Library, Title, Alt.Title) %>%
+  kableExtra::kbl(caption = "Beschrijving van tabellen met semantische componenten voor de P01 beschrijvende parameters. Deze versie is op 25 mei 2022 van de [seadata website](https://vocab.seadatanet.org/search) opgehaaald. ") %>%
+  kable_styling(latex_options = "scale_down")
+```
+
+

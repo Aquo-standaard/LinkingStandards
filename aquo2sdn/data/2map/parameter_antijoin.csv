@@ -1,0 +1,802 @@
+Parameter.Code;Parameter.Omschrijving
+NVT;Waarde is niet van toepassing
+Corg;koolstof organisch
+CaCO3;calciumcarbonaat
+GV;Gloeiverlies
+HUMS;Humus
+OSTOF;Organisch stof
+sNMDSED;Som niet minerale delen sediment (kalk, humus e.d.)
+DS;Droge stof
+Ag110m;zilver 110m (metastabiel)
+Am241;americium 241
+Be7;beryllium 7
+Bi214;bismuth 214
+Co58;kobalt 58
+Co60;kobalt 60
+Cs134;cesium 134
+Cs137;cesium 137
+In111;indium 111
+I131;jodium 131
+K40;kalium 40
+Lu177;lutetium 177
+Mn54;mangaan 54
+Pb210;lood 210
+Ru103;ruthenium 103
+Ru106;ruthenium 106
+Tl201;thallium 201
+Tl208;thallium 208
+TOTAFA;Totaal Alfa
+TOTBTA;Totaal Beta
+Zn65;zink 65
+Ca;calcium
+Fe;ijzer
+Ptot;fosfor totaal
+AcNe;acenafteen
+AcNy;acenaftyleen
+Ag;zilver
+Al;aluminium
+Ant;antraceen
+As;arseen
+Ba;barium
+BaA;benzo(a)antraceen
+BaP;benzo(a)pyreen
+BbF;benzo(b)fluorantheen
+Be;beryllium
+BeP;benzo(e)pyreen
+BghiPe;benzo(ghi)peryleen
+Bi;bismut
+BkF;benzo(k)fluorantheen
+Cd;cadmium
+Ce;cerium
+Chr;chryseen
+Co;kobalt
+Cr;chroom
+Cs;cesium
+Cu;koper
+DBahAnt;dibenzo(a,h)antraceen
+Dy;Dysprosium
+Er;erbium
+Eu;europium
+Fen;fenantreen
+Fle;fluoreen
+Flu;fluorantheen
+Ga;gallium
+Gd;gadolinium
+Ge;germanium
+Hg;kwik
+Ho;holmium
+InP;indeno(1,2,3-cd)pyreen
+K;kalium
+La;lanthaan
+Li;lithium
+Lu;lutetium
+Mg;magnesium
+minrlole;minerale olie
+Mn;mangaan
+Mo;molybdeen
+Na;natrium
+Naf;naftaleen
+Nb;niobium
+Nd;neodymium
+Ni;nikkel
+Pb;lood
+Pr;praseodymium
+Pyr;pyreen
+Rb;rubidium
+Sb;antimoon
+Sc;scandium
+Se;seleen
+Sm;samarium
+Sn;tin
+sPAK6;som 6 polycyclische aromatische koolwaterstoffen (Borneff)
+Sr;strontium
+Stot;zwavel totaal
+s23x6T4ClFol;som 2,3,4,6- en 2,3,5,6-tetrachloorfenol
+s2425DClFol;som 2,4- en 2,5-dichloorfenol
+Tb;terbium
+Te;tellurium
+Th;thorium
+Ti;titaan
+Tl;thallium
+Tm;thulium
+U;uranium
+V;vanadium
+W;wolfraam
+Y;yttrium
+Yb;ytterbium
+Zn;zink
+Zr;zirkonium
+2ClFol;2-chloorfenol
+23DClFol;2,3-dichloorfenol
+234TClFol;2,3,4-trichloorfenol
+2345T4ClFol;2,3,4,5-tetrachloorfenol
+235TClFol;2,3,5-trichloorfenol
+236TClFol;2,3,6-trichloorfenol
+245TClFol;2,4,5-trichloorfenol
+246TClFol;2,4,6-trichloorfenol
+26DClFol;2,6-dichloorfenol
+3ClFol;3-chloorfenol
+34DClFol;3,4-dichloorfenol
+345TClFol;3,4,5-trichloorfenol
+35DClFol;3,5-dichloorfenol
+4ClFol;4-chloorfenol
+NKj;stikstof Kjeldahl
+aedsfn;alfa-endosulfan
+aHCH;alfa-hexachloorcyclohexaan
+aldn;aldrin
+bedsfn;beta-endosulfan
+bHCH;beta-hexachloorcyclohexaan
+cHCH;gamma-hexachloorcyclohexaan (lindaan)
+cHpClepO;cis-heptachloorepoxide
+DC4ySn;dibutyltin (kation)
+DFySn;difenyltin (kation)
+dHCH;delta-hexachloorcyclohexaan
+dieldn;dieldrin
+endn;endrin
+HCB;hexachloorbenzeen
+HpCl;heptachloor
+HxClbtDen;hexachloorbutadieen
+HxClC2a;hexachloorethaan
+idn;isodrin
+MC4ySn;monobutyltin (kation)
+MFySn;monofenyltin (kation)
+PBDE100;2,2',4,4',6-pentabroomdifenylether
+PBDE138;2,2',3,4,4',5'-hexabroomdifenylether
+PBDE153;2,2',4,4',5,5'-hexabroomdifenylether
+PBDE154;2,2',4,4',5,6'-hexabroomdifenylether
+PBDE183;2,2',3,4,4',5',6-heptabroomdifenylether
+PBDE209;2,2',3,3',4,4',5,5',6,6'-decabroomdiphenylether
+PBDE28;2,4,4'-tribroomdifenylether
+PBDE47;2,2',4,4'-tetrabroomdifenylether
+PBDE49;2,2',4,5'-tetrabroomdifenylether
+PBDE66;2,3',4,4'-tetrabroomdifenylether
+PBDE71;2,3',4',6-tetrabroomdifenylether
+PBDE75;2,4,4',6-tetrabroomdifenylether
+PBDE85;2,2',3,4,4'-pentabroomdifenylether
+PBDE99;2,2',4,4',5-pentabroomdifenylether
+PCB101;2,2',4,5,5'-pentachloorbifenyl
+PCB105;2,3,3',4,4'-pentachloorbifenyl
+PCB118;2,3',4,4',5-pentachloorbifenyl
+PCB138;2,2',3,4,4',5'-hexachloorbifenyl
+PCB153;2,2',4,4',5,5'-hexachloorbifenyl
+PCB170;2,2',3,3',4,4',5-heptachloorbifenyl
+PCB18;2,2',5-trichloorbifenyl
+PCB180;2,2',3,4,4',5,5'-heptachloorbifenyl
+PCB185;2,2',3,4,5,5',6-heptachloorbifenyl
+PCB187;2,2',3,4',5,5',6-heptachloorbifenyl
+PCB28;2,4,4'-trichloorbifenyl
+PCB31;2,4',5-trichloorbifenyl
+PCB44;2,2',3,5'-tetrachloorbifenyl
+PCB49;2,2',4,5'-tetrachloorbifenyl
+PCB52;2,2',5,5'-tetrachloorbifenyl
+PeClBen;pentachloorbenzeen
+PeClFol;pentachloorfenol
+sDClNO2Ben4;som 2,3-, 2,4-, 2,5- en 3,4-dichloornitrobenzeen
+sT4ClBen;som tetrachloorbenzeen-isomeren
+s1Cl24NO2Ben;som 1-chloor-2- en 4-nitrobenzeen
+s1214DClBen;som 1,2- en 1,4-dichloorbenzeen
+TClBen;trichloorbenzeen
+TC4ySn;tributyltin (kation)
+teldn;telodrin
+TFySn;trifenyltin (kation)
+tHpClepO;trans-heptachloorepoxide
+1Cl2NO2Ben;1-chloor-2-nitrobenzeen
+1Cl3NO2Ben;1-chloor-3-nitrobenzeen
+1Cl4NO2Ben;1-chloor-4-nitrobenzeen
+12DClBen;1,2-dichloorbenzeen
+123TClBen;1,2,3-trichloorbenzeen
+1234T4ClBen;1,2,3,4-tetrachloorbenzeen
+1235T4ClBen;1,2,3,5-tetrachloorbenzeen
+124TClBen;1,2,4-trichloorbenzeen
+1245T4ClBen;1,2,4,5-tetrachloorbenzeen
+13DClBen;1,3-dichloorbenzeen
+135TClBen;1,3,5-trichloorbenzeen
+14DClBen;1,4-dichloorbenzeen
+23DClNO2Ben;2,3-dichloornitrobenzeen
+24DClNO2Ben;2,4-dichloornitrobenzeen
+24DDD;2,4'-dichloordifenyldichloorethaan
+24DDE;2,4'-dichloordifenyldichlooretheen
+24DDT;2,4'-dichloordifenyltrichloorethaan
+25DClNO2Ben;2,5-dichloornitrobenzeen
+34DClNO2Ben;3,4-dichloornitrobenzeen
+44DDD;4,4'-dichloordifenyldichloorethaan
+44DDE;4,4'-dichloordifenyldichlooretheen
+44DDT;4,4'-dichloordifenyltrichloorethaan
+GR;Gloeirest
+BETA;Beta activiteit
+Ra226;radium 226
+VET;Vet
+VOCHT;Vocht
+SO4;sulfaat
+FAECLCLFMN;Faecale coliformen
+HBCD;som HBCD (technisch mengsel, niet-gespecif. broom-posities)
+L_PFBS;perfluorbutaansulfonzuur
+L_PFDS;perfluor-1-decaansulfonzuur
+L_PFHpS;perfluor-1-heptaansulfonzuur
+L_PFHxS;perfluorhexaansulfonzuur
+OcClsrn;octachloorstyreen
+PCB110;2,3,3',4',6-pentachloorbifenyl
+PCB126;3,3',4,4',5-pentachloorbifenyl
+PCB128;2,2',3,3',4,4'-hexachloorbifenyl
+PCB137;2,2',3,4,4',5-hexachloorbifenyl
+PCB141;2,2',3,4,5,5'-hexachloorbifenyl
+PCB149;2,2',3,4',5',6-hexachloorbifenyl
+PCB151;2,2',3,5,5',6-hexachloorbifenyl
+PCB156;2,3,3',4,4',5-hexachloorbifenyl
+PCB169;3,3',4,4',5,5'-hexachloorbifenyl
+PCB194;2,2',3,3',4,4',5,5'-octachloorbifenyl
+PCB201;2,2',3,3',4,5',6,6'-octachloorbifenyl
+PCB202;2,2',3,3',5,5',6,6'-octachloorbifenyl
+PCB206;2,2',3,3',4,4',5,5',6-nonachloorbifenyl
+PCB47;2,2',4,4'-tetrachloorbifenyl
+PCB56;2,3,3',4'-tetrachloorbifenyl
+PCB70;2,3',4',5-tetrachloorbifenyl
+PCB72;2,3',5,5'-tetrachloorbifenyl
+PCB77;3,3',4,4'-tetrachloorbifenyl
+PCB85;2,2',3,4,4'-pentachloorbifenyl
+PCB87;2,2',3,4,5'-pentachloorbifenyl
+PCB95;2,2',3,5',6-pentachloorbifenyl
+PCB97;2,2',3,4',5'-pentachloorbifenyl
+PCTA;pentachloorthioanisole
+Pe;peryleen
+PeClansl;pentachlooranisol
+PFBA;perfluorbutaanzuur
+PFDA;perfluordecaanzuur
+PFDoA;perfluordodecaanzuur
+PFHpA;perfluorheptaanzuur
+PFHxA;perfluorhexaanzuur
+PFNA;perfluornonaanzuur
+PFOA;perfluoroctaanzuur
+PFOS;perfluoroctaansulfonzuur (lineair)
+PFPA;perfluorpentaanzuur
+PFTDA;perfluortridecaanzuur
+PFTeDA;perfluortetradecaanzuur
+PFUdA;perfluorundecaanzuur
+sDDX6;som 2,4'-, 4,4'-DDT, 2,4'-, 4,4'-DDD, 2,4'- en 4,4'-DDE
+sPBB153DE154;som PBB153 en PBDE154
+sPCB128174;som PCB128 en PCB174
+sPCB138163;som PCB138 en PCB163
+sPCB156172;som PCB156 en PCB172
+sPCB6695;som PCB66 en PCB95
+OSPAR_SA001;Plastic van 4-pack of 6-pack
+OSPAR_SA002;Plastic (boodschappen)tas
+OSPAR_SA003;Plastic zakje
+OSPAR_SA004;Plastic drankfles
+OSPAR_SA005;Plastic fles of verpakking voor schoonmaakmiddelen
+OSPAR_SA006;Plastic fles of verpakking voor voedsel
+OSPAR_SA007;Plastic fles of verpakking voor toiletartikelen
+OSPAR_SA008;Plastic verpakking of olieton voor motorolie (< 50 cm)
+OSPAR_SA009;Plastic verpakking of olieton voor motorolie (> 50 cm)
+OSPAR_SA010;Plastic jerrycan
+OSPAR_SA011;Plastic tube of patroon voor siliconenkit
+OSPAR_SA012;Ander plastic fles, vat of verpakking
+OSPAR_SA013;Kunststof krat
+OSPAR_SA014;Kunststof auto onderdeel
+OSPAR_SA015;Kunststof dop of deksel
+OSPAR_SA016;Aansteker
+OSPAR_SA017;Pen
+OSPAR_SA018;Kam of haarborstel
+OSPAR_SA019;Chips- of snoepzak of lollystokje
+OSPAR_SA020;Kinderspeelgoed of party popper
+OSPAR_SA021;Plastic beker
+OSPAR_SA0211;Plastic beker_plastic
+OSPAR_SA0212;Plastic beker_polystyreen
+OSPAR_SA022;Plastic bestek of dienblad of rietje
+OSPAR_SA023;Plastic zak voor kunstmest en dierenvoer
+OSPAR_SA024;Kunststof net of netzak voor fruit, groenten of mosselen
+OSPAR_SA025;Afwashandschoen
+OSPAR_SA026;Kunststof krabbenfuik of kreeftenfuik
+OSPAR_SA027;Kunststof inktvisfuik
+OSPAR_SA028;Kunststof oesternet of mosselzak
+OSPAR_SA029;Kunststof oesterkrat
+OSPAR_SA030;Kunststof Tahitian (gebruikt in mosselkwekerijen)
+OSPAR_SA031;Kunststof touw (diameter > 1 cm)
+OSPAR_SA032;Kunststof touwtjes en koord (diameter < 1 cm)
+OSPAR_SA0321;Kunststof draad/koord
+OSPAR_SA0322;Visnetbeschermingstouw
+OSPAR_SA033;Kunststof verstrengelde netten, touw of koord
+OSPAR_SA0331;Kunststof verstrengeld draad
+OSPAR_SA0332;Verstrengeld draad visnetbeschermingstouw
+OSPAR_SA034;Kunststof viskist
+OSPAR_SA0341;Plastic viskist
+OSPAR_SA0342;Polystyreen viskist
+OSPAR_SA035;Vislijn
+OSPAR_SA036;Lichtgevend staafje (light stick)
+OSPAR_SA037;Kunststof drijver of boei
+OSPAR_SA038;Plastic emmer
+OSPAR_SA039;Straps (spanbanden voor industriële verpakking)
+OSPAR_SA040;Industriële kunststof verpakkingsmateriaal
+OSPAR_SA041;Glasvezel of polyester voorwerp
+OSPAR_SA042;Veiligheidshelm
+OSPAR_SA043;Patroon of munitiehuls
+OSPAR_SA044;Plastic schoen of sandaal
+OSPAR_SA045;Stuk kunststof spons
+OSPAR_SA046;Stuk plastic of polystyreen 2,5 - 50 cm
+OSPAR_SA0461;Stuk plastic 2,5 - 50 cm
+OSPAR_SA0462;Stuk polystyreen 2,5 - 50 cm
+OSPAR_SA047;Stuk plastic of polystyreen > 50 cm
+OSPAR_SA0471;Stuk plastic > 50 cm
+OSPAR_SA0472;Stuk polystyreen > 50 cm
+OSPAR_SA048;Ander plastic of polystyreen voorwerp
+OSPAR_SA0481;Plastic Biofilm
+OSPAR_SA049;Ballon, inclusief ventiel, lint, touw etc.
+OSPAR_SA050;Rubberlaars
+OSPAR_SA052;Rubberband of rubberen riem
+OSPAR_SA053;Ander rubberen voorwerp
+OSPAR_SA054;Kleding
+OSPAR_SA055;Meubelstof
+OSPAR_SA056;Stoffen zak (bijv. jute)
+OSPAR_SA057;Schoen, niet van plastic
+OSPAR_SA059;Ander textiel voorwerp
+OSPAR_SA060;Papieren zak
+OSPAR_SA061;Karton
+OSPAR_SA0610;Plastic voedselverplakking
+OSPAR_SA062;Overige kartonnen drankverpakking vb Tetra verpakking
+OSPAR_SA0620;Polystyreen voedselverpakking
+OSPAR_SA063;Sigarettenpakje
+OSPAR_SA064;Sigarettenpeuk
+OSPAR_SA065;Papieren beker
+OSPAR_SA066;Krant of tijdschrift
+OSPAR_SA067;Ander papieren voorwerp
+OSPAR_SA068;Kurk
+OSPAR_SA069;Houten palet
+OSPAR_SA070;Houten krat
+OSPAR_SA071;Houten krabbenfuik of kreeftenfuik
+OSPAR_SA072;Houten ijslollystokje of vorkje
+OSPAR_SA073;Houten verfborstel
+OSPAR_SA074;Ander hout < 50 cm
+OSPAR_SA075;Ander hout > 50 cm
+OSPAR_SA076;Metalen spuitbus
+OSPAR_SA077;Metalen flessendop
+OSPAR_SA078;Metalen drankbus of (drink)blikje
+OSPAR_SA079;Elektrisch toestel
+OSPAR_SA080;Vis gewicht
+OSPAR_SA081;Inpakfolie
+OSPAR_SA082;Conservenblik of blik voor voeding
+OSPAR_SA083;Industrieel afval
+OSPAR_SA084;Metalen olievat
+OSPAR_SA086;Verfblik
+OSPAR_SA087;Metalen krabbenfuik of kreeftenfuik
+OSPAR_SA088;Metalen draden, netten, gaas of prikkeldraad
+OSPAR_SA089;Andere metalen voorwerp < 50 cm
+OSPAR_SA090;Andere metalen voorwerp > 50 cm
+OSPAR_SA091;Glazen fles
+OSPAR_SA092;Lamp of TL-lamp
+OSPAR_SA093;Ander glazen voorwerp
+OSPAR_SA0931;Glazen potten
+OSPAR_SA094;Bouwmateriaal (bijv. tegel)
+OSPAR_SA095;Inktvisfuik
+OSPAR_SA096;Ander aardewerken of keramisch voorwerp
+OSPAR_SA097;Condoom
+OSPAR_SA098;Wattenstaafje
+OSPAR_SA0981;Wattenstaafje_plastic
+OSPAR_SA0982;Wattenstaafje_karton
+OSPAR_SA099;Maandverband of inlegkruisje
+OSPAR_SA100;Tampon of inbrenghuls
+OSPAR_SA101;Toiletverfrisser
+OSPAR_SA102;Ander sanitair voorwerp
+OSPAR_SA103;Medische koker of buisje
+OSPAR_SA104;Injectiespuit
+OSPAR_SA105;Ander medisch voorwerp
+OSPAR_SA108;Stukje paraffine of wax 0 - 1 cm
+OSPAR_SA109;Stukje paraffine of wax 1 - 10 cm
+OSPAR_SA110;Stukje paraffine of wax > 10 cm
+OSPAR_SA111;Ander vervuilend voorwerp
+OSPAR_SA112;Verzamelrol afgescheurde plastic zakken
+OSPAR_SA113;Werkhandschoen (industrieel/professioneel)
+OSPAR_SA114;Kreeft of vis label
+OSPAR_SA115;Net of stukken net < 50 cm
+OSPAR_SA116;Net of stukken net > 50 cm
+OSPAR_SA117;Stukjes plastic of polystyreen 0-2,5 cm
+OSPAR_SA1171;Stuk plastic 0-2,5 cm
+OSPAR_SA1172;Stuk polystyreen 0-2,5 cm
+OSPAR_SA118;Kartonnen drankverpakking voor melk, vb tetrapak
+OSPAR_SA119;Houten viskrat
+OSPAR_SA120;Wegwerp BBQ
+OSPAR_SA121;Hondenpoepzakje
+OSPAR_SA200;Touw klein
+OSPAR_SA201;Touw groot
+OSPAR_SA202;Plastic stukje
+OSPAR_SA203;Handschoen
+OSPAR_SA204;Drinkverpakking
+OSPAR_SA205;Olievat - nieuw
+OSPAR_SA206;Olievat - oud
+OSPAR_SA207;Menselijke faecaliën
+OSPAR_SA208;Dierlijke faecaliën
+OSPAR_SA210;Kleding-koord
+CHLFa;chlorofyl-a
+GEUR;Geur
+KLEUR;Kleur
+OLE;Olie
+SCHUIM;Schuim
+VUIL;Vuil
+Ce144;cerium 144
+Hg203;kwik 203
+H3;tritium
+Mo99;molybdeen 99
+Na22;natrium 22
+Po210;polonium 210
+Ra228;radium 228
+RESTBTA;Rest Beta
+Sb122;antimoon 122
+Sb124;antimoon 124
+Sb125;antimoon 125
+Sr90;strontium 90
+sSr8990;som strontium 89 en 90-isotopen
+Tc99;technetium 99
+Tc99m;technetium 99m (metastabiel)
+Cl;chloride
+OS;Onopgeloste stoffen
+NH4;ammonium
+NO2;nitriet
+NO3;nitraat
+Ntot;stikstof totaal
+sNO3NO2;som nitraat en nitriet
+CZV;Chemisch zuurstofverbruik
+Br;bromide
+BZV5;Biochemisch zuurstofverbruik over 5 dagen
+BZV5a;Biochemisch zuurstofverbruik met allylthioureum
+F;fluoride
+FeII;ijzer (tweewaardig)
+Furanose;Di-o-isopropylideen-a-l-sorbofuranose-2,3
+HCO3;waterstofcarbonaat
+O2;zuurstof
+sMBAS;Som Methyleenblauwactieve stoffen (anionactief)
+sNOIO;Som pikraatactieve niet ionogene en kationogene detergenten
+PO4;fosfaat
+sPO4;som orthofosfaat en hydrolyseerbaar fosfaat
+SiO2;siliciumdioxide
+13DNO2Ben;1,3-dinitrobenzeen
+T4C4ySn;tetrabutyltin
+E_COLI;Escherichia coli
+FAECLSTCCND;Faecale Streptococcen D
+FSPFAGEN;F-specifieke fagen
+INTTNLETRCCN;Intestinale enterococcen
+SALMNLA;Salmonella
+THERMTLRTCLS;Thermotolerante Coli's (incubatie bij 44 C)
+TOTCLS;Totaal Coli's (incubatie bij 37 C)
+CHLFRFU;Chlorofyl fluorescentie in rel. fluorescentie eenh.(RFU)
+BrO3;bromaat
+sAOX;som adsorbeerbare organische halogeenverbindingen
+sEOX;som extraheerbare organische halogeenverbindingen
+sVOX;som vluchtige organische halogeenverbindingen
+Ta;tantalium
+aaDClTol;alfa,alfa-dichloortolueen
+abmtne;abamectine
+acdne;acridine
+acnfn;aclonifen
+actfnn;acetofenon
+actn;aceton
+alDcb;aldicarb
+alDcsfn;aldicarbsulfon
+alDcSO;aldicarbsulfoxide
+AMPA;aminomethylfosfonzuur
+amtn;ametryn
+ansl;anisool
+ATP;adenosine-trifosfaat
+BenAh;benzaldehyde
+benzCl;benzylchloride
+benzdne;benzidine
+benzfnn;benzofenon
+benzntl;benzonitril
+bfnx;bifenox
+biFy;bifenyl
+bisFolA;bisfenol-A
+bittnl;bitertanol
+bromcl;bromacil
+butcbOxm;butocarboxim
+caffine;caffeine
+camfr;camfor
+carbdzm;carbendazim
+carbfrn;carbofuran
+carbmzpne;carbamazepine
+carbrl;carbaryl
+CFK113;1,1,2-trichloor-1,2,2-trifluorethaan
+cF16C10ezr;cis-hexadecafluor-2-deceenzuur
+CHLFb;chlorofyl-b
+Clahdt;chloralhydraat
+clartmcne;claritromycine
+Clbmrn;chloorbromuron
+ClC2e;chlooretheen (vinylchloride)
+Cldn;chloordaan
+ClFAn;chloorfluoraniline
+ClHAc;chloorazijnzuur
+Cloxrn;chlooroxuron
+Clpn;chloropreen
+CN;cyanide
+CNazne;cyanazine
+cycC6a;cyclohexaan
+cypmtn;cypermethrin
+C1yC2yprdne;methylethylpyridine
+C1ymtclt;methylmethacrylaat
+C1yOxdmtn;methyloxydemeton
+C1yttC4yEtr;methyl-tertiair-butylether
+c13DClC3e;cis-1,3-dichloorpropeen
+C2yAn;ethylaniline
+C28a;octacosaan
+C4yBen;butylbenzeen
+C4yBensfAd;butylbenzeensulfonamide
+DBrClC1a;dibroomchloormethaan
+DBrC1a;dibroommethaan
+Dcbnl;dichlobenil
+DccPeDen;dicyclopentadieen
+Dcfl;dicofol
+DClBrC1a;dichloorbroommethaan
+DClDiC3yEtr;2,2'-Dichloordiisopropyl ether
+DC1oxC1a;dimethoxymethaan
+DC1yAe;dimethylamine
+DC1yDS;dimethyldisulfide
+DC1yFt;dimethylftalaat
+DC1yNOAe;dimethylnitrosamine
+DC2yAe;diethylamine
+DC2yFt;diethylftalaat
+DC2yNOAe;diethylnitrosamine
+DC3yegcC1yEt;dipropyleenglycolmonomethylether
+DC3yNOAe;dipropylnitrosamine
+DC4yFt;dibutylftalaat
+DC4yNOAe;dibutylnitrosamine
+DC8yFt;dioctylftalaat
+DEET;diethyltoluamide
+demtnO;demeton-O
+demtnS;demeton-S
+demtSC1y;demeton-S-methyl
+desC2yatzne;desethylatrazine
+desiC3yatzne;desisopropylatrazine
+desmtn;desmetryn
+Dfbzrn;diflubenzuron
+DiC3yEtr;diisopropylether
+DiC4yFt;diisobutylftalaat
+DmtAd;dimethenamide
+DmtnmdP;dimethenamid-P
+Dnbtn;dinobuton
+DNOC;4,6-dinitro-o-cresol
+Dnsactt;dinoseb-acetaat
+Dnsb;dinoseb
+Dntb;dinoterb
+DONA;trifluor-3-(hexafluor-3-(trifluormethoxy)propoxy)propaanzuur
+Dsftn;disulfoton
+DTPA;di-ethyleentriaminepentaazijnzuur (DTPA)
+EDTA;ethyleendiaminetetraethaanzuur (EDTA)
+epClhdne;epichloorhydrine
+etfmst;ethofumesaat
+EtFOSAA;perfluoroctaansulfonylamide(N-ethyl)azijnzuur
+etofcb;ethiofencarb
+etpfs;ethoprofos
+fenrn;fenuron
+FEOa;Feofytine a
+FEOb;Feofytine b
+ferrcn;ferroceen
+flurOxpr;fluroxypyr
+flutlnl;flutolanil
+FolINDX;fenolindex
+fonfs;fonofos
+fosfmdn;fosfamidon
+FRD-903;2,3,3,3-tetrafluor-2-(heptafluorpropoxy)propionzuur
+glufsnt;glufosinaat
+glufsntNH4;glufosinaat-ammonium
+glyfst;glyfosaat
+H-PFC10asfzr;2-(perfluoroctyl)ethaan-1-sulfonzuur (8:2 FTS)
+ifrn;isoforon
+imzll;imazalil
+inda;indaan
+inde;indeen
+indl;indol
+ipDon;iprodion
+iqnlne;isoquinoline
+L_PFOS;perfluor-1-octaansulfonaat (lineair)
+MCPA;2-methyl-4-chloorfenoxyazijnzuur
+MCPB;2-methyl-4-chloorfenoxyboterzuur
+MCPP;mecoprop
+mcresl;m-cresol
+medntactt;medinoterbacetaat
+MEHP;monoethylhexylftalaat (MEHP)
+mentl;menthol
+metbmrn;metobromuron
+metbzn;metribuzin
+metdton;methidathion
+metml;methomyl
+metocb;methiocarb
+metocbsfn;methiocarbsulfon
+metxrn;metoxuron
+mmtn;metamitron
+monrn;monuron
+mtmdfs;methamidofos
+mzCl;metazachloor
+N-MeFOSAA;N-methylperfluoroctaan sulfonamidoazijnzuur
+NNDC1yAn;N,N-dimethylaniline
+NNO2smflne;N-nitrosomorfoline
+NO2Ben;nitrobenzeen
+NTA;nitrilotriazijnzuur (NTA)
+nuarml;nuarimol
+oallFol;o-allylfenol
+Oaml;oxamyl
+OcC1yT4slxn;octamethyltetrasiloxaan
+omtat;omethoaat
+penccrn;pencycuron
+PFC5asfzr;perfluor-1-pentaansulfonzuur
+PFC9asfzr;perfluornonaan-1-sulfonzuur
+PFOSA;perfluoroctaansulfonamide
+PIGMT;Pigment
+procmdn;procymidon
+profm;profam
+promtne;prometryne
+propCl;propachloor
+propcnzl;propiconazol (som cis- en trans-)
+propnl;propanil
+propzne;propazine
+prosfcb;prosulfocarb
+pyrazfs;pyrazofos
+pyrzl;pyrazol
+quinlne;quinoline
+quinoxfn;quinoxyfen
+sARAM;som aromatische amines
+sBTEX;Som van Benzeen+Tolueen+EyB+1,2-xyleen+1,3-xyleen+1,4-xyleen
+sChER;som cholinesteraseremmers
+sC10C13Clakn;som C10-C13-chlooralkanen
+sDDX4;som 2,4'-DDT, 4,4'-DDT, 4,4'-DDD en 4,4'-DDE
+sdrin4;som aldrin, dieldrin, endrin en isodrin
+sEOS;som extraheerbare organische zwavelverbindingen
+sFEO;som Feopigment
+sFolwv;som fenolen waterdampvluchtig
+sHCH;som hexachloorcyclohexaan-isomeren
+sMAK;som monocyclische aromatische koolwaterstoffen (BTEX)
+sMCPB24DB;som MCPB en 24DB
+sPAK10;som 10 polycyclische aromatische koolwaterstoffen (VROM)
+sPAK16;som 16 polycyclische aromatische koolwaterstoffen (EPA)
+sPCB6;som 6 polychloorbifenylen PCB28, 52, 101, 138, 153, 180
+sPCB7;som 7 polychloorbifenylen PCB28, 52, 101, 118, 138, 153, 180
+squaln;squaleen
+sverttPFHxS;som vertakte PFHxS-isomeren
+sverttPFOS;som vertakte PFOS-isomeren
+sxyln;som xyleen-isomeren
+s1314xyln;som 1,3- en 1,4-xyleen
+Tadmnl;triadimenol
+TAED;tetraacetylethyleendiamine
+Talt;triallaat
+TBrC1a;tribroommethaan
+TClfn;trichloorfon
+TC1ytoPO4;trimethylthiofosfaat
+TC2yPO4;triethylfosfaat
+TC4yPO4;tributylfosfaat
+TFyPO4;trifenylfosfaat
+thiacpd;thiacloprid
+ttC4yBen;tertiair-butylbenzeen
+t13DClC3e;trans-1,3-dichloorpropeen
+T2ClC2yPO4;tri(2-chloorethyl)fosfaat
+T4BrbFolA;tetrabroombisfenol A
+T4Clvfs;tetrachloorvinfos (mixed isomeren)
+T4C13FTZR;Tetrachloororthoftaalzuur
+vinczln;vinclozolin
+warfrn;warfarin
+1ClNaf;1-chloornaftaleen
+1Cl24DNO2Ben;1-chloor-2,4-dinitrobenzeen
+1C3ol2ClPO4;1-propanol-2-chloorfosfaat
+1C3yBen;1-propylbenzeen
+1C8ol;1-octanol
+1HOxNaf;1-hydroxynaftaleen
+1NO2Naf;1-nitronaftaleen
+111TClTol;1,1,1-trichloortolueen
+12DBrC2a;1,2-dibroomethaan
+12DClC2e;1,2-dichlooretheen
+123TClC3a;1,2,3-trichloorpropaan
+123TC1yBen;1,2,3-trimethylbenzeen
+124TC1yBen;1,2,4-trimethylbenzeen
+13DactBen;1,3-diacetylbenzeen
+13DClC3a;1,3-dichloorpropaan
+13DCl2C3ol;1,3-dichloor-2-propanol
+13xyln;1,3-xyleen
+135TC1yBen;1,3,5-trimethylbenzeen
+14DC1oxBen;1,4-dimethoxybenzeen
+14DC2oxBen;1,4-diethoxybenzeen
+14DC4oxBen;1,4-dibutoxybenzeen
+14DOxan;1,4-dioxaan
+2Ao4ClFol;2-amino-4-chloorfenol
+2ClAn;2-chlooraniline
+2ClC2ol;2-chloorethanol
+2ClTol;2-chloortolueen
+2Cl4C1yAn;2-chloor-4-methylaniline
+2Cl4NO2Tol;2-chloor-4-nitrotolueen
+2Cl6NO2Tol;2-chloor-6-nitrotolueen
+2C1oxAn;2-methoxyaniline
+2C1yAn;2-methylaniline
+2C1yNaf;2-methylnaftaleen
+2C1yqnlne;2-methylquinoline
+2C2ox2C1yC3a;2-ethoxy-2-methylpropaan
+2C2yTol;2-ethyltolueen
+2C4ol;2-butanol
+2C4on;2-butanon (MEK)
+2PFC6yC2a1sf;2-(perfluorhexyl)ethaan-1-sulfonzuur (6:2 FTS)
+224TC1y13C5a;2,2,4-trimethyl-1,3-pentaandiol
+2255T4C4yT4H;2,2,5,5,-tetramethyl-tetrahydrofuran
+23DClAn;2,3-dichlooraniline
+23DClC3e;2,3-dichloorpropeen
+2346T4ClFol;2,3,4,6-tetrachloorfenol
+2356T4ClFol;2,3,5,6-tetrachloorfenol
+24D;2,4-dichloorfenoxyazijnzuur
+24DB;2,4-dichloorfenoxyboterzuur
+24DClAn;2,4-dichlooraniline
+24DClFol;2,4-dichloorfenol
+24DC1yBenAh;2,4-dimethylbenzaldehyde
+24DNO2Fol;2,4-dinitrofenol
+24xyldne;2,4-xylidine
+245T;2,4,5-trichloorfenoxyazijnzuur
+245TClAn;2,4,5-trichlooraniline
+245TP;2,4,5-trichloorfenoxypropionzuur
+246TC1yprdne;2,4,6-trimethylpyridine
+2479T4C1y5dc;2,4,7,9-tetramethyl-5-decyn-4,7-diol
+25DClAn;2,5-dichlooraniline
+25DC2oxAn;2,5-diethoxyaniline
+26ClF12C6oxT;2(6chloor-dodecafluorhexoxy)-tetrafluorethaansulfonaat,Kzout
+26DClAn;2,6-dichlooraniline
+26DC1yFol;2,6-dimethylfenol
+26DC1yprdne;2,6-dimethylpyridine
+26xyldne;2,6-xylidine
+28ClF16C8oxT;2(8chloor-hexadecafluoroctoxy)-tetrafluorethaansulfonzuur,Kz
+3ClAn;3-chlooraniline
+3ClC3e;3-chloorpropeen
+3ClTol;3-chloortolueen
+3Cl2C1yAn;3-chloor-2-methylaniline
+3Cl4C1yAn;3-chloor-4-methylaniline
+3Cl4NO2Tol;3-chloor-4-nitrotolueen
+3C1yPppozr;3-(hydroxymethylfosfinoyl)propionzuur
+3C2yTol;3-ethyltolueen
+3NO2An;3-nitroaniline
+3NO2Tol;3-nitrotolueen
+33DClbzdne;3,3'-dichloorbenzidine
+34DClAn;3,4-dichlooraniline
+35DClAn;3,5-dichlooraniline
+4ClAn;4-chlooraniline
+4ClNC1yAn;4-chloor-N-methylaniline
+4ClTol;4-chloortolueen
+4Cl2NO2An;4-chloor-2-nitroaniline
+4Cl2NO2Tol;4-chloor-2-nitrotolueen
+4Cl3C1yFol;4-chloor-3-methylfenol
+4Cl3NO2Tol;4-chloor-3-nitrotolueen
+4C2yTol;4-ethyltolueen
+4C4oxFol;4-butoxyfenol
+4C9yFol;4-nonylfenol
+4NO2Fol;4-nitrofenol
+4Ooifrn;4-oxoisoforon
+4ttC8yFol;4-tertiair-octylfenol
+5Cl2C1yAn;5-chloor-2-methylaniline
+5Cl2NO2Tol;5-chloor-2-nitrotolueen
+C;koolstof
+Canorg;koolstof anorganisch
+B;boor
+Hf;hafnium
+25DClFol;2,5-dichloorfenol
+ADONA;ammonium 4,8-dioxa-3H-perfluornonanoaat
+bisPFC10yPO4;bisperfluordecylwaterstoffosfaat (8:2 diPAP)
+EtFOSA;N-ethyl perfluoroctaansulfonamide
+FRD-902;ammonium 2,3,3,3-tetrafluor-2-(heptafluorpropoxy)-propanoaat
+H-PFC12asfzr;1H,1H,2H,2H-perfluordodecaansulfonzuur (10:2 FTS)
+H-PFC6asfzr;2-(perfluorbutyl)ethaan-1-sulfonzuur (4:2 FTS)
+HPFHpA;7H-perfluorheptaanzuur
+H-PFUdA;2H,2H,3H,3H-perfluorundecaanzuur
+MeFBSAA;perfluorbutaansulfonylamide(N-methyl)azijnzuur
+NC1yPFC4asfA;N-methylperfluorbutaansulfonamide
+PFC16azr;perfluorhexadecaanzuur
+PFC18azr;perfluoroctadecaanzuur
+11ClPF3OUdS;11-chlooreicosafluor-3-oxaundecaan-1-sulfonzuur
+9-Cl-PF3ONS;9-chloorhexadecaanfluor-3-oxanon-1-sulfonzuur
+PCDD48;2,3,7,8-tetrachloordibenzo-p-dioxine
+PCDD54;1,2,3,7,8-pentachloordibenzo-p-dioxine
+PCDD66;1,2,3,4,7,8-hexachloordibenzo-p-dioxine
+PCDD67;1,2,3,6,7,8-hexachloordibenzo-p-dioxine
+PCDD70;1,2,3,7,8,9-hexachloordibenzo-p-dioxine
+PCDD73;1,2,3,4,6,7,8-heptachloordibenzo-p-dioxine
+PCDD75;1,2,3,4,6,7,8,9-octachloordibenzo-p-dioxine
+PCDF114;2,3,4,7,8-pentachloordibenzofuraan
+PCDF121;1,2,3,6,7,8-hexachloordibenzofuraan
+PCDF124;1,2,3,7,8,9-hexachloordibenzofuraan
+PCDF130;2,3,4,6,7,8-hexachloordibenzofuraan
+PCDF131;1,2,3,4,6,7,8-heptachloordibenzofuraan
+PCDF134;1,2,3,4,7,8,9-heptachloordibenzofuraan
+PCDF135;1,2,3,4,6,7,8,9-octachloordibenzofuraan
+PCDF83;2,3,7,8-tetrachloordibenzofuraan
+sPCDF118119;som PCDF118 en PCDF119
+sPCDF9489;som PCDF89 en PCDF94
+PBDE51;2,2',4,6'-tetrabroomdifenylether
+cyhxtn;cyhexatin
+DccC6ySnO;dicyclohexyltinoxide
+fenbtSnO;fenbutatinoxide

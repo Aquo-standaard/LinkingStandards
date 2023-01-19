@@ -1,0 +1,57 @@
+# Nederlandse en internationale semantische standaarden
+
+## AQUO
+
+```{r setupAquo}
+
+source("R/functies.R")
+
+ddlmetadata <- rws_metadata() 
+metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
+  list.flatten() %>% as.data.frame(stringsAsFactors = F)
+
+KwaliteitswaardecodeLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$KwaliteitswaardecodeLijst)
+ReferentievlakLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$ReferentievlakLijst)
+```
+
+
+AQUO is de nederlandse standaard voor watergerelateerde data. Voor uitwisseling van meetgegevens is er het informatiemodel IM-AQUO. Dit model beschrijft voor in situ metingen de "wat". 
+
+## Relevante AQUO vocabulaires (domeintabellen)
+
+De belangrijkste tabellen voor een goede mapping van in situ waarnemingen zijn:
+
+Grootheid of Typering
+
+:   Beschrijving en code van de grootheid (quantitatief) of typering (kwalitatief). Voor elke grootheid zijn een of meerdere Eenheden beschikbaar in de Eenheid tabel.
+
+Parameter
+
+:   Dit is een samengestelde tabel/veld. In AQUO is dit onderverdeeld in Chemische Stof, Taxonnaam
+
+Hoedanigheid
+
+:   Deze tabel bevat diverse informatie die te maken heeft met bijvoorbeeld monstervoorbewerking (opgeloste of deeltjesgebonden fractie), grootteklassen, leeftijdsklasse. 
+
+Monstercriterium
+
+:   Deze tabel bevat informatie over overige criteria, bijvoorbeeld in een fractie kleiner dan een bepaalde korrelgrootte. In de datadistributielaag zijn de velden Hoedanigheid en Monstercriterium samengevoegd in een veld (genaamd Hoedanigheid)
+
+Eenheid
+
+:   Gebruikte eenheid. Elke eenheid is gekoppeld aan een of meerdere grootheden.
+
+
+```{r, eval=FALSE}
+dom_overzicht(peildatum = Sys.Date())
+dom("Eenheid")
+# lijkt niet te werken. Morgen nog eens proberen, anders aan Koos of Johan vragen. 
+# 
+```
+
+
+```{r, child="bodc.Rmd"}
+
+```
+
+

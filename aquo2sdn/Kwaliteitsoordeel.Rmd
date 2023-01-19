@@ -1,0 +1,59 @@
+
+
+```{r}
+
+```
+
+
+# Kwaliteitsoordeel
+
+In AQUO kunnen verschillende kwaliteitsoordelen worden toegekend aan een meetwaarde (tabel \@ref(tab:aquoKwaliteitsoordeel)). Op de AQUO site is deze [hier terug te vinden](https://www.aquo.nl/index.php/Id-1e17d9e6-4e0e-4f88-8fe5-c71f6a7931db). Het is niet eenvoudig om te bepalen welke codes in de praktijk worden toegepast. Het gebruik in de Data Distributielaag kan alleen bepaald worden wanneer data daadwerkelijk gedownloadt worden. Dit valt voor nu buiten de opdracht. 
+
+
+```{r aquoKwaliteitsoordeel}
+idsw_aquo_kwaliteitsoordeel <- GetDomainTable(pDomeintabel <- "Kwaliteitsoordeel")
+
+idsw_aquo_kwaliteitsoordeel %>% select(Codes, Omschrijving) %>%
+  kableExtra::kbl(caption = "Aquo kwaliteitsoordeelcodes en -omschrijvingen.") %>%
+   kable_styling(latex_options = "scale_down")
+```
+De corresponderende tabel met algemene kwalititeitsoordelen van BODC is de tabel [L20](http://vocab.nerc.ac.uk/collection/L20/current/) (figuur \@ref(tab:bodcKwaliteitsoordeel)). BODC hanteert hiernaast tabellen met  meer specifieke "quality flags" voor bepaalde apparaten of organisaties (IODE). Hier gaan we nu niet verder op in. 
+
+
+
+
+```{r bodcKwaliteitsoordeel}
+bodc_sdn_kwaliteitsoordeel <- read_delim(file.path("data\\bodc\\vocab_l20.csv"), delim = ";")
+
+bodc_sdn_kwaliteitsoordeel %>% select(conceptid, preflabel, definition) %>%
+  kableExtra::kbl() %>%
+   kable_styling(latex_options = "scale_down")
+```
+
+
+In eerder werk (NWDM) is een mapping gemaakt van deze codes naar BODC op basis van data uit de DDL voor Noordzee en Waddenzee (fysische-chemische data). Het voorstel is om deze als basis te gebruiken (tabel \@ref(tab:Kwaliteitscodecomparison)). We stellen voor om deze tabel als uitgangspunt te gebruiken. 
+
+```{r readQualityCodeMappingTable}
+L201_mapping <- read_delim(file.path("data\\aquo\\Mapping_SDN_L201.csv"), delim = ";")
+```
+
+
+
+```{r Kwaliteitscodecomparison}
+# compare verbose versions of AQUO and BODC
+kwaliteitescodemapping <- L201_mapping %>% 
+  mutate(SDN_L201_code = as.character(SDN_L201_code)) %>%
+  full_join(idsw_aquo_kwaliteitsoordeel, by = c(Aquo_Kwaliteitsoordeel_code = "Codes")) %>%
+  full_join(bodc_sdn_kwaliteitsoordeel, by = c(SDN_L201_code = "conceptid")) %>%
+  select(aquo_code = Aquo_Kwaliteitsoordeel_code,
+         aquo_omschrijving = Omschrijving,
+         conceptid = SDN_L201_code,
+         preflabel
+         )
+
+kableExtra::kbl(kwaliteitescodemapping, caption = "Voorgestelde apping van kwaliteitscodes.") %>%
+   kable_styling(latex_options = "scale_down")
+
+```
+
+
