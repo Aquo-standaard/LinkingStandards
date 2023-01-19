@@ -27,7 +27,7 @@ idsw_aquo_orgaan %>% select(Omschrijving) %>%
 
 ## Biologie: Biologisch Kenmerk
 
-BiologischKenmerk
+De tabel BiologischKenmerk 
 
 ```{r}
 idsw_aquo_biologischkenmerk <- GetDomainTable(pDomeintabel <- "BiologischKenmerk")

@@ -1,4 +1,6 @@
-# AQUO
+# Nederlandse en internationale semantische standaarden
+
+## AQUO
 
 ```{r setupAquo}
 
@@ -13,7 +15,7 @@ ReferentievlakLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$Referen
 ```
 
 
-AQUO is de nederlandse standaard voor watergerelateerde data. Voor uitwisseling van meetgegevens is er het informatiemodel IM-AQUO. Dit model beschrijft voor in situ metingen de "wat" en "hoe". 
+AQUO is de nederlandse standaard voor watergerelateerde data. Voor uitwisseling van meetgegevens is er het informatiemodel IM-AQUO. Dit model beschrijft voor in situ metingen de "wat". 
 
 ## Relevante AQUO vocabulaires (domeintabellen)
 
@@ -21,7 +23,7 @@ De belangrijkste tabellen voor een goede mapping van in situ waarnemingen zijn:
 
 Grootheid of Typering
 
-:   BeschriNving en code van de grootheid (quantitatief) of typering (kwalitatief). Voor elke grootheid zijn een of meerdere Eenheden beschikbaar in de Eenheid tabel.
+:   Beschrijving en code van de grootheid (quantitatief) of typering (kwalitatief). Voor elke grootheid zijn een of meerdere Eenheden beschikbaar in de Eenheid tabel.
 
 Parameter
 
@@ -29,7 +31,7 @@ Parameter
 
 Hoedanigheid
 
-:   Deze tabel bevat diverse informatie die te maken heeft met bijvoorbeeld monstervoorberking (opgeloste of deeltjesgebonden fractie), grootteklassen, leeftijdsklasse. 
+:   Deze tabel bevat diverse informatie die te maken heeft met bijvoorbeeld monstervoorbewerking (opgeloste of deeltjesgebonden fractie), grootteklassen, leeftijdsklasse. 
 
 Monstercriterium
 
@@ -45,6 +47,11 @@ dom_overzicht(peildatum = Sys.Date())
 dom("Eenheid")
 # lijkt niet te werken. Morgen nog eens proberen, anders aan Koos of Johan vragen. 
 # 
+```
+
+
+```{r, child="bodc.Rmd"}
+
 ```
 
 

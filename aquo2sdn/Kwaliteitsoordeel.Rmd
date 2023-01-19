@@ -14,7 +14,8 @@ In AQUO kunnen verschillende kwaliteitsoordelen worden toegekend aan een meetwaa
 idsw_aquo_kwaliteitsoordeel <- GetDomainTable(pDomeintabel <- "Kwaliteitsoordeel")
 
 idsw_aquo_kwaliteitsoordeel %>% select(Codes, Omschrijving) %>%
-  kableExtra::kbl(caption = "Aquo kwaliteitsoordeelcodes en -omschrijvingen.")
+  kableExtra::kbl(caption = "Aquo kwaliteitsoordeelcodes en -omschrijvingen.") %>%
+   kable_styling(latex_options = "scale_down")
 ```
 De corresponderende tabel met algemene kwalititeitsoordelen van BODC is de tabel [L20](http://vocab.nerc.ac.uk/collection/L20/current/) (figuur \@ref(tab:bodcKwaliteitsoordeel)). BODC hanteert hiernaast tabellen met  meer specifieke "quality flags" voor bepaalde apparaten of organisaties (IODE). Hier gaan we nu niet verder op in. 
 
@@ -25,17 +26,17 @@ De corresponderende tabel met algemene kwalititeitsoordelen van BODC is de tabel
 bodc_sdn_kwaliteitsoordeel <- read_delim(file.path("data\\bodc\\vocab_l20.csv"), delim = ";")
 
 bodc_sdn_kwaliteitsoordeel %>% select(conceptid, preflabel, definition) %>%
-  kableExtra::kbl()
+  kableExtra::kbl() %>%
+   kable_styling(latex_options = "scale_down")
 ```
 
 
-In eerder werk (NWDM) is een mapping gemaakt op basis van data uit de DDL voor Noordzee en Waddenzee (fysische-chemische data). Het voorstel is om deze als basis te gebruiken. De tabel 
+In eerder werk (NWDM) is een mapping gemaakt van deze codes naar BODC op basis van data uit de DDL voor Noordzee en Waddenzee (fysische-chemische data). Het voorstel is om deze als basis te gebruiken (tabel \@ref(tab:Kwaliteitscodecomparison)). We stellen voor om deze tabel als uitgangspunt te gebruiken. 
 
 ```{r readQualityCodeMappingTable}
 L201_mapping <- read_delim(file.path("data\\aquo\\Mapping_SDN_L201.csv"), delim = ";")
 ```
 
-Dit
 
 
 ```{r Kwaliteitscodecomparison}
@@ -50,7 +51,8 @@ kwaliteitescodemapping <- L201_mapping %>%
          preflabel
          )
 
-kableExtra::kbl(kwaliteitescodemapping, caption = "Voorgestelde apping van kwaliteitscodes.")
+kableExtra::kbl(kwaliteitescodemapping, caption = "Voorgestelde apping van kwaliteitscodes.") %>%
+   kable_styling(latex_options = "scale_down")
 
 ```
 

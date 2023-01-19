@@ -12,7 +12,7 @@
 idsw_aquo_statistischeparameter <- GetDomainTable(pDomeintabel <- "StatistischeParameter")
 
 idsw_aquo_statistischeparameter %>% select(Codes, Omschrijving) %>%
-  kableExtra::kbl(caption = "Aquo statistischeparametercodes en -omschrijvingen.")
+  kableExtra::kbl(caption = "Aquo statistischeparametercodes en -omschrijvingen.") 
 ```
 
 ## Waardebepalingsmethode
@@ -22,7 +22,8 @@ idsw_aquo_statistischeparameter %>% select(Codes, Omschrijving) %>%
 idsw_aquo_Waardebepalingsmethode <- GetDomainTable(pDomeintabel <- "Waardebepalingsmethode")
 
 idsw_aquo_Waardebepalingsmethode %>% select(Codes, Omschrijving) %>%
-  kableExtra::kbl(caption = "Aquo Waardebepalingsmethodecodes en -omschrijvingen.")
+  kableExtra::kbl(caption = "Aquo Waardebepalingsmethodecodes en -omschrijvingen.") %>%
+   kable_styling(latex_options = "scale_down")
 ```
 
 ## Waardebepalingstechniek
@@ -32,7 +33,8 @@ idsw_aquo_Waardebepalingsmethode %>% select(Codes, Omschrijving) %>%
 idsw_aquo_Waardebepalingstechniek <- GetDomainTable(pDomeintabel <- "Waardebepalingstechniek")
 
 idsw_aquo_Waardebepalingstechniek %>% select(Codes, Omschrijving) %>%
-  kableExtra::kbl(caption = "Aquo Waardebepalingstechniekcodes en -omschrijvingen.")
+  kableExtra::kbl(caption = "Aquo Waardebepalingstechniekcodes en -omschrijvingen.") %>%
+   kable_styling(latex_options = "scale_down")
 ```
 
 
@@ -43,7 +45,8 @@ idsw_aquo_Waardebepalingstechniek %>% select(Codes, Omschrijving) %>%
 idsw_aquo_Waardebewerkingsmethode <- GetDomainTable(pDomeintabel <- "Waardebewerkingsmethode")
 
 idsw_aquo_Waardebewerkingsmethode %>% select(Codes, Omschrijving) %>%
-  kableExtra::kbl(caption = "Aquo Waardebewerkingsmethodecodes en -omschrijvingen.")
+  kableExtra::kbl(caption = "Aquo Waardebewerkingsmethodecodes en -omschrijvingen.") %>%
+   kable_styling(latex_options = "scale_down")
 ```
 
 
@@ -55,7 +58,8 @@ De meest gerelateerde BODC vocabulary is [S07](https://vocab.nerc.ac.uk/search_n
 bodc_sdn_statistics <- read_delim(file.path("data\\bodc\\vocab_S07.csv"), delim = ";")
 
 bodc_sdn_statistics %>% select(conceptid, preflabel, definition) %>%
-  kableExtra::kbl()
+  kableExtra::kbl() %>%
+   kable_styling(latex_options = "scale_down")
 ```
 
 De BODC tabel (tabel \@ref(tab:bodcKwaliteitsoordeel)) bevat soortgelijke termen als de AQUO tabel (tabel \@ref(tab:aquoWaardebewerkingsmethode)). Beide tabellen lijken geen verwijzingen opgenomen te hebben naar externe standaarden. 

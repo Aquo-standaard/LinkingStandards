@@ -14,12 +14,9 @@ source("R/functies.R")
 
 AQUO onderhoudt de tabel [Bemonsteringsapparaat](https://www.aquo.nl/index.php/Id-ecbe0e11-3cdc-4661-903f-f9382b32a343). Deze bevat ongeveer 90 apparaten. Een deel daarvan zijn relevant voor het mariene milieu. 
 
-```{r}
+```{r , include=F}
 idsw_aquo_bemonsteringsapparaat <- GetDomainTable(pDomeintabel <- "Bemonsteringsapparaat")
-0
-idsw_aquo_bemonsteringsapparaat %>% select(Omschrijving) %>% 
-  DT::datatable()
-  # kableExtra::kbl(caption = 'Lijst met bemonsteringsapparaten in AQUO domeintabel "bemonsterinsapparaat"')
+
 ```
 
 
@@ -60,7 +57,9 @@ bemonsteringsapparaat_mapping <- idsw_aquo_bemonsteringsapparaat %>%
   arrange(bodc_code) %>%
   write_delim("data/mappings/ddl2sdn_bemonsteringsapparaat.csv", delim = ";")
 
-bemonsteringsapparaat_mapping %>% drop_na(bodc_code)
+bemonsteringsapparaat_mapping %>% drop_na(bodc_code) %>%
+  knitr::kable(caption = "Initiele mapping bemonsteringapparaat op basis van EMODnet bestaande mappings. ")  %>%
+   kable_styling(latex_options = "scale_down")
 ```
 
 
@@ -75,7 +74,7 @@ bemonsteringsapparaat_mapping %>% drop_na(bodc_code)
 
 ## Bemonsteringsmethode
 
-```{r}
+```{r, eval=F}
 idsw_aquo_bemonsteringsmethode <- GetDomainTable(pDomeintabel <- "Bemonsteringsmethode")
 
 idsw_aquo_bemonsteringsmethode %>% select(Omschrijving) %>%
@@ -86,7 +85,7 @@ Bemonstingsmethoden die in AQUO gehanteerd worden zijn meestal gedocumenteerd in
 
 ## Bemonsteringssoort
 
-```{r}
+```{r, eval=F}
 idsw_aquo_Bemonsteringssoort <- GetDomainTable(pDomeintabel <- "Bemonsteringssoort")
 
 idsw_aquo_Bemonsteringssoort %>% select(Omschrijving)

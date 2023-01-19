@@ -1,12 +1,13 @@
 # example R options set globally
 options(width = 60)
 
+source("R/functies.R")
+
 library(kableExtra) 
 require(tidyverse)
 require(data.table)
 require(stringr)
 # Lees functie in voor download domeintabellen
-source("R/functies.R")
 require(aquodom)
 require(rwsapi)
 require(rlist)
