@@ -3,21 +3,22 @@ library(rdflib)
 library(tidyverse)
 library(jsonld)
 
-FileName_RDF = "aquo2sdn/data/bodc/S27.ttl"
-FileName_Aquo = "aquo2sdn/data/aquo/Parameter.csv"
+# FileName_RDF = "aquo2sdn/data/bodc/S27.ttl"
+FileName_RDF = "http://vocab.nerc.ac.uk/collection/S27/current/?_profile=nvs&_mediatype=text/turtle"
+# FileName_Aquo = "aquo2sdn/data/aquo/Parameter.csv"
+FileName_Aquo = "https://www.aquo.nl/index.php/Speciaal:RDFExporteren/Id-21795134-d304-412b-a425-ea0979440cf6"
 
 destination_csv = "aquo2sdn/data/mappings/chemischeStof/CAS-aquo-bodc.csv"
 
-parameter <- read.csv(FileName_Aquo,header=TRUE,sep = ";") %>%
-  filter(Groep == "ChemischeStof")
-
 rdf <- rdf_parse(FileName_RDF, format = "turtle") 
+parameter <- read_csv2("https://www.aquo.nl/file_auth.php/aquo/a/a3/Parameter.csv")
 
 ## Creating tables
-query <- "PREFIX owl:  <http://www.w3.org/2002/07/owl#> 
-SELECT ?id ?casnr
+query <- "PREFIX owl:  <http://www.w3.org/2002/07/owl#> prefix skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT *
 WHERE {
-    ?id owl:sameAs ?casnr .
+    ?id owl:sameAs ?casnr;
+      skos:altLabel ?alt .
 } ORDER BY ?id"
 
 RDFTable2 <- rdf_query(rdf,query) %>%
@@ -29,6 +30,7 @@ RDFTable2 <- rdf_query(rdf,query) %>%
   ) %>%
   rename(
     bodc_S27_id = id,
+    bodc_S27_altlable = alt,
     nih_casnrURI = casnr,
     aquo_parameter.code = Codes,
     aquo_parameter.omschrijving = Omschrijving
@@ -61,9 +63,4 @@ bodc_antijoin <- rdf_query(rdf,query) %>%
 
 bodc_antijoin$bodc_S27_id[duplicated(bodc_antijoin$bodc_S27_id)]
 duplicated_bodcanti <- dim(bodc_antijoin[duplicated(bodc_antijoin$bodc_S27_id),])
-
-
-
-
-
 
