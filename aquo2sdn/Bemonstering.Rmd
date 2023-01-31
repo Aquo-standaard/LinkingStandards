@@ -27,6 +27,41 @@ De mapping die hier gepresenteerd wordt is gebaseerd op actuele mappings van (vo
 
 ```{r}
 
+# Nieuwe versie. Mapping als tabel
+monsterapparaat_mapping <- tibble::tribble(
+  ~omschrijving, ~BODCmapping,
+"Box-corer"  , 'http://vocab.nerc.ac.uk/collection/L22/current/TOOL1177/',
+      "Bodemschaaf"  , 'http://vocab.nerc.ac.uk/collection/L22/current/NETT0190/',
+      "Hamon happer"  ,  "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0960/",   # to be added to BODC L22
+      "Video"  , 'http://vocab.nerc.ac.uk/collection/L05/current/180/',
+      "Van Veen happer", "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/",
+      "Zuigkor", "http://vocab.nerc.ac.uk/collection/L05/current/64/",
+      "Boomkor", "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0651/",
+      "Emmer", "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0536/",
+      "Pomp", "http://vocab.nerc.ac.uk/collection/L22/current/NETT0173/",
+      "Pelagic trawl", "http://vocab.nerc.ac.uk/collection/L05/current/23/",
+      "Fuik", "http://vocab.nerc.ac.uk/collection/L05/current/63/",
+      "Piston-corer", "http://vocab.nerc.ac.uk/collection/L05/current/51/",
+      "Videocamera", "http://vocab.nerc.ac.uk/collection/L05/current/311/",
+      "Vacuüm steekbuis", "http://vocab.nerc.ac.uk/collection/L05/current/391/",
+      "Pelagic trawl", "http://vocab.nerc.ac.uk/collection/L05/current/23/",
+      "Pelagic trawl", "http://vocab.nerc.ac.uk/collection/L05/current/23/",
+      "Pelagic trawl", "http://vocab.nerc.ac.uk/collection/L05/current/23/"
+)
+# schrijf weg als csv
+
+bemonsteringsapparaat_mapping <- idsw_aquo_bemonsteringsapparaat %>%
+right_join(monsterapparaat_mapping, by = c(Omschrijving = "omschrijving")) %>%
+  select(
+    aquo_omschrijving = Omschrijving,
+    aquo_cijfercode = Cijfercode,
+    bodc_code
+  ) %>% 
+  arrange(bodc_code) %>%
+  write_delim("data/mappings/ddl2sdn_bemonsteringsapparaat.csv", delim = ";")
+  
+
+
 bemonsteringsapparaat_mapping <- idsw_aquo_bemonsteringsapparaat %>%
   mutate(
     bodc_code = case_when(
