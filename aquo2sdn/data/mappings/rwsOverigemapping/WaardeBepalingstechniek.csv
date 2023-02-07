@@ -1,0 +1,29 @@
+WaardeBepalingstechniek.Code;WaardeBepalingstechniek.Omschrijving
+GC-MS;Gaschromatografie - massaspectrometrie
+NVT;Waarde is niet van toepassing
+AAS-GF;Atomaire absorptie spectrometrie - grafietoven
+GAMMAS;Gammaspectrometrie
+GC;Gaschromatografie (code GC+detectietechniek heeft voorkeur)
+ICP-MS;Inductie gekoppeld plasma - massaspectrometrie
+LC-FL;Vloeistofchromatografie - fluorescentie  (voorkeur: ID 207)
+RONTGDF;Röntgendiffractie
+AF;Atomaire fluorescentie
+GC-MS-MS;Gaschromatografie - massaspectrometrie - massaspectrometrie
+LC-TQMS;Vloeistofchrom. -tandem quadrupool massaspect. (Hoge Druk)
+MEMBF;Membraanfiltratie
+UV/VIS;Spectrofotometrie
+GC-ECD;Gaschromatografie - electron capture detector
+ICP-AES;Inductie gekoppeld plasma - atomaire emissie spectrometrie
+AA;Autoanalyser (code AA+detectietechniek heeft de voorkeur)
+AA-FOTM;Autoanalyser - fotometrie
+AAS-F;Atomaire absorptie spectrometrie - flame
+AES-F;Atomaire emissie spectrometrie - vlam
+AF-KD;Atomaire fluorescentie - koude-damptechniek
+DA-S;Discreetanalyser - spectrometrie
+FOTM;Fotometrie
+HPLC;Hoge druk vloeistofchromatografie (voorkeur HPLC+det.techn.)
+LC-MS;Vloeistofchromatografie - massaspectrometrie (Hoge Druk)
+LC-MS-MS;Vloeistofchromatografie-massaspect.-massaspect. (Hoge Druk)
+AAS;Atomaire absorptie spectrometrie
+GC-FID;Gaschromatografie - flame ionisation detector
+SEDI;Sedigraaf
