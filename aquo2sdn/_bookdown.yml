@@ -6,8 +6,8 @@ rmd_files: [
  "wat_mapping.Rmd",
   "eenheden.Rmd",
   "kwaliteitsoordeel.Rmd",
-  "Waardebepalingenbewerking.Rmd",
- "Bemonstering.Rmd"]
+  "Waardebepalingenbewerking.Rmd"]
+ #"Bemonstering.Rmd"]
  # "Biologie.Rmd"]
 new_session: true
 before_chapter_script: _common.R

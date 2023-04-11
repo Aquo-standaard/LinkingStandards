@@ -28,3 +28,4 @@ WaardeBepalingstechniek <- df %>% distinct(WaardeBepalingstechniek.Code, WaardeB
 
 WaardeBewerkingsmethode <- df %>% distinct(WaardeBewerkingsmethode.Code, WaardeBewerkingsmethode.Omschrijving) %>%
   write_delim(paste(path, 'WaardeBewerkingsmethode.csv', sep="/"), delim = ";")
+

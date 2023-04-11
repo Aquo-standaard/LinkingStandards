@@ -1,6 +1,11 @@
 # Mapping van eenheden
 
 ```{r}
+require(tidyverse)
+require(aquodom)
+require(rwsapi)
+require(rlist)
+require(kableExtra)
 ddlmetadata <- rws_metadata() 
 metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
   list.flatten() %>% as.data.frame(stringsAsFactors = F)
