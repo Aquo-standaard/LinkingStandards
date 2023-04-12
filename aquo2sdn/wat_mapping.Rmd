@@ -23,8 +23,7 @@ Binnen de aquo domeintabellen is in eerdere projecten de mapping tabel Mapping\_
 De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO IM-metingen, maar wijkt op een aantal punten af. Onder andere doordat het veld Hoedanigheid.code is opgebouwd uit twee verschillende AQUO codes, namelijk Hoedanigheid.code en Monstercriterium.code. Idem voor de omschrijvingen. In de Mapping\_SDN\_P01\_2021\_12\_13 zijn deze twee velden niet gecombineerd. Voor een kansrijke automatische mapping worden in Mapping\_SDN\_P01\_2021\_12\_13 deze velden aan elkaar geplakt. In Mapping\_SDN\_P01\_2021\_12\_13 zijn "lege" velden echt leeg terwijl deze in de DDL metadata gevuld zijn met "NVT". Dus, vóórdat de P01 koppeltabel gekoppeld kan worden aan de AQUO catalogustabel worden Hoedanigheid.code en Monstercriterium.code gecombineerd in één veld en alle lege plekken gevuld met "NVT".
 
 ```{r , message=FALSE, warning=FALSE}
-#idsw_aquo_map_PO1 <- GetDomainTable(pDomeintabel <- "Mapping_SDN_P01") 
-#does not work well
+idsw_aquo_map_PO1 <- GetDomainTable(pDomeintabel <- "Mapping_SDN_P01")
 
 # from local file
 idsw_aquo_map_PO1 <- read_delim("data/aquo/Mapping_SDN_P01_2021_12_13.csv", delim = ";")
@@ -102,7 +101,7 @@ mappingDim <- dim(ddl_p01_joined)[1]
 
 ```
 
-De uiteindelijke automatische mapping geeft als resultaat een tabel met `r mappingDim` regels. Dit betekent dat de `r mappingDim` uit de DDL al gekoppeld kan worden met de eerdere Mapping_SDN_P01_2021_12_13 tabel. De overige mapping wordt uitgevoerd door handmatig door de volgende velden, `r metadatavelden` te zoeken.
+De uiteindelijke automatische mapping geeft als resultaat een tabel met `r mappingDim` regels. Dit betekent dat deze metadata uit de DDL al gekoppeld kan worden met de mapping_P01 tabel die eerder gemaakt is. Daarna wordt gekeken naar welke metadata nog niet automatisch gekoppeld kan worden. Dit wordt gedaan door apart naar de verschillende velden, `r metadatavelden` te zoeken. Handmatig wordt er gezocht naar de juiste match voor de ontbrekende metadata velden.
 
 ```{r, eval=F}
 ddl_p01_joined %>%
@@ -115,34 +114,35 @@ ddl_p01_joined %>%
 
 De uitsplitsing van P01 termen naar de verschillende onderdelen is te vinden in tabel \@ref(tab:s-tabellen). 
 
+
 ```{r koppeling-aquo-sdn-s}
+
 p01s <- data.table::fread("data//bodc/p01s.csv")
+
 ddl_p01_joined_p01s <- ddl_p01_joined %>% left_join(p01s, by = c(`SDN_P01_code`= "P01_conceptid"))
+
 nrow1 <- ddl_p01_joined_p01s %>% distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>% filter(Parameter.Code != "NVT") %>% filter(!is.na(s27_conceptid)) %>% nrow()
+
 nrow2 <- ddl_p01_joined_p01s %>% distinct(Parameter.Code) %>% nrow()
-```
-
-### Parameter vs BODC S27 substances
-
-De parameter tabel bestaat voor een groot deel uit chemische stof. Voor chemische stof kan er een onafhankelijke mapping worden gemaakt, doormiddel van het linken van CAS nummers aan de BODC S27 tabel. De CAS-nummers staan in de Mapping\_SDN\_P01\_2021\_12\_13 tabel, maar ze staan verborgen in de P01 beschrijving. Deze mapping kan uitgevoerd worden via semantisch web methodes. Met semantische web is een kennismethode om data te linken over verschillende webpagina's heen. Via semantic web zijn er `nrows(casBodc2)` regels gematchd. Hierbij zijn duplicaten verwijderd en de 'NA' waarden uit de ruwe mapping [de csv](https://github.com/Aquo-standaard/LinkingStandards/blob/main/aquo2sdn/data/mappings/chemischeStof/CAS-aquo-bodc.csv) file gefilterd. 
-
-```{r koppeling-casnmr-bodc}
-casBodc <- read_delim("data/mappings/chemischeStof/CAS-aquo-bodc.csv")
-cadBodc <- casBodc %>%
-  distinct(CASnummer,aquo_parameter.code, aquo_parameter.omschrijving)
-
-casBodc2 <- na.omit(casBodc)
-
-kableExtra::kbl((sample_n(casBodc2,5)), caption = "Voorbeeld van 10 elementen uit de mapping tussen de CAS nummers en de BODC S27 tabel.") %>%
-kable_styling(latex_options = "scale_down")
 
 ```
+
+### Parameter vs BODC substances
+
+Een eenduidige mapping kan onafhankelijk van eerdere mappings worden gemaakt, namelijk de mapping voor chemische stof. Deze mapping kan worden uitgevoerd doormiddel van het vergelijken van CAS nummers. De CAS-nummers staan in Mapping\_P01 tabel, maar het staat verborgen in de P01 beschrijving.
+
+Vanuit de gekoppelde tabel wordt een mapping geëxtraheerd door de unieke combinaties van relevante AQUO (parameter.code, parameter.omschrijving) en SDN (S27\_preflabel, S27\_altlabel, s27\_conceptid) velden te combineren. Deze lijst dient nog handmatig gecontroleerd te worden. Met deze methode kunnen `r nrow1` van de `r nrow2` (totaal aantal unieke parameter.code waarden) gecombineerd worden met een S27 term.
+
+Een mogelijk betere manier is om de S27 termen te relateren aan CAS nummers door deze op te halen via sematische web methodes (RDF triple stores). Deze methode wordt momenteel nog onderzocht.
+
 ```{r}
+
 ddl_p01_joined_p01s %>%
   distinct(Parameter.Code, Parameter.Omschrijving, S27_preflabel, S27_altlabel, s27_conceptid) %>%
   filter(Parameter.Code != "NVT") %>%
   filter(!is.na(s27_conceptid)) %>%
   write_delim("data/mappings/ddl_p01_joined_parameter.csv")
+
 chem <- read_delim("data/mappings/ddl_p01_joined_parameter.csv")
 kableExtra::kbl((sample_n(chem,10)), caption = "Voorbeeld van 10 elementen uit de mapping AQUO en S27.") %>%
 kable_styling(latex_options = "scale_down")
@@ -150,7 +150,7 @@ kable_styling(latex_options = "scale_down")
 
 ### Compartimenten vs S26 BODC matrices
 
-Het begrip compartimenten in AQUO is gelijk aan het begrip Matrices in BODC. In de onderstaande tabel worden de resultaten van een eerste automatische mapping gepresenteerd. Het handmatig mappen van de compartiment anti join tabel geeft weinig extra mapping resultaten. De attributen die niet goed gemapt zijn, hebben te maken met stratificatie in meren of zeeën. 
+Het begrip compartimenten in AQUO is gelijk aan het begrip Matrices in BODC. In de onderstaande tabel worden de resultaten van een eerste automatische mapping gepresenteerd. De volgende stap is het handmatig vergelijken van de ontbrekende metadatabegrippen met de BODC begrippen.
 
 ```{r}
 
@@ -183,7 +183,7 @@ kable_styling(latex_options = "scale_down")
 
 ### Hoedanigheid vs BODC
 
-Omdat de tabel *Hoedanigheid* een combinatie is van monstercriterium en hoedanigheid uit AQUO, maakt het moeilijk om een automatische mapping over . Er is voor gekozen om als eerste te kijken wat er wel automatisch gemapt kon worden en daarna handmatig te kijken naar de begrippen die niet automatisch gemapt kunnen worden. De eerste resultaten zijn gepresenteerd in de tabel hoedanigheid_antijoin, te vinden via [deze weblink](https://github.com/Aquo-standaard/LinkingStandards/blob/aquo2sdn/aquo2sdn/output/hoedanigheid_antijoin_edit.csv). Hieronder vallen een paar speciale gevallen, gepresenteerd in de onderstaande tabellen. Dit zijn vaak combinaties van Grootheden, Matrices en een relatietabel. Naar dit onderdeel wordt nog in detail gekeken.
+Omdat de tabel *Hoedanigheid* een combinatie is van monstercriterium en hoedanigheid uit AQUO, is het lastig om hier een automatische mapping over uit te voeren. Deze tabel is gevuld met verschillende combinaties aan begrippen. Er is voor gekozen om als eerste te kijken wat er wel automatisch gemapt kon worden en daarna handmatig te kijken naar de begrippen die niet automatisch gemapt kunnen worden. De eerste resultaten zijn gepresenteerd in de tabel hoedanigheid_antijoin, te vinden via [deze weblink](https://github.com/Aquo-standaard/LinkingStandards/blob/aquo2sdn/aquo2sdn/output/hoedanigheid_antijoin_edit.csv). Hieronder vallen een paar speciale gevallen, gepresenteerd in de onderstaande tabellen. Dit zijn vaak combinaties van Grootheden, Matrices en een relatietabel. Naar dit onderdeel wordt nog in detail gekeken.
 
 ```{r, include=FALSE}
 ddl_p01_joined_p01s %>%
