@@ -22,11 +22,16 @@ WHERE {
 } ORDER BY ?id"
 
 RDFTable2 <- rdf_query(rdf,query) %>%
-  filter(grepl("https://chem.nlm.nih.gov/chemidplus/rn/", casnr)) %>%
+  filter(
+    grepl("https://chem.nlm.nih.gov/chemidplus/rn/", casnr)
+  ) %>%
   mutate(CASnummer = stringr::str_replace(casnr, "https://chem.nlm.nih.gov/chemidplus/rn/","")) %>%
   full_join(
     parameter %>% select(CASnummer, Codes, Omschrijving, Status),
     by = c(CASnummer = "CASnummer")
+  ) %>%
+  filter(
+    Status == 'Geldig'
   ) %>%
   rename(
     bodc_S27_id = id,

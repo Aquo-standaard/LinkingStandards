@@ -1,0 +1,495 @@
+WaardeBepalingsmethode.Code;WaardeBepalingsmethode.Omschrijving
+other:A652;Organo-tinverbindingen in biota mbv GC-MSD
+NVT;Waarde is niet van toepassing
+ZINTUIGLIJK;Niet genormaliseerde zintuiglijke waardebepaling
+other:A1680;Bepaling Nikkel in biota met GFAAS
+other:N5623;Bepaling mbv halfgeleider gammaspectrometrie
+other:A067;Org. koolstof/stikstof mbv Gas Chromatografie (Carlo Erba)
+other:A421;Bepaling van HCB en PCB's in sediment en ZS met GC-MSD
+other:A1690;Bepaling Cd, Cu, Pb en Zn in biota met ICP/MS (RIVO)
+other:I17294_2;Toep. van massaspectr. met inductief gekozen plasma ICP-MS
+other:A404;Bepaling van PAK met HPLC en FL-detectie
+other:A034;De bepaling van nat gewicht, droog gewicht, % droge stof
+other:A063;Bepaling sedimentsamenstelling
+other:A064;Deeltjesgrootteverdeling dmv laserdiffractie
+other:A088;Bepaling van droge stof/gloeiverlies
+other:A1600;Bepaling Arsenicum in biota
+other:A1610;Bepaling Cadmium in biota
+other:A1620;Bepaling Chroom in biota
+other:A1630;Bepaling Koper in biota
+other:A1640;Bepaling Lood in biota
+other:A1650;Bepaling Kwik in biota
+other:A1660;Bepaling Nikkel in biota
+other:A1670;Bepaling Zink in biota
+other:A1700;Bepaling PCB en pesticiden in biota
+other:A1800;Bepaling PAK's in biota
+other:A1900;Bepaling vet volgens Bligh en Dyer
+other:A1901;Bepaling vocht in biota
+other:A408;Bepaling gehalte totaal en apolair vet
+other:A420;Bep. brandvertragers met GCMS met negatieve ionisatie
+other:A802;Vaststellen van intersex Alikruik (RIKZ SV BC109)
+other:B101;Bepaling biologische parameters van vis tbv chemische bep.
+other:B1680;Bepaling sulfaat in as van biota
+other:I16772;kwik in bodemextracten mbv atomaire spectrometrie koude damp
+other:N5622;Radioactiviteitsbep. massieke totale alfa-act., dikkelaagmet
+other:N5627;Radioact.bep. massieke totale en rest beta-act. telmonster
+other:N6620;Gravimetrische bepaling indamprest en gloeirest
+other:X068;Bepaling van kwik door vlamloze AAS (Imares, ISW 2.10.3.025)
+other:X069;Bepaling arseen spectrofotometrisch (Imares, ISW A047)
+other:X070;Bepaling metalen met ICP/MS (TNO, LSP/055)
+other:X071;Bep. van PCB's ea gehalog.Microveront.(Imares,ISW2.10.3.001)
+other:X072;Bep. van geh.vocht met droogstoofmeth.(Imares,ISW2.10.3.011)
+other:X073;Bep. tot. vetgehalte  Bligh en Dyer(Imares, ISW2.10.3.002)
+other:X074;Vaststellen imposex mariene slakken (Imares)
+other:X078;Bep. gehalte as (Imares, ISW 2.10.3.018)
+other:X079;Bep. polycycl. koolw.stoffen met HPLC (Imares,ISW2.10.3.005)
+other:X080;Bep. organotinverbindingen GC-MS(SIM)(Imares, ISW2.10.3.024)
+other:X087;Bep PBDE's met GC-NCI-MS + HPLC-ECI-MS(Imares,ISW2.10.3.017)
+other:X114;Bep. v. perfluorverb. mbv HPLC-ESI-MS (Imares,ISW2.10.3.045)
+other:W1445;Bepaling van lutum en KGF mbv Sedigraph (X-ray difraction)
+other:F006;Debiet uit afvoerkromme (Q/H- of Q/HH-relatie)
+other:F012;Astronomische waterhoogte mbv harmonische analyse
+other:F013;Opzet voorspellingsmodel - Model IOS (0-6h)
+other:F014;Opzet voorspellingsmodel - Model Timmerman (0-6h)
+other:F015;Gewogen gemiddelde waterhoogte van 4 IJsselmeer locaties
+other:F019;Debiet mbv ZWENDL (zout- en waterbeweging model)
+other:F023;Gewogen gemiddelde waterhoogte van 3 Markermeer locaties
+other:F024;Sommatie van debiet uit diverse afvoerkrommen (Q/H relaties)
+other:F050;Berekend debiet uit spui- en maalgegevens
+other:F051;Berekend debiet mbv verdeelsleutel (riviersplitsingen)
+other:F072;Berekende chloride concentratie - methode NDB '80-'81
+other:F101;Berekend debiet vermenigvuldigd met vaste factor 1.12
+other:F102;Berekend debiet vermenigvuldigd met vaste factor 1.21
+other:F152;Debiet mbv SOBEK (zout en zoetwatermodel)
+other:F160;Momentane schuifhoogte
+other:F165;Berekend debiet uit spuigegevens
+other:F216;Debiet uit Q-f relatie
+other:N6490;Jodometrische bepaling volgens Winkler
+other:N6651;Fotometrische bep opgelost chloride mbv doorstroomanalyse
+other:A008;Zuurstof volgens Winkler
+other:A009;Chloride uit geleidbaarheid
+other:A053;Chloride mbv AgNO3 titratie
+other:FMW001;MdSV Sea-Bird Electronics 911 plus system (913.03.W001)
+other:FW010;Verrichting van zintuigelijke, meteorologische waarnemingen
+other:FW012;Bepaling extinctie in situ (K-factor)
+other:F007;Rekenkundig gemiddelde waarde over vorige 5 en volgende 5 minuten
+other:F053;Berekende waterhoogten mbv rechtlijnige interpolatie (MSW)
+other:F054;Berekende waterhoogten mbv 2-D relatie (MSW)
+other:F105;Dieptebepaling
+other:F138;Saliniteit bepaling
+other:F227;getijanalyse methode HORN
+other:N6572;Kwant. thermo.tol.bact. coligroep mbv gistingsproeven
+other:ONBKD;Onbekend
+other:W1032;Bepaling soortelijke geleiding in water
+other:X001;Berekende waarden mbv stikstof houdende parameters
+other:X156;Guideline for monitoring marine litter on beaches (OSPAR)
+RWSV-W007;RWSV 913.00.W007
+RWSV-W008;RWSV 913.00.W008
+RWSV-W009;RWSV 913.00.W009
+other:FMW002;MdSV Bepaling van concentratie opgelost Zuurstof
+RWSV-W006;RWSV 913.00.W006
+other:F162;Berekening van Photosynthetically Active Radiation (PAR)
+other:F163;Bepaling van extinctie uit PAR instralingswaarden
+other:F083;Zicht bepaling
+other:F078;Rek. gem. troebelheidsbep. over vorige 5 en volgende 5 min.
+other:F080;Troebelheid bepaling
+other:W001;Bepaling van fysische waterkwaliteitparameters (continue)
+other:F001;Rekenkundig gemiddelde waarde over vorige 10 minuten
+other:F018;10 minuut scalair gemiddelde van de windsnelheid
+other:F034;10 minuut gemiddelde van de windrichting
+other:F040;Tijdreeks en frequentie analyse, methode WAVEBA
+other:F041;Tijdreeks en frequentie analyse, methode GOLVEN
+other:F042;Tijdreeks en frequentie analyse, methode CIC/MAREG
+other:F043;Tijdreeks en frequentie analyse, methode CIC/GLFPAR
+other:F044;Tijdreeks en frequentie analyse, methode Golfprocessor
+other:F045;Frequentie analyse energie en richting, methode WAVDIR
+other:F046;Freq/tijd analyse energie en richtingen, methode CIC/GLFPAR
+other:F047;Tijdreeks en frequentie analyse, methode MAREX
+other:F057;Tijdreeks en frequentie analyse, methode VCZ
+other:F002;Gem. waterhoogte mbv numerieke/laagpas filtering
+other:F009;Visuele aflezing van blad
+other:F010;HW en LW uit 1 min. waterhoogten gefilterd uit 10 min. gem.
+other:F026;Gem. levendigheid mbv Chebyshev filter vorige 10 min. (MSW)
+other:F155;Waterhoogte over vorige 5 en volgende 5 min.(SEMON)
+other:I17852;De bep.van kwik mbv atomaire fluorecentie spectometrie (AFS)
+other:W5423;Bepaling van fenolen en anilines mbv GCMS
+other:W6016;Bep. vluchtige organische stoffen in water m.b.v. GC-MS
+other:X047;Bepaling van organische verbindingen mbv GCMS (Omegam)
+other:X049;Bepaling van organotin verbindingen mbv GCMS (Omegam)
+other:X086;Bep. polaire bestrijdingsmiddelen mbv GCMS (Groot Salland)
+other:W5424;Bepaling van stoffen uit de KRW met GC/MS/MS
+other:I17294-2;Toep. van massaspectr. met inductief gekozen plasma ICP-MS
+other:X067;Bepaling van organische verbindingen LCTQ (Omegam)
+other:I7899-2;Membraam filtratie methode volgens NEN en ISO 7899_2
+other:X100;Thermotolbact coligroep mbv membraamfiltratie N6570 (HWL)
+I7899-1.98;NEN-EN-ISO 7899-1:1998 en
+I9308-3.99;NEN-EN-ISO 9308-3:1999 en
+other:A049;Opgelost organisch koolstof mbv autoanalyser
+other:A303;Determinatie fytoplankton, licht microscopie
+other:A624;Organotin-verbindingen mbv GC-AAS
+other:A650;Bepaling van organotin verbindingen mbv GC-AED
+other:I14403;Spectrofotometr. bep totaal&vrij cyanide doorstroomanalyse.
+other:N1899_1;Bep. BZV na n dagen in water, verdunning en entmeth (NEN-EN)
+other:N6484;Bepaling van zwevende stof en de gloeirest ervan in water
+other:N6526;Bepaling van cholinesterase remmende activiteit
+other:N6633;Bepaling van het chemisch zuurstof verbruik (CZV) in water
+other:W5310;GC bepaling OPB/ONB mbv grootvol injectie en MS-NPD detectie
+other:X101;Bepaling van Glyfosaat, en AMPA mbv HPLC-FLD (HWL)
+other:X102;Bep van Ecoli en coligroep bacterien gelijkw. I9308-1 (HWL)
+other:N6520;Spectrofotometrische bepaling
+other:F025;Bodemhoogte gecorrigeerd voor omstandigheden tijdens opname
+other:F029;Indompeling gedurende 1 minuut
+other:F178;tijdreeks en frequentie analyse methode Wemelsfelder
+other:F179;waterstansbepaling, methode Wemelsfelder
+other:F021;Steekwaarde bepaling (ponsband, veldlogger)
+other:F027;Rekenkundig gemiddelde waarde over vorige 3 en volgende 2 minuten
+other:F038;Rek gem. waterhoogte over vorig uur
+other:F039;Rek. gem. waterhoogte over vorige 2,5 en volgende 2,5 min.
+other:F056;Momentane waterhoogten
+other:F153;Rek. gem. waterhoogte over vorige 15 min.
+other:F159;Rek. gem. hefhoogte over de vorige 10 minuten (SEMON)
+other:F016;Rek. gem. stroomsnelheid over vorige 10 min.
+other:F075;Rek. gem. stroomrichting over vorige 10 min.
+other:F106;Rek. gem. stroomrichting over vorige en volgende 5 min(ADCP)
+other:F107;Rek. gem. stroomsnelheid over vorige en volgende 5 min(ADCP)
+other:F128;ADCP verwerking (RMI applicatie I&V)
+other:F129;ADCP verwerking (RMI I&V, middeling 2-5m tov waterspiegel)
+other:F130;ADCP verwerking (RMI I&V, middeling 2-10m tov waterspiegel)
+other:F131;ADCP verwerking (RMI I&V, middeling 2-15m tov waterspiegel)
+other:F183;ADCP verwerking met VISEA DPS (softwareprogramma)
+other:F170;Totale openingstijd over de vorige en volgende 5 minuten
+other:F171;Totale pomptijd over vorige 5 en volgende 5 minuten
+other:F172;Totale spuitijd over vorige 5 en volgende 5 minuten
+other:F173;Totale inschakeltijd over de vorige en volgende 5 minuten
+other:F098;Rek. gem. stroomsnelheid vorige 20 min grid 250x250m(DOPPLER
+other:F099;Rek. gem. stroomrichting vorige 20 min grid 250x250m(DOPPLER
+other:F146;Fluorescentie bepaling
+other:F164;Fluorimetrie met parallelmeting
+other:F067;Bepaling praktische saliniteit van zeewater (RWS Standaard)
+other:F068;Bepaling soortelijk gewicht van zeewater (RWS Standaard)
+other:F069;Bepaling chlorositeit van zeewater (RWS Standaard)
+other:F073;Berekende chloride uit geleidendheid en temperatuur (ZEGE)
+other:F076;Rek. gem. elec geleidendheid over vorige 5 en volgende 5 min
+other:F086;Geleidendheid bepaling
+other:F087;Rek. gem. elec. geleidendheid over vorige 10 min. (SEMON)
+other:F088;Representatieve elec. geleidendheid uit 2 steekwaarden
+other:A055;Alkaliteit mbv titratie
+other:F140;pH bepaling
+other:N6411;Bepaling van de pH met behulp van een glaselectrode
+other:W1072;Bepaling van de zuurgraad in water
+other:F139;Zuurstof (opgelost) bepaling
+other:F137;3 sec max windstoot afgelopen 10 min gecorr. naar 10 m +msl
+other:F030;Rek. gem. watertemperatuur over vorige 10 min. (SEMON)
+other:F081;Watertemperatuur bepaling
+other:F082;Luchttemperatuur bepaling
+other:F089;Representatieve watertemperatuur uit 2 steekwaarden
+other:A007;Saliniteit berekend uit temperatuur en geleidendheid
+other:F079;Rek. gem. fluorescentie over vorige 5 min en volgende 5 min
+other:F169;Rek. Gem. waterhoogte uit waterdruk- en luchtdruk vlgs msw90
+other:F097;Rek. gem. stroomsnelheid over vorige 5 en volgende 5 min(MSW
+other:F103;Rek. gem. afvoer over vorige 5 en volgende 5 min.(MSW90)
+other:F108;Rek. Gem. Stroomsnelheid over de vorige 30 en volgend 30 sec
+other:F133;Stroomrichting bepaling
+other:F134;Stroomsnelheid bepaling
+other:F223;Stroomsnelheid bepaling Aquadopp - Nortek
+other:F224;Vector current meter - Nortek - user manual
+other:A606;Totaal zwaar metaal na HCLO4 destructie mbv vlam AAS
+other:A068;Grafimetrische bepaling van CaCO3 mbv HCl
+other:A406;Bepaling van PCB's met GC en ECD-detectie
+other:A618;Bepaling van kwik mbv CV-AES
+other:A625;Arseen mbv ICP
+other:A638;ICP bepaling zwevende stof methode mbv AES techniek
+other:N5753;Bepaling dmv pipetmethode
+other:N5754;Bepaling organische stof volgens gloeiverliesmethode
+other:N6406;Gaschromatografische bepaling van OCB's en PCB's in water
+other:N6675;Minerale olie mbv infrarood spectrofotometrie
+other:W5327;GC bepaling mbv ECD
+other:N6426;AES bepaling van 40 elementen mbv ICP
+other:W5352;HPLC bepaling mbv fluorescentiedetectie
+other:N5733;Bepaling van minerale olie mbv IR/GC detectie
+other:N5760;AAS bepaling mbv vlamtechniek na ontsl. met HNO3 en HCL (As)
+other:O5779;AAS bepaling mbv koudedamptechniek na ontsl. met HNO3 en HCl
+other:V8514;GC bepaling mbv ECD detectie (VPR 8514)
+other:W1402;Fotom bep tot-PO4,KjN mbv CFA in afvalwater,sediment en ZS
+other:W1415;GC bepaling dmv elementaire analyse
+other:W1444;Bepaling dmv laserdiffractie
+other:W7002;Bepaling totaal natgewicht en (%)droge stof mbv vriesdrogen
+other:A010;Bepaling nutrienten mbv autoanalyser (Technicon)
+other:A024;Bepaling nutrienten mbv autoanalyser (Traacs)
+other:A084;Bepaling stikstof vlgs Kjedahl mbv autoanalyser (Technicon)
+other:A090;Nutrienten mbv autoanalyser
+other:A093;Stikstof volgens Kjeldahl mbv autoanalyser
+other:A056;Bepaling van hoeveelheid zwevende stof
+other:A200;Bepaling van Chlorofyl A en B - Feofytine A en B
+other:A801;Minerale olie mbv Infra-rood (vlgs. NEN6673 en NEN6675)
+other:N6634;BZV na n dagen - verdunningsmethode met enting
+other:A092;Bepaling particulair organisch fosfaat mbv autoanalyser
+other:A097;Totaal fosfor mbv autoanalyser
+other:X018;Bepaling totaal fosfo, fotometrische bep. mbv AA in water
+other:W4127;Bepaling van Mg mbv AAS vlam in oppervlakte water
+other:A604;Zwaar metaal extract mbv oven AAS
+other:N6429;Bep v Pb mbv AAS grafietoventechniek in (slibhoudend) water
+other:N6430;Bep v Ni mbv AAS grafietoventechniek in (slibhoudend) water
+other:N6444;Bep van Cr mbv AAS grafietoventechniek in water
+other:N6454;Bep v Cu mbv AAS grafietoventechniek in (slibhoudend) water
+other:N6458;Bep van Cd mbv AAS grafietoventechniek in water
+other:N6442;AES bepaling mbv vlamtechniek
+other:W4405;Bepa. Seleen m.b.v koude damp fluorescentie in water
+other:N6604;Bep. nutrienten mbv discrete analyse spectofotometrische det
+other:W1085;Fotometrische bepaling
+other:X064;Fotometrische bep. van WVFEN afgeleid van N6670 (Omegam).
+other:N12673;Gaschromatografische bepaling v. geselecteerde chloorfenolen
+other:X056;Bep. van OCBs,PCBs met GC afgeleid van I6468 (Omegam).
+other:X057;Bep. chloorfenolen met GC afgeleid van N12673 (Omegam).
+other:X065;Bep. van diverse OPBs met GC afgeleid van N12918 (Omegam).
+other:A653;bepaling organische verbindingen mbt GC-MSD (opvolger A650)
+other:OMS15GW;GC-MS bepaling
+other:W5410;Bepaling componenten uit richtlijn EEG76/464 mbv GCMS
+other:X046;Bepaling van bestrijdingsmiddelen mbv GCMS (Omegam)
+other:X172;Bepaling van vluchtige organische verbindingen m.b.v. GC-MS
+other:N6527;Bepaling van het gehalte aan 10 PAKs met HPLC in water
+other:X063;Bep. van PAKs met HPLC afgeleid van N6527 (Omegam).
+other:X104;Bepaling van PAKs met HPLC afgeleid I17993 (OMEGAM)
+other:W4301;Bepaling van het gehalte Fe, Zn, Mn mbv ICP-AES in water
+other:W4330;Bepaling van metalen mbv ICP-MS
+other:A418;Bepaling polaire bestrijdingsmiddelen met LC/MS
+other:X054;LC/MS analyse afgeleid van I11369 (Omegam)
+other:X066;Bepalen van Captan mbv LCMS (Omegam).
+other:W5316;Bep van polaire bestrijdingsmiddelen stoffen met LC/MS/MS
+other:W5429;An. PFOS en PFOA mbv solid phase extractie en LC-MS/MS detec
+other:I9308-1;Membraam filtratie methode volgens ISO 9308-1
+other:N6274;Kwant faecale streptococcen mbv membraanfiltratie (water)
+other:N6570;Kwant. thermo.tol.bact. coligroep mbv membraanfiltratie
+other:N6571;Kwant. totaal bact. coligroep mbv membraanfiltratie
+D38412-16.85;DIN 38412-16:1985-12
+I9698.89;ISO 9698:1989 en
+N12260.03;NEN-EN 12260:2003 en
+other:A081;Berekening totaal organisch koolstof (TOC)
+other:A082;Berekening totaal stikstof
+other:A083;Berekening totaal fosfor
+other:A089;Totaal opgelost stikstof mbv UV-destructie
+other:A1043;Analyse van specifieke polaire verbindingen met IC-MS
+other:A3051;Bepaling van Ra-226 m.b.v. extractiedisks.
+other:A4404;Bepaling van biogeen silicium mbv ICP-OES
+other:A4411;Bepaling van organotin mbv GC-ICP-MS
+other:A5320;Bep van polaire bestrijdingsmiddelen met LCMSMS in water
+other:A601;Bepaling van Arseen
+other:A602;Bepaling van Chroom
+other:A603;Bepaling van kwik
+other:B001;Bepaling volgens Mac Conkey MPN
+other:B003;Bepaling volgens Eykmanlactose 44,5o MPN
+other:B005;Bepaling volgens WAKWA 031621
+other:B008;Bepaling van reciprose waarde titer
+other:FW015;913.00.W015, Bepaling fysisch-chemische veldparameters
+other:I10304-1;Bep F,Cl,NO2,oPO4,Br,NO3,SO4 mbv LC NEN-EN-ISO
+other:I11369;Bep. diverse bestrijdingsmiddelen mbv LC-MS met UV-detectie
+other:I11905_2;Bepaling van N mbv chemoluminiscentie
+other:I13395;Bep. van NO2, NO3, s_NO3NO2 als N mbv spectro.det
+other:I15680;GC bep MAK Naf en cl verb mvb purge/trap termal desorption
+other:I15681_2;Bep. van het gehalte van o-PO4 en tP mbv CFA
+other:I15923_1;Bep NH4,Cl,NO3,NO2,oPO4,SiO4,SO4 mbv discrete analyse
+other:I16588;Gaschromatische meth voor bep 6 complexvormende verbindingen
+other:I21458;Bepaling van glyfosaat en aminomethylfosfonzuur (AMPA)
+other:I6340;Water - Bepaling van Salmonelle mbv MWA-methode (ISO-norm)
+other:I6468;Gaschr. bep. OCBs, PCBs, CBs na vloeistof/vloeistof extract.
+other:I7888;Geleidendheid bepaling (NEN - ISO 7888)
+other:I9562;Coulometrische bepaling (ISO 9562)
+other:I9963;Bepaling van alkaliniteit (HCO3) volgens NEN en ISO 9963
+other:LC01GW;Bep. van 16 EPA PAK in water en zs mbv HPLC-UV/Fluorescentie
+other:N1483;Bepaling vh gehalte aan kwik mbv koude damp AAS in water
+other:N1484;Leidraad voor bep. gehalt TOC en DOC in water
+other:N15204;Waterkwaliteit - tellen van fytoplankton Utermohl-techniek
+other:N26340;Salmonella mbv MWA methode
+other:N3235;Fotometrische bepaling (8.3)
+other:N6261;Escherichia coli mbv DP methode
+other:N6265;Bepaling Salmonella, red. indicatief
+other:N6401;Coulometrische bepaling
+other:N6402;Coulometrische bepaling van organisch gebonden halogeen
+other:N6412;Bepaling van de soortelijke geleiding
+other:N6420;Bepaling dmv vloeistof scintillatie telling
+other:N6421;Bepaling (rest)BETA act.conc. niet vluchtige bestanddelen
+other:N6432;Bep van As mbv AAS hydridegeneratie techniek in water
+other:N6434;Bep van Se mbv AAS hydridegeneratie techniek in water
+other:N6443;Bepaling van zink mbv AAS vlamtechniek in water
+other:N6445;Fluorescentiespectrometrische bepaling mbv koudedamp
+other:N6451;Bepaling van koper mbv AAS vlamtechniek in water
+other:N6452;Bepaling van cadmium mbv AAS vlamtechniek in water
+other:N6453;Bepaling van lood mbv AAS vlamtechniek in water
+other:N6456;Bepaling van nikkel mbv AAS vlamtechniek in water
+other:N6468;Bep v Co mbv AAS grafietoventechniek in (slibhoudend) water
+other:N6471;Fotometrische bepaling van het gehalte aan kiezelzuur
+other:N6476;Bepaling chloride door potentiometrische titratie
+other:N6483;Fluoride bepaling dmv ion-selectieve electrode
+other:N6531;Titrimetrische bep HCO3 in water met pH kleiner/gelijk 8.35
+other:N6562;Kwant faecale streptococcen mbv membraanfiltr (opp.water)
+other:N6563;Kwant. faecale streptococcen mbv gistingsproeven
+other:N6589;Bepaling van tot. anorg. fluoride met doorstr.injectiesyst.
+other:N6646;Fotometr bep som NH4 en organisch-N vlgs Kjeldahl mbv CFA
+other:N6652;Fotometrische bep opgelost s_NO3NO2 mbv doorstroomanalyse
+other:N6653;Fotometrische bep opgelost nitriet mbv doorstroomanalyse
+other:N6654;Fotometrische bep opgelost sulfaat mbv doorstroomanalyse
+other:N6655;Fotometrische bep tot. en vrij cyanide mbv doorstroomanalyse
+other:N6663;Fotometrische bepaling opgelost o_PO4 en totaal P mbv CFA
+other:N6670;Fotometrische bep v/h gehalte waterdamp vluchtige fenolen
+other:N6674;Fotometrisch bep. van het gehalte anionactieve detergentia
+other:N6966;analyse van metalen in opl.  atomaire emissiespectrometrie
+other:PEN26340;Bepaling van salmonella vlgs Pro Europese Norm mbv MWA metho
+other:RN87022;Fysische bepaling volgens RIZA nota 87-022
+other:R6522;Bepaling van organisch- en anorganisch koolstof (NPR 6522)
+other:V5622;Radioactiviteitsbepaling mbv de dikkelaagmethode
+other:V5637;Radioactiviteitsbepaling mbv proportionele teller
+other:V8511;HPLC bepaling mbv UV/fluorescentie detectie (VPR 8511)
+other:V8516;GC bepaling mbv ECD detectie (VPR 8516)
+other:W003;Bepaling van fluoride - ionselectieve neting
+other:W1001;Fotometr bep NO3,NO2,NH4,o-PO4,SiO2,Cl mbv CFA in water
+other:W1002;Fotometr bep KjN en totaal fosfaat mbv CFA in water
+other:W1024;Fotometrische bepaling van DOC mbv CFA in water
+other:W1052;Bep anionactieve detergentia (s_MBAS) mbv CFA in water
+other:W1086;Fotometrische bepaling van nutrienten mbv discrete analyse
+other:W1104;Coulometrische bepaling
+other:W1111;Bep v Br mbv ionselectieve electrode en gran-plot in water
+other:W1182;Spectrofotometrische bepaling
+other:W2103;Bepaling van salmonella mbv de MWA methode
+other:W3001;Bep totaal alfa activiteit mbv proportionele teller in water
+other:W3003;Bepaling totaal en rest beta activiteit in water
+other:W3040;Bepaling dmv radiochemische scheiding
+other:W3041;Bep. van Sr89 en Sr90 activiteitsconc. in water
+other:W3050;Bepaling volgens Ba3SO4 neerslag mbv proportionele teller
+other:W4116;Bepaling van Zn mbv AAS vlam in oppervlakte water
+other:W4124;Bep v Ca en Mg mbv AAS vlamtechniek in oppervlaktewater
+other:W4202;Bep v Cd,Cr,Cu,Ni,Pb mbv AAS grafietoven in zout water
+other:W4205;Bepaling van Pb mbv AAS grafietoven in zout opp water
+other:W4208;Bepaling van Cu mbv AAS grafietoven in zout opp water
+other:W4211;Bepaling van Ni mbv AAS grafietoven in zout opp water
+other:W4217;Bepaling van Fe mbv AAS grafietoventechniek in opp water
+other:W4313;Bep van Al,B,Ba,Be mbv ICP-AES in oppervlaktewater
+other:W4499;Totaal gehalte aan Cd Cr Cu Ni Pb en Zn in zoutwatermonsters
+other:W5302;HPLC bepaling mbv DAD, C-18 kolom, CH3CN/H20
+other:W5311;Bep. van fenyllureumherbiceden mbv vloeist.chrom en MS/MS
+other:W5330;Bepaling van OPB/PCB in water mbv GC-ECD
+other:W5411;Bep. van chelaten mbv HPLC en diode array detectie in water
+other:W5418;Bepaling van C10-C13 chlooralkanen mbv GC/MS na SPE
+other:W6011;Bep en bevestigen vluchtige org stoffen mbv ION TRAP MS
+other:W6013;Bep CFCZ, nitrofenolen+enige andere verb. in water mbv LC-MS
+other:X019;Bep. van vluchtige org. halogenen - microcoulometrie
+other:X020;Multicomponentiele test mbv massaspectrometrie
+other:X062;Bep. van EOX afgeleid van N6402 (Omegam).
+other:X081;Bep bicarbonaat mbv potentiometrische titr obv N6532 (HWL)
+other:X082;Bep van totaal fosfor mbv CFA obv I15681_2 (HWL)
+other:X083;Bep van anion actieve detergentiea (MBAS) obv N903 (HWL)
+other:X084;Bepalen van de complexvormers NTA, EDTA, DTPA mbv HPLCUV
+other:X095;Bepaling van AOX mbv microcoulometrie (HWL)
+other:X097;Bep van opgeloste anionen mbv LC gelijkw. I10304-1 (HWL)
+other:X099;Bepaling van nutri���nten mbv discrete analyse (HWL)
+other:X116;Bep v metalen mbv ICP/MS gelijkwaardig aan I17294-1/2 (HWL)
+other:X142;Bep. van perfluor comp.mbv SPE en LS-MS/MS(UvA-PFAA_SPE)
+other:X146;Bepaling van chloorfenolen in water glw NEN-EN 12673
+other:X147;Bepaling van PBDE's in water (Al-West, QMP_BR_C_187)
+other:X170;Bepaling van broomhoudende brandvertragers m.b.v. GC-MS
+other:X171;Bepaling van chloorfenoxyalkaanzuren m.b.v. GC-MS
+other:X096;Bep van CHLFa mbv spectrofotometerie gelijkw. N6520 (HWL)
+other:N5761;AAS bepaling mbv vlamtechniek na ontsl. met HNO3 en HCL (Pb)
+other:N5762;AAS bepaling mbv vlamtechniek na ontsl. met HNO3 en HCL (Cd)
+other:W5414;analyse van (Nitro)Chloorbenzeen in sed. en zw.st.  GC-MS/MS
+other:W4311;Bep van Cd,Cr,Cu,Mn,Ni,Pb,Sc,Zn mbv ICP-AES in sediment
+other:N5756;Bep v organ+totaal koolst gehalte in grond na drogeverassing
+other:N5758;AAS bepaling mbv vlamtechniek na ontsl. met HNO3 en HCL (Cu)
+other:N5759;AAS bepaling mbv vlamtechniek na ontsl. met HNO3 en HCL (Zn)
+other:N5764;AAS bepaling na ontsl. met HNO3 in destructievat bij 140 oC
+other:N5765;AAS bepaling mbv vlamtechniek na ontsl. met HNO3 en HCL (Ni)
+other:N5767;AAS bepaling mbv vlamtechniek na ontsl. met HNO3 en HCL (Cr)
+other:N5779;Bepaling van kwik mbv koude damp techniek in zwevende stof
+other:W1423;Gravimetrische bepaling
+other:W1468;IR bepaling met freon extractie
+other:W4310;Bepaling van het gehalte Ca en Fe mbv ICP-AES in sediment
+other:W4404;Bep v Hg mbv fluoriscentiespectro in sediment/zwevende stof
+other:W4407;AAS bepaling hydride techniek
+other:W5328;Bep. CB(chloorbenzenen),NCB(nitroCB),HCE,HCBd,QCB mbv GC-ECD
+other:W5409;Bep (Nitro)chloorbenzenen in sediment/zw.stof mbv. LC/GC/MS
+other:X012;Bepaling gehalte olieproducten mbv GC-FID methode Tauw WV350
+other:X026;Kj N en P volgens werkvoorschrift WV2.3.2-073 AL-West
+other:X037;Bep. van de korrelgrootte mbv de sedigraaf (Al-West)
+other:A651;Organo-tinverbindingen in sediment en ZS mbv GC-MSD
+other:A074;Deeltjesgrootteverdeling fractie 0-63 um m.b.v. sedigraaf
+other:A075;Bepaling sedimentsamenstelling
+other:A641;Arseen mbv hybride generatie ICP-AES
+other:A643;Bepaling Hg in sediment/zwevende stof met CVAFS
+other:A645;Organo-tinverbindingen in sediment mbv GC-AED
+other:A647;Bepaling metalen in zs m.b.v. ICP/MS
+other:B079;Destructie mbv Kaliumbichromaat (IB 1979)
+other:N6950;Bep geselecteerde elementen in bodem, waterbodem en slib
+other:N6970;Koepelnrm v bep organ compon. in grond, waterbdm en bouwstof
+other:X103;Bep van PAKs met GCMS gedeeltelijk afgeleid N6977 (Omegam)
+other:X148;Bepaling van PAKs in WB en ZS (Al-West, SOP_AL_C_15208_01)
+other:X149;Bepaling van PCBs in WB en ZS (Al-West, SOP_AL_C_15224_01)
+other:X150;Bepaling van OCBs in WB en ZS (Al-West, SOP_AL_C_15210_01)
+other:N6649;AAS bepaling na onsl. met permanganaat en persulfaat
+other:ISW_A034;Bepaling van het gehalte aan vocht (droogstoofmethode)
+other:RIVO9008;As bepaling in biota
+other:A307;Bepaling algemene gegevens schelpdieren
+other:X088;Bep. van non-ortho PCB's met GC/MS-NCI(Imares,ISW2.10.3.004)
+other:A079;Bepaling van opgelost fosfaat mbv autoanalyser (Technicon)
+other:A094;Opgelost stikstof mbv autoanalyser
+other:A095;Opgelost fosfor mbv autoanalyser
+other:A096;Totaal stikstof mbv autoanalyser
+other:A100;Bepaling opgelost fosfor mbv autoanalyser na UV-destructie
+other:A605;Zink mbv vlam AAS
+other:A607;Zwaar metaal mbv oven/vlam AAS
+other:A608;Nikkel mbv vlam AAS
+other:A609;Lood mbv vlam AAS
+other:A610;Zink mbv vlam AAS
+other:N6455;Bepaling van magnesium mbv AAS vlamtechniek in water
+other:A423;Bepaling Organochloorverb in water met GC/MS
+other:X053;Bepaling van chlooranilines in water mbv GC/ MS (omegam)
+other:X013;Bepaling van PAK's mbv hoge druk vloeistofchromatografie
+other:A649;bepaling metalen in zout water mbv ICPMS (opvolger A604)
+other:A040;Bepaling particulair stikstof mbv autoanalyser (Technicon)
+other:A043;Bepaling particulair fosfaat mbv autoanalyser (Technicon)
+other:A046;Totaal ijzer mbv autoanalyser
+other:A091;Bepaling particulair stikstof mbv autoanalyser
+other:A3060;Bep Tc99 met behulp van vloeistofscintillatie teltecniek
+other:A414;Bepaling polaire pesticiden m.b.v. GC/MS
+other:A419;Bepaling van Chloorfenoxycarbonzuren met LC-MS
+other:A5313;Bepaling van geneesmiddelen mbv LCMSMS
+other:B004;Bepaling mbv MFC medium 44,5o
+other:I107051;Bepaling F specifieke RNA-fagen (ISO 107051)
+other:LOA505;HPLC bepaling mbv UV detectie
+other:LOA524;Derivatisering HPLC-fluorescentie
+other:N6407;Gaschromat. bepaling van div. aromaten en alifatische koolw.
+other:N6433;Bep van Sb mbv AAS hydridegeneratie techniek in water
+other:N6446;Bepaling van calcium mbv AAS vlamtechniek in water
+other:N6460;Bepaling van ijzer mbv AAS vlamtechniek in water
+other:OM_LC25W;Bepaling van glyfocaat en aminomethylfosfonzuur
+other:OM_N1056;Bepaling HCO3 in water vlgs Omegam voorschrift N1056.IV.6
+other:V5623;Radioactiviteitsbepaling mbv halfgeleidergammaspectrometrie
+other:V6432;AAS bepaling mbv hydride generatie techniek
+other:W3005;Bepaling (rest)BETA act. conc. dmv NORIT methode
+other:W3030;Bepaling mbv alfaspectrometrie
+other:W4401;Bepaling mbv AES vlamtechniek
+other:W4412;AAS bepaling mbv hydride generatie techniek
+other:W5301;GC bepaling mbv N-P detectie
+other:W5303;HPLC bepaling mbv diode-array detectie
+other:W5304;Bepaling van N-methylcarbamaten
+other:W5305;Bepaling van fenolherbiciden mbv HPLC
+other:W6001;GC-MS bepaling na XAD-4 isolatie
+other:W6002;GC-MS bepaling na purge and trap injectie
+other:W6010;Bepaling van organische stoffen mbv GC-MS en DCM extractie
+other:X021;bepaling ftalen met behulp van GCMS
+other:X027;Bepaling van Glyfosaat en AMPA mbv HPLC-FLD (Aqualab)
+other:W002;Bepaling van chloride - ionselectieve meting
+other:X107;Bepaling van minerale olie mbv GC (Omegam)
+other:W5413;Bep. van broomhoudendebrandvertragers in sed.zwst. mbv GC-MS
+other:X166;Bepaling van PAKs door middel van GC-MSMS (BMM SV067)
+other:X173;Bepaling van dibenzodioxines en dibenzofuranen mbv GC-MS/MS
+other:X176;bep van perfluorverbindingen in ZS mbv LC-MS/MS in MRM mode
+other:FW005;Zwevende stof monstername mbv een doorstroomcentrifuge
+other:MTC3S005;Bepaling dioxine mbv hoge resolutie massa spectometric
+other:N15936;Bep v orgasnisch+tot koolstof geh.in grond na drogeverassing
+other:N5771;AES bepaling met ICP voor PAK's
+other:V5627;Bep massieke tot beta + rest-beta-activiteit vast telmonster
+other:W3002;Bepaling totaal alfa activiteit in sediment en zwevende stof
+other:W3004;Bep van totaal beta activiteit in sediment en zwevende stof
+other:X042;Bepaling van Dioxines mbv HRGC/HRMS (Analytico)
+other:X151;Bepaling van Diox in WB en ZS (Al-West, SOP_AL_C_15267_01)
+other:A401;PAK's volgens Borneff
+other:A402;Bepaling van HCH

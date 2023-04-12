@@ -1,6 +1,11 @@
 # Mapping van eenheden
 
 ```{r}
+require(tidyverse)
+require(aquodom)
+require(rwsapi)
+require(rlist)
+require(kableExtra)
 ddlmetadata <- rws_metadata() 
 metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
   list.flatten() %>% as.data.frame(stringsAsFactors = F)
@@ -51,7 +56,6 @@ Het "Eenheid.Code" veld uit de ddl tabel lijkt op het veld "altlabel" uit de SDN
 ```{r ddl-sdn-eenheden}
 
 p06 <- p06 %>% mutate(altlabel2 = stringr::str_replace_all(altlabel, "\\^", ""))
-
 
 DDL_SDN_eenheid_auto <- ddl_eenheden %>% 
   inner_join(
