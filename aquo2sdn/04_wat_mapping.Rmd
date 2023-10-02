@@ -1,8 +1,48 @@
 # Mapping van AQUO "wat" termen.
 
+
+
+
 ```{r}
 
-ddlmetadata <- rws_metadata() 
+coastlineUrl <- ("data/shapes/eea_v_3035_100_k_coastline-poly_1995-2012_p_v03_r00/EEA_Coastline_20170228.shp")
+coastline <- sf::st_read(coastlineUrl, quiet = TRUE)
+
+ddlmetadata <- rws_metadata(
+  filterList = list(
+    Eenheden = T, 
+    Grootheden = T, 
+    Parameters = T, 
+    Hoedanigheden = T, 
+    Compartimenten = T,
+    BemonsteringsApparaten = T,
+    BemonsteringsMethoden = T,
+    BemonsteringsSoorten = T,
+    BioTaxon = T,
+    BioTaxon_Compartimenten = T,
+    MeetApparaten = T,
+    MonsterBewerkingsMethoden = T,
+    Organen = T,
+    PlaatsBepalingsApparaten = T,
+    Typeringen = T,
+    WaardeBepalingstechnieken = T,
+    WaardeBepalingsmethoden = T,
+    WaardeBewerkingsmethoden = T
+    )
+  )
+
+Locaties <- ddlmetadata$content$LocatieLijst %>%
+  sf::st_as_sf(coords = c("X", "Y"), crs = 25831) %>% 
+  st_transform(st_crs(coastline))
+
+land = lengths(st_intersects(Locaties, coastline)) > 0
+coast = !land
+
+zouteLocaties <- Locaties[coast,]
+
+
+
+
 metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
   list.flatten() %>% as.data.frame(stringsAsFactors = F)
 
