@@ -1,0 +1,7 @@
+﻿WaardeBewerkingsmethode.Code;WaardeBewerkingsmethode.Omschrijving;SDN_S07_ID;SDN_S07_URI;SDN_S07_ID_Preferred Label;ID ↑;Preferred Label ↑;Definition ↑;Date ↑
+NVT;Niet van toepassing;S0700006;http://vocab.nerc.ac.uk/collection/S07/current/S0700006/;not specified;S0700006;not specified;No statistic has been explicitly specified for the parameter entity.;17/02/2006
+GEM;Gemiddelde;S0700003;http://vocab.nerc.ac.uk/collection/S07/current/S0700003/;mean;S0700003;mean;Assumed to be the arithmetic mean (the sum of a set of measurements divided by the sample size) unless explicitly qualified by a subgroup term such as geometric.;11/08/2017
+SOM;Sommatie waarden;na;;;na;;;
+BER;Berekend;na;;;na;;;
+other:OSPAR_KM;afgeleid van n/km naar n/hm;na;;;na;;;
+other:FACTR081;Vermenigvuldigingsfactor 0.81;na;;;na;;;
