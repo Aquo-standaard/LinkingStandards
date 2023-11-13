@@ -7,11 +7,27 @@
 source("R/functies.R")
 
 ddlmetadata <- rws_metadata() 
+ddlmetadata <- rws_metadata(
+  filterList = list(
+    Eenheden = T, 
+    Grootheden = T, 
+    Parameters = T, 
+    Hoedanigheden = T, 
+    Compartimenten = T,
+    BemonsteringsApparaten = T,
+    MeetApparaten = T,
+    WaardeBepalingstechnieken = T,
+    WaardeBepalingsmethoden = T,
+    WaardeBewerkingsmethoden = T
+    )
+  )
+
 metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
   list.flatten() %>% as.data.frame(stringsAsFactors = F)
 
 KwaliteitswaardecodeLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$KwaliteitswaardecodeLijst)
 ReferentievlakLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$ReferentievlakLijst)
+
 ```
 
 

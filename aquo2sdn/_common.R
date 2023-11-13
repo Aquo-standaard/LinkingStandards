@@ -11,6 +11,8 @@ require(stringr)
 require(aquodom)
 require(rwsapi)
 require(rlist)
+require(sf)
+require(leaflet)
 
 # example chunk options set globally
 knitr::opts_chunk$set(

@@ -17,18 +17,17 @@ csl: chicago-fullnote-bibliography.csl
 
 Uitwisseling van watergerelateerde data met andere landen is belangrijk voor analyses en beoordelingen van internationale wateren. Van oudsher is er veel uitwisseling van mariene data. Sinds SeaDataNet ([SDN](https://www.seadatanet.org/)) zijn hiervoor internationale standaarden gebruikt en ontwikkeld. Als uitgangspunt is het systeem van de Brittisch Oceanographic Data Center ([BODC](https://www.bodc.ac.uk/)) genomen. Dit heeft geleid tot een set internationaal geaccepteerde semantische standaarden (vocabulaires) voor registratie van in situ metingen in het mariene domein. 
 
-Er zijn binnen SeaDataNet ook technische standaarden ontwikkeld voor het zoeken, vinden en transporteren van metadata en data. Het gangbare formaat voor metadata is de Common Data Index (CDI), en voor data het Ocean Data View (ODV) formaat. 
-
 De Nederlandse standaard voor waterdata is [AQUO](https://www.aquo.nl/index.php/Hoofdpagina). Er is op dit moment geen eenduidige en complete mapping om AQUO-gestandaardiseerde data te transformeren naar SDN-gestandaardiseerde data. De technische standaard voor uitlevering van data variëert. 
 
-We beperken ons in dit project tot het mappen van de semantische standaarden.
+Het doel van dit project is om de semantische termen die gebruikt worden in respectievelijk de Nederlandse gegevens en gegevens in internationale bronnen waar mogelijk aan elkaar te koppelen. Dit moet leiden tot een gemakkelijkere en snellere conversie van gegevens opgeslagen in het Nederlandse formaat naar internationale formaten (en omgekeerd). 
 
+We beperken ons in dit project tot het koppelen van de semantische standaarden.
 
 ## Voortgang
 
 Dit rapport is een concept eindrapport. Termen uit de Data Distributielaag zijn gemapt naar EMODnet/BODC voor de volgende AQUOtabellen:
 
-Uit DDL metadata:
+Termen uit DDL metadata die de aand van de gemeten entiteit beschrijven:
 
 * Grootheid (ca 75% compleet)
 * Eenheid  (100% compleet)
@@ -37,7 +36,7 @@ Uit DDL metadata:
 * Compartiment  (ca 75% compleet)
 * Kwaliteitswaarde  (ca 75% compleet)
 
-Extra informatie die niet in de metadata voorhanden is, maar wel regelmatig uitgewisseld wordt in EMODnet projecten, zijn termen uit de volgende tabellen. Hiervan is een compilatie gemaakt op basis van tot nu toe uitgewisselde informatie. 
+Extra informatie over de bemonstering en waardebepaling, zijn termen uit de volgende tabellen. Van deze informatie is een compilatie gemaakt op basis van ervaring met uitwisseling van informatie met EMODnet. 
 
 * Bemonsteringsapparaat
 * Bemonsteringsmethode
