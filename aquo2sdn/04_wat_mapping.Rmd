@@ -32,6 +32,7 @@ ddlmetadata <- rws_metadata(
   )
 
 Locaties <- ddlmetadata$content$LocatieLijst %>%
+  filter(Y > 100000) %>%
   sf::st_as_sf(coords = c("X", "Y"), crs = 25831) %>% 
   st_transform(st_crs(coastline))
 
@@ -40,27 +41,44 @@ coast = !land
 
 zouteLocaties <- Locaties[coast,]
 
-
-
+# parameters gekoppeld aan zoute locaties selecteren
 
 metadataLijst <- ddlmetadata$content$AquoMetadataLijst %>%
-  list.flatten() %>% as.data.frame(stringsAsFactors = F)
+  list.flatten() %>% as.data.frame(stringsAsFactors = F) %>%
+  left_join(ddlmetadata$content$AquoMetadataLocatieLijst, by = c(AquoMetadata_MessageID = "AquoMetaData_MessageID")) %>%
+  filter(Locatie_MessageID %in% zouteLocaties$Locatie_MessageID)
+
+
 
 KwaliteitswaardecodeLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$KwaliteitswaardecodeLijst)
 ReferentievlakLijst <- tibble(kwaliteitswaardecode = ddlmetadata$content$ReferentievlakLijst)
 
-metadatavelden <- names(metadataLijst)[c(3, 7, 9, 11)]
-aantaluniekecombinaties <- metadataLijst %>% distinct(Grootheid.Code, Parameter.Code, Hoedanigheid.Code, Compartiment.Code) %>% nrow()
+metadatavelden <- c('Grootheid.Code', 'Parameter.Code', 'Hoedanigheid.Code', 'Compartiment.Code')
+
+aantaluniekecombinaties <- metadataLijst[,metadatavelden] %>% distinct() %>% nrow()
 
 ```
 
-## Vergelijking DDL metadata en P01 vocabulaire
+## AQUO termen aanwezig in de RWS Data Distributielaag
 
-De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een overzicht van deze gegevens [deze weblink](https://rijkswaterstaatdata.nl/waterdata/). Hier staan ook links naar instructies voor benadering van de webservices. Een beknopt overzicht van welke soort metingen er in de DDL zitten kan worden opgevraagd via de metadata service. Hieruit blijkt dat het totale aantal unieke combinaties van de metadatavelden `r metadatavelden` in de DDL `r aantaluniekecombinaties` is.
+De Data Distributie Laag (DDL) bevat fysische, chemische en deels biologische gegevens van Rijkswaterstaat in het waterdomein. Zie voor een overzicht van deze gegevens [deze weblink](https://rijkswaterstaatdata.nl/waterdata/). Hier staan ook links naar instructies voor benadering van de webservices. Een overzicht van welke soort metingen er in de DDL zitten kan worden opgevraagd via de metadata service. Hieruit blijkt dat het totale aantal unieke combinaties van de metadatavelden `r metadatavelden` in de DDL `r aantaluniekecombinaties` is.
 
-Binnen de aquo domeintabellen is in eerdere projecten de mapping tabel Mapping\_SDN\_P01\_202\_12\_13 gemaakt om sommige elementen van aquo te koppelen aan de seadatanet semantiek. Deze tabel wordt hier als uitgangspunt gebruikt om P01 termen te koppelen aan metadata uit de Data Distributielaag (DDL). Hierna moeten de P01 termen uitgesplitst worden in de verschillende onderliggende componenten om een 1:1 mapping te verkrijgen van de individuele *S*-termen.
+Er is in deze studie alleen gekeken naar metadata gekoppeld aan zoute of mariene locaties (zie figuur \@ref(fig:zouteLocaties)).
 
-De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO IM-metingen, maar wijkt op een aantal punten af. Onder andere doordat het veld Hoedanigheid.code is opgebouwd uit twee verschillende AQUO codes, namelijk Hoedanigheid.code en Monstercriterium.code. Idem voor de omschrijvingen. In de Mapping\_SDN\_P01\_2021\_12\_13 zijn deze twee velden niet gecombineerd. Voor een kansrijke automatische mapping worden in Mapping\_SDN\_P01\_2021\_12\_13 deze velden aan elkaar geplakt. In Mapping\_SDN\_P01\_2021\_12\_13 zijn "lege" velden echt leeg terwijl deze in de DDL metadata gevuld zijn met "NVT". Dus, vóórdat de P01 koppeltabel gekoppeld kan worden aan de AQUO catalogustabel worden Hoedanigheid.code en Monstercriterium.code gecombineerd in één veld en alle lege plekken gevuld met "NVT".
+```{r zouteLocaties, fig.cap="Zoute locaties waarvoor metadata uit de datadistributielaag verzameld is. "}
+zouteLocaties %>%
+  st_transform(4236) %>%
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(radius = 2)
+```
+
+
+Binnen de aquo domeintabellen is in eerdere projecten de mapping tabel Mapping\_SDN\_P01\_202\_12\_13 gemaakt om sommige elementen van aquo te koppelen aan de seadatanet semantiek. Deze tabel wordt hier als uitgangspunt gebruikt om P01 termen te koppelen aan metadata uit de Data Distributielaag (DDL). Hierna zijn de P01 termen uitgesplitst in de verschillende onderliggende componenten om een 1:1 mapping te verkrijgen van de individuele *S*-termen.
+
+De AquoMetadataLijst uit de DDL metadata is grotendeels opgebouwd volgens AQUO IM-metingen, maar wijkt op een aantal punten af. Onder andere doordat het veld Hoedanigheid.code in de DDL is opgebouwd uit twee verschillende AQUO codes, namelijk Hoedanigheid.code en Monstercriterium.code. Idem voor de omschrijvingen. In de Mapping\_SDN\_P01\_2021\_12\_13 zijn deze twee velden niet gecombineerd. Voor een kansrijke automatische mapping zijn deze velden aan elkaar geplakt. 
+
+In Mapping\_SDN\_P01\_2021\_12\_13 zijn "lege" velden echt leeg terwijl deze in de DDL metadata gevuld zijn met "NVT". Dus, vóórdat de P01 koppeltabel gekoppeld kan worden aan de AQUO catalogustabel worden Hoedanigheid.code en Monstercriterium.code gecombineerd in één veld en alle lege plekken gevuld met "NVT".
 
 ```{r , message=FALSE, warning=FALSE}
 #idsw_aquo_map_PO1 <- GetDomainTable(pDomeintabel <- "Mapping_SDN_P01")
@@ -75,9 +93,16 @@ idsw_aquo_map_PO1 <- idsw_aquo_map_PO1 %>%
   replace((. == ''), "NVT") %>%
   select(-ID, -`D_BEGIN`, -`D_EIND`)
 
+if(knitr::is_html_output()){
+kableExtra::kbl(head(idsw_aquo_map_PO1, 10), caption = "Eerste 10 elementen uit de aangepaste tabel idsw_aquo_map_PO1. ")
+} else {
+    knitr::kable(head(idsw_aquo_map_PO1, 10), format = "latex", booktabs = TRUE, caption = "Eerste 10 elementen uit de aangepaste tabel idsw_aquo_map_PO1. ") %>%
+          kable_styling(latex_options = "scale_down")
+}
+
 ```
 
-De metadata uit de DDL worden hierna gecombineerd met de mapping\_P01 tabel op de velden:
+De metadata uit de DDL worden hierna gecombineerd met de mapping\_P01 tabel op de volgende velden:
 
 (ref:bestaandeMappingLabel) Veldnamen die gecombineerd worden om de ddl_metadata te koppelen aan de gemodificeerde mapping\_P01 tabel. Hierbij zijn de velden monstercriterium en hoedanigheid gecombineerd in een veld Aquo_Monstercriterium\_Hoedanighed\_code
 
@@ -101,7 +126,8 @@ waarin *Aquo\_Monstercriterium\_Hoedanigheid\_code* de combinatie is van monster
 
 # join new metadata from ddl with mapping table from aquo
 
-ddl_p01_joined <- metadataLijst %>%
+ddl_p01_joined <- metadataLijst[,c(metadatavelden, "Grootheid.Omschrijving", "Parameter.Omschrijving", "Hoedanigheid.Omschrijving", "Compartiment.Omschrijving")] %>% 
+  distinct() %>%
   left_join(
     idsw_aquo_map_PO1 %>% select(-`Aquo_biotaxon_code`),
     by = c(
@@ -120,7 +146,8 @@ ddl_p01_joined <- metadataLijst %>%
 
 # join new metadata from ddl with mapping table from aquo
 
-ddl_p01_antijoined <- metadataLijst %>%
+ddl_p01_antijoined <- metadataLijst[,c(metadatavelden, "Grootheid.Omschrijving", "Parameter.Omschrijving", "Hoedanigheid.Omschrijving", "Compartiment.Omschrijving")] %>%
+  distinct() %>%
   anti_join(
     idsw_aquo_map_PO1 %>% select(-`Aquo_biotaxon_code`),
     by = c(

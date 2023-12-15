@@ -2,7 +2,7 @@
 
 ## Afbakening
 
-Het doel van dit project is om een semantische koppeling (mapping) vast te leggen voor het vertalen van Nederlandse zoutwatergerelateerde monitoringgegevens naar een internationale semantische standaard die gebruikt kan worden in EMODnet. De grootste bron van mariene gegevens wordt gevormd door de door Rijkswaterstaat ingewonnen gegevens in het kader van MWTL. Deze worden ontsloten via de Data Distributielaag. We hebben ons hier daarom in eerste instantie beperkt tot alle soorten gegevens die via de Data Distributielaag beschikbaar wordt gemaakt. Dit is nog aangevuld met veelgebruikte overige informatie die wel in de DDL data zit, maar niet direct in de metadata (zie ook figuur \@ref(fig:werkwijze).
+Het doel van dit project is om een semantische koppeling (mapping) vast te leggen voor het vertalen van Nederlandse zoutwatergerelateerde monitoringgegevens naar een internationale semantische standaard die gebruikt kan worden in EMODnet. De grootste bron van mariene gegevens wordt gevormd door de door Rijkswaterstaat ingewonnen gegevens in het kader van MWTL. Deze worden ontsloten via de Data Distributielaag. We hebben ons hier daarom beperkt tot alle soorten gegevens die via de Data Distributielaag beschikbaar wordt gemaakt.
 
 ## Algemene werkwijze
 

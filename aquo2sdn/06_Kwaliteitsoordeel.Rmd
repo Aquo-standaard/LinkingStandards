@@ -31,7 +31,7 @@ bodc_sdn_kwaliteitsoordeel %>% select(conceptid, preflabel, definition) %>%
 ```
 
 
-In eerder werk (NWDM) is een mapping gemaakt van deze codes naar BODC op basis van data uit de DDL voor Noordzee en Waddenzee (fysische-chemische data). Het voorstel is om deze als basis te gebruiken (tabel \@ref(tab:Kwaliteitscodecomparison)). We stellen voor om deze tabel als uitgangspunt te gebruiken. 
+In eerder werk (Deltares intern) is een mapping gemaakt van deze codes naar BODC op basis van data uit de DDL voor Noordzee en Waddenzee (tabel \@ref(tab:Kwaliteitscodecomparison)). We stellen voor om deze tabel als uitgangspunt te gebruiken. 
 
 ```{r readQualityCodeMappingTable}
 L201_mapping <- read_delim(file.path("data\\aquo\\Mapping_SDN_L201.csv"), delim = ";")

@@ -49,7 +49,7 @@ Hierbij moet aangetekend worden dat de eenheid "/l" in dit geval ook gelijkgeste
 AANBEVELING: verander eenheid "/l" in "n/l" in de DDL.
 :::
 
-### Vergelijking DDL en SDN (P0)
+### Vergelijking DDL en SDN (P06)
 
 Het "Eenheid.Code" veld uit de ddl tabel lijkt op het veld "altlabel" uit de SDN tabel. Hierbij zijn alle "\^" (bijv. in g/m\^2) tekens uit de SDN tabel voor de vergelijking verwijderd. Een eerste poging om de twee modellen te mappen wordt daarom gedaan op die twee velden. Het blijkt (tabel \@ref(tab:ddl-sdn-eenheden)) dat er `r ddl_eenheden %>% inner_join(p06, by = c(Eenheid.Code = "altlabel")) %>% nrow()` codes precies gelijk zijn. De validiteit van deze mapping kan in de tabel \@ref(tab:ddl-sdn-eenheden)) geïnspecteerd worden.
 
@@ -63,6 +63,7 @@ DDL_SDN_eenheid_auto <- ddl_eenheden %>%
     by = c(Eenheid.Code = "altlabel2")
     ) %>% 
   select(Eenheid.Code, Eenheid.Omschrijving, altlabel, preflabel, conceptid)
+
 knitr::kable(DDL_SDN_eenheid_auto, caption = "Eenheidcodes uit de DDL die direct vergelijkbaar zijn met de eenheidcodes uit de SDN tabel (veldnaam altlabel).") %>%
   {if(knitr::is_latex_output()) kable_styling(kable_input = ., latex_options = "scale_down") else .}
 
