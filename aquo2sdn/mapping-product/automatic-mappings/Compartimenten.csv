@@ -1,0 +1,6 @@
+Compartiment.Code Compartiment.Omschrijving Hoedanigheid.Code S26_preflabel S26_conceptid
+OW Oppervlaktewater NVT "water body [dissolved plus reactive particulate phase]" MAT00633
+OW Oppervlaktewater NVT "water body" MAT00640
+OW Oppervlaktewater nf "water body [dissolved plus reactive particulate <unknown phase]" MAT00626
+OW Oppervlaktewater NVT "water body [particulate >GF/F phase]" MAT00997
+ZS "Zwevende stof" dg "suspended particulate material" MAT00528

@@ -1,0 +1,33 @@
+MeetApparaat.Code;MeetApparaat.Omschrijving
+NVT;Waarde is niet van toepassing
+110;Handmatig
+127;Vlotter
+156;Stroomsnelheidsmeter
+100000;other:Datasonde
+104;Lichtintensiteitsmeter
+105;Secchi schijf
+106;Troebelheidsmeter
+108;Golfmeetboei
+109;Radar
+113;Laser
+117;Singlebeam echolood - hoog frequent
+121;Barometer
+124;Peilschaal
+125;Stappenbaak
+126;Ultrasoon
+134;Akoestisch Doppler (ADCP)
+135;Elektromagnetische sensor
+136;HF-Radar
+138;Kwikthermometer
+141;Fluorescentiemeter
+142;Geleidendheidmeter
+145;pH meter
+146;Saliniteitmeter
+147;Titratiemeter
+148;Zuurstofmeter
+149;Windrichtingmeter
+150;Windsnelheidsmeter
+153;Temperatuursensor
+154;Geleidendheid- en temperatuursensor
+155;Druksensor
+205;Afstandsdraad

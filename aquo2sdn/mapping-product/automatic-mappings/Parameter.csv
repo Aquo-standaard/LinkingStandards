@@ -1,0 +1,162 @@
+Parameter.Code Parameter.Omschrijving S27_preflabel S27_altlabel s27_conceptid
+O2 zuurstof oxygen O2 CS002779
+Fe ijzer "total iron" total_Fe CS000284
+DC4ySn "dibutyltin (kation)" dibutyltin "DBT dibutylstannane" CS000431
+DFySn "difenyltin (kation)" diphenyltin "DPT diphenylstannane" CS000452
+TC4ySn "tributyltin (kation)" "tributyltin cation" "tributylstannylium TBT+" CS002650
+T4C4ySn tetrabutyltin tetrabutyltin  CS003148
+Ag zilver silver Ag CS002615
+As arseen arsenic As CS002328
+B boor boron B CS003263
+Ba barium barium Ba CS002335
+Be beryllium beryllium Be CS003266
+Cd cadmium cadmium Cd CS002363
+Co kobalt cobalt Co CS002447
+Cr chroom chromium Cr CS002377
+Cu koper copper Cu CS002454
+Hg kwik "total mercury" total_Hg CS001621
+Li lithium lithium Li CS002552
+Mn mangaan "total manganese" total_Mn CS000305
+Mo molybdeen molybdenum Mo CS003003
+Ni nikkel nickel Ni CS002566
+Pb lood lead Pb CS002545
+Rb rubidium rubidium Rb CS003116
+Sb antimoon antimony Sb CS002962
+Se seleen selenium Se CS002608
+Sn tin tin Sn CS003004
+Sr strontium strontium Sr CS002622
+Te telluur tellurium Te CS003145
+Ti titaan titanium Ti CS002918
+Tl thallium thallium Tl CS003132
+U uranium uranium U CS026907
+V vanadium vanadium V CS002664
+Zn zink zinc Zn CS002678
+aedsfn alfa-endosulfan alpha-endosulfan  CS002307
+aHCH alfa-hexachloorcyclohexaan alpha-hexachlorocyclohexane alpha-HCH CS002321
+alCl alachloor alachlor  CS001173
+aldn aldrin aldrin  CS002293
+Ant antraceen anthracene  CS002027
+atzne atrazine atrazine  CS001579
+BaP benzo(a)pyreen benzo(a)pyrene  CS001908
+BbF benzo(b)fluorantheen benzo(b)fluoranthene  CS001915
+bedsfn beta-endosulfan beta-endosulfan  CS003282
+Ben benzeen benzene  CS003272
+BghiPe benzo(ghi)peryleen benzo(g,h,i)perylene  CS001936
+bHCH beta-hexachloorcyclohexaan beta-hexachlorocyclohexane beta-HCH CS002349
+BkF benzo(k)fluorantheen benzo(k)fluoranthene  CS001950
+cHCH "gamma-hexachloorcyclohexaan (lindaan)" gamma-hexachlorocyclohexane "lindane gamma-HCH" CS002503
+CHLFa chlorofyl-a chlorophyllide-a  CS002942
+cHpClepO cis-heptachloorepoxide "cis-heptachlor epoxide"  CS002440
+ClBen chloorbenzeen chlorobenzene  CS003286
+Clfvfs chloorfenvinfos chlorfenvinphos chlorfenvinfos CS001201
+Clidzn chloridazon chloridazon  CS001208
+Cltlrn chloortoluron chlortoluron chlorotoluron CS001222
+cumfs cumafos coumaphos  CS000375
+cumn cumeen (1-methylethyl)benzene "isopropylbenzene cumene" CS003258
+C1yazfs methylazinfos azinphos-methyl  CS001586
+C1yprmfs methylpirimifos pirimiphos-methyl  CS001425
+C1yprton methylparathion parathion-methyl  CS003164
+c12DClC2e cis-1,2-dichlooretheen cis-1,2-dichloroethene  CS000333
+C2yazfs ethylazinfos azinphos-ethyl  CS001180
+C2yBen ethylbenzeen ethylbenzene  CS003317
+C2yClprfs ethylchloorpyrifos chlorpyrifos  CS003289
+C2yprton ethylparathion parathion-ethyl  CS000781
+Daznn diazinon diazinon  CS000424
+DClC1a dichloormethaan dichloromethane  CS003270
+DClvs dichloorvos dichlorvos  CS003283
+DEHP "bis(2-ethylhexyl)ftalaat (DEHP)" bis(2-ethylhexyl)phthalate DEHP CS001194
+dHCH delta-hexachloorcyclohexaan delta-hexachlorocyclohexane delta-HCH CS000396
+dieldn dieldrin dieldrin  CS002468
+Dmtat dimethoaat dimethoate  CS000438
+dmtn deltamethrin deltamethrin  CS000403
+dodne dodine dodine "1-dodecylguanidine acetate" CS000508
+Durn diuron diuron 3-(3,4-dichlorophenyl)-1,1-dimethylurea CS003293
+endn endrin endrin  CS002489
+esfvlrt esfenvaleraat esfenvalerate  CS000543
+fenamfs fenamifos fenamiphos  CS000564
+fenOxcb fenoxycarb fenoxycarb  CS000578
+feNO2ton fenitrothion fenitrothion  CS000571
+fenton fenthion fenthion  CS000585
+Flu fluorantheen fluoranthene  CS002069
+HCB hexachloorbenzeen hexachlorobenzene HCB CS002531
+heptnfs heptenofos heptenophos  CS000641
+HpCl heptachloor heptachlor  CS002510
+HxClbtDen hexachloorbutadieen hexachloro-1,3-butadiene  CS002524
+HxClC2a hexachloorethaan hexachloroethane  CS000648
+idn isodrin isodrin  CS002538
+imdcpd imidacloprid imidacloprid  CS000683
+InP indeno(1,2,3-cd)pyreen indeno(1,2,3-cd)pyrene  CS002118
+iptrn isoproturon isoproturon  CS000690
+linrn linuron linuron  CS000697
+malton malathion malathion  CS001348
+metbtazrn methabenzthiazuron methabenzthiazuron  CS000704
+metlCl metolachloor metolachlor  CS001362
+mevfs mevinfos mevinphos  CS000732
+Mlnrn monolinuron monolinuron  CS000739
+Naf naftaleen naphthalene  CS002013
+PBDE100 2,2',4,4',6-pentabroomdifenylether "2,2',4,4',6-pentabromodiphenyl ether" BDE100 CS002146
+PBDE138 2,2',3,4,4',5'-hexabroomdifenylether "2,2',3,4,4',5'-hexabromodiphenyl ether" BDE138 CS002132
+PBDE153 2,2',4,4',5,5'-hexabroomdifenylether "2,2',4,4',5,5'-hexabromodiphenyl ether" BDE153 CS000998
+PBDE154 2,2',4,4',5,6'-hexabroomdifenylether "2,2',4,4',5,6'-hexabromodiphenyl ether" BDE154 CS001005
+PBDE28 2,4,4'-tribroomdifenylether "2,4,4'-tribromodiphenyl ether" BDE28 CS002209
+PBDE47 2,2',4,4'-tetrabroomdifenylether "2,2',4,4'-tetrabromodiphenyl ether" BDE47 CS001026
+PBDE49 2,2',4,5'-tetrabroomdifenylether "2,2',4,5'-tetrabromodiphenyl ether" BDE49 CS001040
+PBDE85 2,2',3,4,4'-pentabroomdifenylether "2,2',3,4,4'-pentabromodiphenyl ether" BDE85 CS002139
+PBDE99 2,2',4,4',5-pentabroomdifenylether "2,2',4,4',5-pentabromodiphenyl ether" BDE99 CS001012
+PeClBen pentachloorbenzeen pentachlorobenzene  CS002587
+PeClFol pentachloorfenol pentachlorophenol  CS003165
+pirmcb pirimicarb pirimicarb  CS000809
+simzne simazine simazine  CS000837
+styrn styreen styrene  CS003166
+s4C9yFol "som vertakte 4-nonylfenol-isomeren"   
+Tazfs triazofos triazophos  CS001495
+TClC1a "trichloormethaan (chloroform)" trichloromethane chloroform CS003033
+TClC2e "trichlooretheen (tri)" 1,1,2-trichloroethene "trichloroethylene TCE" CS003226
+terC4yazne terbutylazine terbuthylazine TBA CS000858
+Tfrlne trifluraline trifluralin  CS001243
+TFySn "trifenyltin (kation)" "triphenyltin cation" TPT+ CS001250
+tHpClepO trans-heptachloorepoxide "trans-heptachlor epoxide"  CS002636
+Tol tolueen methylbenzene toluene CS003183
+tolcfsC1y tolclofos-methyl tolclofos-methyl  CS000893
+t12DClC2e trans-1,2-dichlooretheen trans-1,2-dichloroethene  CS003149
+T4ClC1a "tetrachloormethaan (tetra)" tetrachloromethane "CCl4 carbon tetrachloride" CS003013
+T4ClC2e "tetrachlooretheen (per)" tetrachloroethene tetrachloroethylene CS003138
+11DClC2a 1,1-dichloorethaan 1,1-dichloroethane  CS000942
+11DClC2e 1,1-dichlooretheen 1,1-dichloroethene  CS003250
+111TClC2a 1,1,1-trichloorethaan 1,1,1-trichloroethane  CS003246
+112TClC2a 1,1,2-trichloorethaan 1,1,2-trichloroethane  CS003233
+1122T4ClC2a 1,1,2,2-tetrachloorethaan 1,1,2,2-tetrachloroethane  CS003232
+12DClBen 1,2-dichloorbenzeen 1,2-dichlorobenzene  CS003235
+12DClC2a 1,2-dichloorethaan 1,2-dichloroethane  CS003247
+12DClC3a 1,2-dichloorpropaan 1,2-dichloropropane  CS001516
+12xyln 1,2-xyleen 1,2-dimethylbenzene "1,2-xylene o-xylene" CS000963
+123TClBen 1,2,3-trichloorbenzeen 1,2,3-trichlorobenzene 1,2,3-TCB CS000949
+124TClBen 1,2,4-trichloorbenzeen 1,2,4-trichlorobenzene 1,2,4-TCB CS000956
+13DClBen 1,3-dichloorbenzeen 1,3-dichlorobenzene  CS003249
+135TClBen 1,3,5-trichloorbenzeen 1,3,5-trichlorobenzene 1,3,5-TCB CS000970
+14DClBen 1,4-dichloorbenzeen 1,4-dichlorobenzene  CS003234
+24DDT 2,4'-dichloordifenyltrichloorethaan 2,4'-dichlorodiphenyltrichloroethane o,p'-DDT CS001117
+44DDD 4,4'-dichloordifenyldichloorethaan 4,4'-dichlorodiphenyldichloroethane p,p'-DDD CS002244
+44DDE 4,4'-dichloordifenyldichlooretheen 4,4'-dichlorodiphenyldichloroethylene p,p'-DDE CS002251
+44DDT 4,4'-dichloordifenyltrichloorethaan 4,4'-dichlorodiphenyltrichloroethane p,p'-DDT CS002258
+Ca calcium calcium Ca CS002921
+K kalium potassium K CS002923
+Mg magnesium magnesium Mg CS002981
+Na natrium sodium Na CS002904
+bentzn bentazon bentazone bentazon CS001187
+C1ymsfrn methyl-metsulfuron metsulfuron-methyl  CS000725
+irgrl irgarol irgarol  CS003184
+lcyhltn lambda-cyhalothrin lambda-cyhalothrin  CS003187
+PBDE209 2,2',3,3',4,4',5,5',6,6'-decabroomdiphenylether "decabromodiphenyl ether" "BDE209 decabromodiphenyl oxide" CS000382
+pyrdbn pyridaben pyridaben  CS000830
+pyrpxfn pyriproxyfen pyriproxyfen  CS001439
+tefbzrn teflubenzuron teflubenzuron  CS001446
+terbtn terbutrin terbutryn  CS000851
+24DP 2,4-dichloorfenoxypropionzuur dichloroprop "2,4-DP 2,4-dichlorophenoxypropionic acid" CS001124
+captn captan captan  CS003284
+Clpfm chloorprofam chlorpropham  CS001600
+C1yClprfs methylchloorpyrifos chlorpyrifos-methyl  CS001215
+Dtann dithianon dithianon  CS000459
+propxr propoxur propoxur  CS001432
+BaP benzo(a)pyreen benzo(e)pyrene  CS001929
+teldn telodrin telodrin isobenzan CS002629
