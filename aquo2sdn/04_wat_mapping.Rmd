@@ -197,7 +197,7 @@ nrow2 <- ddl_p01_joined_p01s %>% distinct(Parameter.Code) %>% nrow()
 
 ### Parameter vs BODC S27 substances
 
-De parameter tabel bestaat voor een groot deel uit chemische stof. Voor chemische stof kan er een onafhankelijke mapping worden gemaakt, doormiddel van het linken van CAS nummers aan de BODC S27 tabel. De CAS-nummers staan in de Mapping\_SDN\_P01\_2021\_12\_13 tabel, maar ze staan verborgen in de P01 beschrijving. Deze mapping kan uitgevoerd worden via semantisch web methodes. Met semantische web is een kennismethode om data te linken over verschillende webpagina's heen. Hierbij zijn duplicaten verwijderd en de 'NA' waarden uit de ruwe mapping [de csv](https://github.com/Aquo-standaard/LinkingStandards/blob/main/aquo2sdn/data/mappings/chemischeStof/CAS-aquo-bodc.csv) file gefilterd.
+De parameter tabel bestaat voor een groot deel uit chemische stof. Voor chemische stof kan er een onafhankelijke mapping worden gemaakt, doormiddel van het linken van CAS nummers aan de BODC S27 tabel. De CAS-nummers staan in de Mapping\_SDN\_P01\_2021\_12\_13 tabel, maar ze staan verborgen in de P01 beschrijving. Deze mapping kan uitgevoerd worden via linked data methodes (semantische web). Dit is een kennismethode om data te linken over verschillende webpagina's heen. Hierbij zijn duplicaten verwijderd en de 'NA' waarden uit de ruwe mapping ([de csv](https://github.com/Aquo-standaard/LinkingStandards/blob/main/aquo2sdn/data/mappings/chemischeStof/CAS-aquo-bodc.csv)) file gefilterd. De code voor deze mapping via Linked Data staat [hier](https://github.com/Aquo-standaard/LinkingStandards/blob/main/aquo2sdn/R/chemischeStofLinkedData.R).
 
 ```{r koppeling-casnmr-bodc}
 casBodc <- read_delim("data/mappings/chemischeStof/CAS-aquo-bodc.csv")
@@ -227,12 +227,11 @@ ddl_p01_joined_p01s %>%
 
 ### Compartimenten vs S26 BODC matrices
 
-Het begrip compartimenten in AQUO is gelijk aan het begrip Matrices in BODC. In de onderstaande tabel worden de resultaten van een eerste automatische mapping gepresenteerd. Het handmatig mappen van de compartiment anti join tabel geeft weinig extra mapping resultaten. De attributen die niet goed gemapt zijn, hebben te maken met stratificatie in meren of zeeën.
+Het begrip "compartimenten" in AQUO is gelijk aan het begrip "matrices" in BODC. In de onderstaande tabel worden de resultaten van een eerste automatische mapping gepresenteerd. Het handmatig mappen van de compartiment anti join tabel geeft weinig extra mapping resultaten. De attributen die niet goed gemapt zijn, hebben te maken met stratificatie in meren of zeeën.
 
 ```{r}
 
 idsw_aquo_compartimenten <- GetDomainTable(pDomeintabel <- "Compartiment")
-
 
 ddl_p01_joined_p01s %>%
   distinct(Compartiment.Code, Compartiment.Omschrijving, Hoedanigheid.Code, S26_preflabel, S26_conceptid) %>%
